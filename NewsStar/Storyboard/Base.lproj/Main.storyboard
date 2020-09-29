@@ -21,8 +21,35 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5j-60-d0l">
                                         <rect key="frame" x="0.0" y="0.0" width="406" height="1200"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAa-xB-UXf" customClass="SeparatorLine" customModule="NewsStar" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="116.5" width="60" height="4"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="4" id="CCn-nI-35S"/>
+                                                    <constraint firstAttribute="width" constant="60" id="FFr-nY-fOE"/>
+                                                </constraints>
+                                            </view>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F7U-9G-0Gn">
+                                                <rect key="frame" x="24" y="152.5" width="358" height="180"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="AJK-U8-Ode"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YqX-YS-PIZ">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="F7U-9G-0Gn" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="24" id="KPj-tA-cpB"/>
+                                            <constraint firstItem="F7U-9G-0Gn" firstAttribute="top" secondItem="rAa-xB-UXf" secondAttribute="bottom" constant="32" id="jVZ-cg-nmZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="F7U-9G-0Gn" secondAttribute="trailing" constant="24" id="kGR-FV-x2V"/>
                                             <constraint firstAttribute="height" constant="1200" id="uxS-EF-2Fa"/>
                                         </constraints>
                                     </view>
@@ -40,17 +67,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Ig-lNf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Ig-lNf" customClass="CircleButton" customModule="NewsStar" customModuleProvider="target">
                                 <rect key="frame" x="342" y="50" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="KRo-oO-62q"/>
                                     <constraint firstAttribute="height" constant="40" id="Q7X-36-JTo"/>
                                 </constraints>
                                 <state key="normal" image="userImge"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-If-oYW">
-                                <rect key="frame" x="24" y="104" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tops picks for you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-If-oYW">
+                                <rect key="frame" x="24" y="104" width="163" height="28.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -58,11 +90,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="rAa-xB-UXf" firstAttribute="centerY" secondItem="aGk-If-oYW" secondAttribute="centerY" id="7gL-sL-X8G"/>
                             <constraint firstItem="Vhp-Uz-pdg" firstAttribute="centerY" secondItem="JaP-Ig-lNf" secondAttribute="centerY" id="BSc-aA-1FX"/>
                             <constraint firstItem="wlY-tJ-m0u" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DSk-Xg-ux8"/>
                             <constraint firstItem="y5j-60-d0l" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="250" id="EGW-3C-2Qz"/>
                             <constraint firstItem="wlY-tJ-m0u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fy6-bV-r6G"/>
                             <constraint firstItem="JaP-Ig-lNf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="KHO-Oq-huN"/>
+                            <constraint firstItem="rAa-xB-UXf" firstAttribute="leading" secondItem="aGk-If-oYW" secondAttribute="trailing" constant="13" id="MGC-rp-N7J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JaP-Ig-lNf" secondAttribute="trailing" constant="32" id="Mu0-sy-V5b"/>
                             <constraint firstItem="aGk-If-oYW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="OTq-1f-OmT"/>
                             <constraint firstItem="y5j-60-d0l" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.980676" id="hie-OR-29m"/>
@@ -77,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189.8550724637682" y="16.741071428571427"/>
+            <point key="canvasLocation" x="1426" y="13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vio-tM-cAa">
@@ -95,6 +129,11 @@
             <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="JaP-Ig-lNf">
+            <size key="intrinsicContentSize" width="359" height="359"/>
+        </designable>
+    </designables>
     <resources>
         <image name="userImge" width="359" height="359"/>
         <systemColor name="systemBackgroundColor">

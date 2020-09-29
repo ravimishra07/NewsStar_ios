@@ -1,5 +1,5 @@
 //
-//  SeparatorLine.swift
+//  CircleImageView.swift
 //  NewsStar
 //
 //  Created by Ravi Mishra on 29/09/20.
@@ -7,19 +7,15 @@
 
 import UIKit
 
-@IBDesignable class SeparatorLine: UIView {
+@IBDesignable class CircleButton: UIButton {
     
-    @IBInspectable var cornerRadius: CGFloat = 4 {
+    @IBInspectable var cornerRadius: CGFloat = 30 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }
     }
     
-    var background: UIColor = UIColor.systemGray {
-        didSet {
-            self.backgroundColor = background
-        }
-    }
+ 
     override func prepareForInterfaceBuilder() {
         self.prepareViews()
     }
@@ -36,7 +32,9 @@ import UIKit
     
     func prepareViews(){
         self.layer.cornerRadius = cornerRadius
-        self.backgroundColor = background
+        self.clipsToBounds = true
+       
     }
    
 }
+

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewsCollectionCell" customModule="NewsStar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="347"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="419" height="347"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHa-fX-cbC">
+                        <rect key="frame" x="0.0" y="0.0" width="419" height="347"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerImage" translatesAutoresizingMaskIntoConstraints="NO" id="dQW-qW-oc1">
+                                <rect key="frame" x="0.0" y="0.0" width="419" height="243"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alien invasion reported in Lucknow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1d-sU-OfZ">
+                                <rect key="frame" x="4" y="249" width="411" height="29"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ws8-Ek-t3g">
+                                <rect key="frame" x="2" y="283" width="415" height="64"/>
+                                <string key="text">Post-war paranoia-inspired tales of Martians, flying saucers and malevolent intergalactic entities perfect for stargazers in search of proof of life beyond our solar ...</string>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQw-t5-XIc" customClass="NewsDateView" customModule="NewsStar" customModuleProvider="target">
+                                <rect key="frame" x="287" y="18" width="120" height="24"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cna-8h-gFG">
+                                        <rect key="frame" x="8" y="3" width="20" height="17.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="i93-R4-8Cz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06 Aug 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-DI-vra">
+                                        <rect key="frame" x="34" y="3.5" width="70" height="17"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="cna-8h-gFG" firstAttribute="top" secondItem="xQw-t5-XIc" secondAttribute="top" constant="2" id="0Cg-vl-ePe"/>
+                                    <constraint firstAttribute="bottom" secondItem="cna-8h-gFG" secondAttribute="bottom" constant="2" id="34j-9S-aA5"/>
+                                    <constraint firstAttribute="width" constant="120" id="4qa-Tx-Jsh"/>
+                                    <constraint firstItem="ZRH-DI-vra" firstAttribute="centerY" secondItem="xQw-t5-XIc" secondAttribute="centerY" id="Gyb-Kk-ryp"/>
+                                    <constraint firstItem="cna-8h-gFG" firstAttribute="leading" secondItem="xQw-t5-XIc" secondAttribute="leading" constant="8" id="KpT-uj-I8v"/>
+                                    <constraint firstItem="ZRH-DI-vra" firstAttribute="leading" secondItem="cna-8h-gFG" secondAttribute="trailing" constant="6" id="njT-xK-z2b"/>
+                                    <constraint firstAttribute="height" constant="24" id="qEX-JF-24o"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-5d-Q3U" customClass="SeparatorLine" customModule="NewsStar" customModuleProvider="target">
+                                <rect key="frame" x="4" y="281" width="411" height="2"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="SAN-Mr-BjJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dQW-qW-oc1" firstAttribute="top" secondItem="xHa-fX-cbC" secondAttribute="top" id="70V-3l-Eub"/>
+                            <constraint firstItem="Z1d-sU-OfZ" firstAttribute="top" secondItem="dQW-qW-oc1" secondAttribute="bottom" constant="6" id="Bfc-hF-Xpl"/>
+                            <constraint firstAttribute="trailing" secondItem="dQW-qW-oc1" secondAttribute="trailing" id="DZ3-Yu-Zcj"/>
+                            <constraint firstAttribute="trailing" secondItem="Ws8-Ek-t3g" secondAttribute="trailing" constant="2" id="EO1-Qt-UyL"/>
+                            <constraint firstAttribute="bottom" secondItem="Ws8-Ek-t3g" secondAttribute="bottom" id="FTj-y3-bhZ"/>
+                            <constraint firstItem="SN7-5d-Q3U" firstAttribute="leading" secondItem="xHa-fX-cbC" secondAttribute="leading" constant="4" id="I25-ek-ddn"/>
+                            <constraint firstAttribute="trailing" secondItem="Z1d-sU-OfZ" secondAttribute="trailing" constant="4" id="Ils-KY-krV"/>
+                            <constraint firstAttribute="trailing" secondItem="SN7-5d-Q3U" secondAttribute="trailing" constant="4" id="JdW-cT-kwd"/>
+                            <constraint firstItem="Ws8-Ek-t3g" firstAttribute="leading" secondItem="xHa-fX-cbC" secondAttribute="leading" constant="2" id="KCs-ZV-O60"/>
+                            <constraint firstItem="SN7-5d-Q3U" firstAttribute="top" secondItem="Z1d-sU-OfZ" secondAttribute="bottom" constant="3" id="Pg3-W0-gKU"/>
+                            <constraint firstItem="Z1d-sU-OfZ" firstAttribute="leading" secondItem="xHa-fX-cbC" secondAttribute="leading" constant="4" id="ToV-Je-w0u"/>
+                            <constraint firstItem="xQw-t5-XIc" firstAttribute="top" secondItem="xHa-fX-cbC" secondAttribute="top" constant="18" id="VxA-QU-xer"/>
+                            <constraint firstItem="Ws8-Ek-t3g" firstAttribute="top" secondItem="SN7-5d-Q3U" secondAttribute="bottom" id="fco-60-bdw"/>
+                            <constraint firstAttribute="trailing" secondItem="xQw-t5-XIc" secondAttribute="trailing" constant="12" id="hFT-PQ-u3e"/>
+                            <constraint firstItem="dQW-qW-oc1" firstAttribute="height" secondItem="xHa-fX-cbC" secondAttribute="height" multiplier="0.7" id="jav-lV-VNi"/>
+                            <constraint firstItem="dQW-qW-oc1" firstAttribute="leading" secondItem="xHa-fX-cbC" secondAttribute="leading" id="tfj-XO-Mn3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="xHa-fX-cbC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1B1-0p-W9I"/>
+                <constraint firstAttribute="bottom" secondItem="xHa-fX-cbC" secondAttribute="bottom" id="1WF-15-6AS"/>
+                <constraint firstItem="xHa-fX-cbC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9pX-qI-6Xs"/>
+                <constraint firstAttribute="trailing" secondItem="xHa-fX-cbC" secondAttribute="trailing" id="eLO-hD-hf0"/>
+            </constraints>
+            <size key="customSize" width="419" height="347"/>
+            <point key="canvasLocation" x="238.40579710144928" y="185.82589285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bannerImage" width="485" height="264"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
