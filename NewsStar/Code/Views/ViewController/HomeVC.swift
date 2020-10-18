@@ -18,7 +18,8 @@ class HomeVC: UIViewController {
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
     let menuCellIdentifier = "MenuCVCell"
-    
+    let dataSource = MenuDataSource()
+
     // MARK:- lifeCycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
