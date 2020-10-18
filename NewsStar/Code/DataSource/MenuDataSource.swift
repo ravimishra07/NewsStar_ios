@@ -14,7 +14,7 @@ class GenericDataSource<T> : NSObject {
 
 class MenuDataSource:  GenericDataSource<MenuModel>, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return data.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -25,7 +25,10 @@ class MenuDataSource:  GenericDataSource<MenuModel>, UICollectionViewDataSource 
         cell.menuImage.image = UIImage(named: menuName.menuImage)
         return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        return CGSize(width: width/5, height: 150)
+    }
     
 //    func numberOfSections(in tableView: UITableView) -> Int {
 //        return 1

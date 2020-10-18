@@ -19,6 +19,12 @@ class HomeVC: UIViewController {
     
     let menuCellIdentifier = "MenuCVCell"
     let dataSource = MenuDataSource()
+    
+    lazy var viewModel : MenuViewModel = {
+        let viewModel = MenuViewModel(dataSource: dataSource)
+        return viewModel
+    }()
+    
 
     // MARK:- lifeCycle methods for the viewController
     override func viewDidLoad() {
@@ -29,26 +35,29 @@ class HomeVC: UIViewController {
     func setUpUI(){
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
         searchTextField.delegate = self
-        menuCollectionView.delegate = self
-        menuCollectionView.dataSource = self
+        self.menuCollectionView.dataSource = self.dataSource
         searchButton.layer.cornerRadius  = 4
+        self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
+            self?.menuCollectionView.reloadData()
+        }
+        self.viewModel.getMenuData()
     }
 }
 
-extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: menuCellIdentifier, for: indexPath) as? MenuCVCell else {return UICollectionViewCell()}
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = mainView.bounds.width
-        return CGSize(width: width/5, height: 150)
-    }
-    
+extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return dataSource.
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: menuCellIdentifier, for: indexPath) as? MenuCVCell else {return UICollectionViewCell()}
+//        return cell
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let width = mainView.bounds.width
+//        return CGSize(width: width/5, height: 150)
+//    }
+
 }
 extension HomeVC: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
