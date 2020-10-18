@@ -23,13 +23,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="406" height="1200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey Ravi!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a05-9y-bnb">
-                                                <rect key="frame" x="32" y="124" width="83.5" height="28.5"/>
+                                                <rect key="frame" x="32" y="127" width="83.5" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwv-H9-JyJ">
-                                                <rect key="frame" x="32" y="292" width="342" height="50"/>
+                                                <rect key="frame" x="32" y="277.5" width="342" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmv-q3-ePc">
                                                         <rect key="frame" x="292" y="0.0" width="50" height="50"/>
@@ -37,13 +37,14 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="l97-4s-ml0"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                         <state key="normal" image="magnifyingglass" catalog="system"/>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QMO-ga-eHO">
-                                                        <rect key="frame" x="23" y="8" width="245" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search News Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QMO-ga-eHO">
+                                                        <rect key="frame" x="23" y="0.0" width="245" height="50"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -53,17 +54,29 @@
                                                     <constraint firstItem="QMO-ga-eHO" firstAttribute="centerY" secondItem="gwv-H9-JyJ" secondAttribute="centerY" id="8ds-c7-wz3"/>
                                                     <constraint firstAttribute="bottom" secondItem="Wmv-q3-ePc" secondAttribute="bottom" id="JX1-sQ-6sJ"/>
                                                     <constraint firstItem="Wmv-q3-ePc" firstAttribute="top" secondItem="gwv-H9-JyJ" secondAttribute="top" id="KJ8-oz-gYF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="QMO-ga-eHO" secondAttribute="bottom" id="Up2-4m-3rN"/>
+                                                    <constraint firstItem="QMO-ga-eHO" firstAttribute="top" secondItem="gwv-H9-JyJ" secondAttribute="top" id="ccQ-o8-RmM"/>
                                                     <constraint firstAttribute="trailing" secondItem="Wmv-q3-ePc" secondAttribute="trailing" id="nHZ-4Y-aqE"/>
                                                     <constraint firstItem="Wmv-q3-ePc" firstAttribute="leading" secondItem="QMO-ga-eHO" secondAttribute="trailing" constant="24" id="y22-TL-22F"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-dZ-jak" customClass="SeparatorLine" customModule="NewsStar" customModuleProvider="target">
+                                                <rect key="frame" x="30.5" y="326" width="269.5" height="1.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1.5" id="uKq-sf-ped"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="gwv-H9-JyJ" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="32" id="1yf-Pp-fkE"/>
+                                            <constraint firstItem="5Od-dZ-jak" firstAttribute="width" secondItem="QMO-ga-eHO" secondAttribute="width" multiplier="1.1" id="5S5-oA-qrZ"/>
                                             <constraint firstItem="a05-9y-bnb" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="32" id="Wct-BH-2Yy"/>
                                             <constraint firstAttribute="trailing" secondItem="gwv-H9-JyJ" secondAttribute="trailing" constant="32" id="f8W-ha-kVP"/>
+                                            <constraint firstItem="5Od-dZ-jak" firstAttribute="trailing" secondItem="QMO-ga-eHO" secondAttribute="trailing" id="rQq-DP-52f"/>
                                             <constraint firstAttribute="height" constant="1200" id="uxS-EF-2Fa"/>
+                                            <constraint firstItem="5Od-dZ-jak" firstAttribute="bottom" secondItem="QMO-ga-eHO" secondAttribute="bottom" id="yye-aj-e3S"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -75,8 +88,8 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsStar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-Uz-pdg">
-                                <rect key="frame" x="32" y="60" width="156.5" height="32"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="32"/>
+                                <rect key="frame" x="32" y="57.5" width="152" height="37.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Ig-lNf" customClass="CircleButton" customModule="NewsStar" customModuleProvider="target">
@@ -94,10 +107,10 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-If-oYW">
-                                <rect key="frame" x="32" y="169" width="232" height="91"/>
+                                <rect key="frame" x="32" y="157.5" width="225" height="88"/>
                                 <string key="text">Discover Latest 
 News</string>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -111,7 +124,7 @@ News</string>
                             <constraint firstItem="y5j-60-d0l" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="250" id="EGW-3C-2Qz"/>
                             <constraint firstItem="wlY-tJ-m0u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fy6-bV-r6G"/>
                             <constraint firstItem="JaP-Ig-lNf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="KHO-Oq-huN"/>
-                            <constraint firstItem="aGk-If-oYW" firstAttribute="top" secondItem="a05-9y-bnb" secondAttribute="bottom" constant="16.5" id="KbM-R7-e8E"/>
+                            <constraint firstItem="aGk-If-oYW" firstAttribute="top" secondItem="a05-9y-bnb" secondAttribute="bottom" constant="2" id="KbM-R7-e8E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JaP-Ig-lNf" secondAttribute="trailing" constant="32" id="Mu0-sy-V5b"/>
                             <constraint firstItem="gwv-H9-JyJ" firstAttribute="top" secondItem="aGk-If-oYW" secondAttribute="bottom" constant="32" id="PLY-xY-qwc"/>
                             <constraint firstItem="y5j-60-d0l" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.980676" id="hie-OR-29m"/>
@@ -125,6 +138,8 @@ News</string>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="mainView" destination="y5j-60-d0l" id="n9b-jR-mKN"/>
+                        <outlet property="searchButton" destination="Wmv-q3-ePc" id="9wQ-Jm-pAk"/>
+                        <outlet property="searchTextField" destination="QMO-ga-eHO" id="X2L-cd-xqo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

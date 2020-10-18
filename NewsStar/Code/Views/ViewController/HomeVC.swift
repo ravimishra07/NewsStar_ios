@@ -11,17 +11,25 @@ class HomeVC: UIViewController {
     override class func description() -> String {
         "HomeVC"
     }
-    @IBOutlet weak var dummyView: UIView!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var mainView: UIView!
-
-    let darkShadow = CALayer()
-    let lightShadow = CALayer()
     
     // MARK:- lifeCycle methods for the viewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpUI()
     }
-
+    
+    func setUpUI(){
+        searchTextField.delegate = self
+        searchButton.layer.cornerRadius  = 4
+    }
+}
+extension HomeVC: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        return true
+    }
 }
