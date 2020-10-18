@@ -8,22 +8,20 @@
 import UIKit
 
 class HomeVC: UIViewController {
-    
-    @IBOutlet weak var topPicksForYouCollectionView: UICollectionView!
-    
-    // MARK:- lifeCycle methods for the viewController
     override class func description() -> String {
         "HomeVC"
     }
+    @IBOutlet weak var dummyView: UIView!
+    @IBOutlet weak var mainView: UIView!
+
+    let darkShadow = CALayer()
+    let lightShadow = CALayer()
+    
+    // MARK:- lifeCycle methods for the viewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setCollectionView(cv: topPicksForYouCollectionView, with: NewsCollectionCell().asNib(), and: NewsCollectionCell.description())
-    }
-    
-    func setCollectionView(cv collectionView: UICollectionView, with nib: UINib, and identifier: String){
-        //        collectionView.dataSource = self
-        //        collectionView.delegate = self
-        collectionView.register(nib, forCellWithReuseIdentifier: identifier)
-    }
-}
 
+    }
+
+}
