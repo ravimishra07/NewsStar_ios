@@ -24,11 +24,11 @@ class MenuDataSource: GenericDataSource<MenuModel>, UICollectionViewDataSource {
         cell.menuLabel.text = menuName.menuName
         cell.menuImage.image = UIImage(named: menuName.menuImage)
         if indexPath.row == 0{
-        cell.imgBackgroundView.backgroundColor = UIColor("ED4041")?.withAlphaComponent(0.3)
+            cell.imgBackgroundView.backgroundColor = UIColor("ED4041")?.withAlphaComponent(0.3)
         }
         return cell
     }
-
+    
 }
 
 class PersonalisedDataSource: GenericDataSource<NewsModel>, UITableViewDataSource{
@@ -37,11 +37,7 @@ class PersonalisedDataSource: GenericDataSource<NewsModel>, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
-        
-      //  let menuName = self.data.value[indexPath.row]
-        
         return cell
     }
     

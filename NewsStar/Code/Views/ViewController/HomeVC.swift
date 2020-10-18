@@ -19,10 +19,11 @@ class HomeVC: UIViewController {
     @IBOutlet weak var personalTableView: UITableView!
 
     let menuCellIdentifier = "MenuCVCell"
-    let dataSource = MenuDataSource()
+    let menuDataSource = MenuDataSource()
+    let personalisedDataSource = PersonalisedDataSource()
     
     lazy var viewModel : MenuViewModel = {
-        let viewModel = MenuViewModel(dataSource: dataSource)
+        let viewModel = MenuViewModel(dataSource: menuDataSource)
         return viewModel
     }()
     
@@ -34,14 +35,17 @@ class HomeVC: UIViewController {
     
     func setUpUI(){
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
+        
         searchTextField.delegate = self
-        menuCollectionView.dataSource = self.dataSource
+        menuCollectionView.dataSource = self.menuDataSource
         menuCollectionView.delegate = self
         personalTableView.delegate = self
+        personalTableView.dataSource = self.personalisedDataSource
         searchButton.layer.cornerRadius  = 4
-        self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
+        self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
+        
         self.viewModel.getMenuData()
     }
 }
