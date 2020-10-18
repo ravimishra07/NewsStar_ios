@@ -17,7 +17,7 @@ class MenuCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         menuImage.perfectCorner()
-        imgBackgroundView.backgroundColor = UIColor("ED4041")?.withAlphaComponent(0.5)
+        imgBackgroundView.backgroundColor = UIColor.systemGray.withAlphaComponent(0.3)
         imgBackgroundView.perfectCorner()
         // Initialization code
     }

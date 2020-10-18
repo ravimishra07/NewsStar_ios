@@ -12,7 +12,7 @@ class GenericDataSource<T> : NSObject {
     var data: DynamicValue<[T]> = DynamicValue([])
 }
 
-class MenuDataSource:  GenericDataSource<MenuModel>, UICollectionViewDataSource {
+class MenuDataSource: GenericDataSource<MenuModel>, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.value.count
     }
@@ -23,28 +23,27 @@ class MenuDataSource:  GenericDataSource<MenuModel>, UICollectionViewDataSource 
         let menuName = self.data.value[indexPath.row]
         cell.menuLabel.text = menuName.menuName
         cell.menuImage.image = UIImage(named: menuName.menuImage)
+        if indexPath.row == 0{
+        cell.imgBackgroundView.backgroundColor = UIColor("ED4041")?.withAlphaComponent(0.3)
+        }
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width
-        return CGSize(width: width/5, height: 150)
+
+}
+
+class PersonalisedDataSource: GenericDataSource<NewsModel>, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        data.value.count
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return data.value.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCVCell", for: indexPath) as! MenuCVCell
-//
-//        let menuName = self.data.value[indexPath.row]
-//        cell.menuLabel.text = menuName
-//
-//        return cell
-//    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
+        
+      //  let menuName = self.data.value[indexPath.row]
+        
+        return cell
+    }
+    
+    
 }

@@ -10,6 +10,9 @@ extension UIView{
     func perfectCorner(){
         layer.cornerRadius = bounds.height/2
     }
+    func addCorner(radius: CGFloat = 4){
+        layer.cornerRadius = radius
+    }
 }
 extension UIColor {
     convenience init?(_ hexString: String) {
