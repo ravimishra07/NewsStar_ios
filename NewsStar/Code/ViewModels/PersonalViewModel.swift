@@ -8,10 +8,10 @@
 import Foundation
 
 struct PersonalViewModel {
-    weak var dataSource: GenericDataSource<NewsModel>?
-    weak var service: Services?
+    weak var dataSource: GenericDataSource<Article>?
+    weak var service: Service?
 
-    init(dataSource: GenericDataSource<NewsModel>?, service: Services.sharedInstance) {
+    init(dataSource: GenericDataSource<Article>?) {
         self.dataSource = dataSource
     }
     
@@ -19,9 +19,18 @@ struct PersonalViewModel {
     //let service =   Service.sharedInstance.
     func fetchNews(){
         let params:[String:Any] = ["q":"India"]
-        Services.sharedInstance.callApiWithGet(endUrl: BASE_URL+EVERYTHING, parameters: params) { (result) in
+        Service.sharedInstance.callApiWithGet(endUrl: BASE_URL+EVERYTHING, parameters: params) { (result) in
             switch(result){
-            
+            case .success(let data):
+           
+            do {
+            let newsModel =  try JSONDecoder().decode(NewsModel.self, from: data)
+                dataSource?.data.value = newsModel.articles
+            }catch{
+                print(error.localizedDescription)
+            }
+            case .failure(let resError):
+                print(resError.localizedDescription)
                 
             }
         }

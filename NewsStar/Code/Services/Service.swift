@@ -11,15 +11,36 @@ import Alamofire
 protocol NewsServiceProtocol : class {
     func callApiWithGet(_ completion: @escaping ((Result<NewsModel, ErrorResult>) -> Void))
 }
-
-class Services: NSObject{
-    func callApiWithGet(_ completion: @escaping ((Result<NewsModel, ErrorResult>) -> Void)) {
-        <#code#>
-    }
-    
-    //typealias apiResponse = (Data?)->()
+//enum ResponseCode {
+//    case <#case#>
+//}
+class Service{
     typealias apiResponse = (Result<Data, ErrorResult>) -> Void
-    static let sharedInstance = Services()
+    static let sharedInstance = Service()
+
+    func callApiWithGet(endUrl: String, parameters: [String: Any],  callback: @escaping apiResponse){
+        
+        let headers : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+        Alamofire.request(endUrl, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers)
+            .responseJSON { (response) in
+                
+                switch response.result{
+                case .success(let success):
+                    print("success >\(success)")
+                    if let responseData = response.data {
+                        callback(.success(responseData))
+                    }else{
+                        callback(.failure(.kParser(string: "received data is null, cannot parse")))
+                    }
+                case .failure(let error):
+
+                    callback(.failure(.kCustom(string: "api call failed \(error)")))
+                }
+              
+                
+            }
+    }
+    //typealias apiResponse = (Data?)->()
     
 }
 

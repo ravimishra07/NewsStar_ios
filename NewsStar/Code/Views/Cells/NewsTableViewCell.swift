@@ -16,7 +16,16 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsDescLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var mainView: UIView!
-
+     
+    var article: Article?{
+        didSet{
+            setData(article: article)
+        }
+    }
+    
+    override class func description() -> String {
+       return "NewsTableViewCell"
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -25,6 +34,15 @@ class NewsTableViewCell: UITableViewCell {
     func setUpUI(){
         dateView.perfectCorner()
         newsImage.addCorner()
+    }
+    
+    func setData(article: Article?){
+        if let article = article{
+            newsTitleLabel.text = article.title
+            newsDescLabel.text = article.articleDescription
+            
+        }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
