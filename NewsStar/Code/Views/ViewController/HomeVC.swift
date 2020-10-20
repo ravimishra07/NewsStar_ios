@@ -35,7 +35,6 @@ class HomeVC: UIViewController {
     
     func setUpUI(){
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
-        
         searchTextField.delegate = self
         menuCollectionView.dataSource = self.menuDataSource
         menuCollectionView.delegate = self
@@ -45,7 +44,6 @@ class HomeVC: UIViewController {
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
-        
         self.viewModel.getMenuData()
     }
 }

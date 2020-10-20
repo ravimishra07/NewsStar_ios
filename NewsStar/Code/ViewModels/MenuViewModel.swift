@@ -22,4 +22,5 @@ struct MenuViewModel{
         let menuArray: [MenuModel] = [trendingData,sportsData,technologyData,healthData,politicsData]
         dataSource?.data.value = menuArray
     }
+    
 }
