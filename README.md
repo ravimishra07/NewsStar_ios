@@ -10,19 +10,17 @@ Idea behind this project is to explore MVVM architecture pattern and create a pr
 
 ## Screenshots
 Dark Mode
-- [NewsStar_ios screenshots](img1.png)
+- ![NewsStar_ios screenshots](screenshots/img1.png)
 
 Light Mode
-- [NewsStar_ios screenshots](img2.png)
+- ![NewsStar_ios screenshots](screenshots/img2.png)
 
 
 ## Tech/framework used
 Swift/MVVM
 
-## Features
-What makes your project stand out?
-
 ## Contribute
-Anyone who is excited about clean code and want to contribute to the project, follow the <li>guildlines</li>
+Anyone who is excited about clean code and want to contribute to the project, follow the [guidelines](https://github.com/stanmishra/NewsStar_ios)
+
 
 MIT © [Ravi Mishra]()
