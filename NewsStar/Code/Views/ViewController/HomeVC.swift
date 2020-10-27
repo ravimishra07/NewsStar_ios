@@ -13,6 +13,7 @@ class HomeVC: UIViewController {
     }
     //MARK:- Outlets
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
@@ -22,6 +23,7 @@ class HomeVC: UIViewController {
     let personCellIdentifier = "NewsTableViewCell"
     let menuDataSource = MenuDataSource()
     let personalisedDataSource = PersonalDataSource()
+    var transAnimator:TransitionAnimator?
     
     lazy var viewModel : MenuViewModel = {
         let viewModel = MenuViewModel(dataSource: menuDataSource)
@@ -65,6 +67,14 @@ class HomeVC: UIViewController {
         self.peronalViewModel.fetchNews()
         
     }
+    @IBAction func menuTapped(){
+//        guard let buttonVC = self.storyboard?.instantiateViewController(identifier: ButtonViewController.description()) as? ButtonViewController,
+//            let senderButton = sender as? UIButton else { return }
+//        self.selectedButton = senderButton
+//        buttonVC.transitioningDelegate = self
+//        buttonVC.modalPresentationStyle = .custom
+//        self.present(buttonVC, animated: true, completion: nil)
+    }
 }
 
 extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
@@ -82,5 +92,21 @@ extension HomeVC: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.resignFirstResponder()
         return true
+    }
+}
+extension HomeVC: UIViewControllerTransitioningDelegate{
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+         let backgroundColor = UIColor.label
+        transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.4)
+        transAnimator?.mode = .dismiss
+        return transAnimator
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let backgroundColor = UIColor.label
+        transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.5)
+        transAnimator?.mode = .present
+        
+        return transAnimator
     }
 }
