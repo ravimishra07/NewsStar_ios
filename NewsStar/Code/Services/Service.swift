@@ -20,8 +20,8 @@ class Service{
 
     func callApiWithGet(endUrl: String, parameters: [String: Any],  callback: @escaping apiResponse){
         
-        let headers : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
-        Alamofire.request(endUrl, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers)
+        let headers : HTTPHeaders = ["Content-Type":"application/json"]
+        Alamofire.request(endUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
             .responseJSON { (response) in
                 
                 switch response.result{
@@ -33,14 +33,10 @@ class Service{
                         callback(.failure(.kParser(string: "received data is null, cannot parse")))
                     }
                 case .failure(let error):
-
                     callback(.failure(.kCustom(string: "api call failed \(error)")))
                 }
-              
-                
             }
     }
     //typealias apiResponse = (Data?)->()
-    
 }
 

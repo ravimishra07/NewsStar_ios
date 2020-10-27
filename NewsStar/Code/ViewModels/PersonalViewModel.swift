@@ -18,13 +18,17 @@ struct PersonalViewModel {
     var onErrorHandling: ((ErrorResult?)->Void)?
     //let service =   Service.sharedInstance.
     func fetchNews(){
-        let params:[String:Any] = ["q":"India"]
+        let params:[String:Any] = ["q":" India", "apiKey": API_KEY]
         Service.sharedInstance.callApiWithGet(endUrl: BASE_URL+EVERYTHING, parameters: params) { (result) in
             switch(result){
             case .success(let data):
-           
             do {
             let newsModel =  try JSONDecoder().decode(NewsModel.self, from: data)
+                print("statuss")
+
+                print(newsModel.status)
+                print("statuss")
+
                 dataSource?.data.value = newsModel.articles
             }catch{
                 print(error.localizedDescription)

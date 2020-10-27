@@ -28,7 +28,7 @@ class NewsTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setUpUI()
         // Initialization code
     }
     func setUpUI(){
@@ -41,6 +41,10 @@ class NewsTableViewCell: UITableViewCell {
             newsTitleLabel.text = article.title
             newsDescLabel.text = article.articleDescription
             
+            guard let url = URL(string: article.urlToImage ?? "") else{
+                return
+            }
+            loadImage(from: url, imgView: newsImage)
         }
         
     }

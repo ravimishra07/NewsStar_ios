@@ -19,11 +19,17 @@ class HomeVC: UIViewController {
     @IBOutlet weak var personalTableView: UITableView!
 
     let menuCellIdentifier = "MenuCVCell"
+    let personCellIdentifier = "NewsTableViewCell"
     let menuDataSource = MenuDataSource()
-    let personalisedDataSource = PersonalisedDataSource()
+    let personalisedDataSource = PersonalDataSource()
     
     lazy var viewModel : MenuViewModel = {
         let viewModel = MenuViewModel(dataSource: menuDataSource)
+        return viewModel
+    }()
+    
+    lazy var peronalViewModel : PersonalViewModel = {
+        let viewModel = PersonalViewModel(dataSource: personalisedDataSource)
         return viewModel
     }()
     
@@ -35,6 +41,7 @@ class HomeVC: UIViewController {
     
     func setUpUI(){
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
+        self.personalTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: NewsTableViewCell.description())
         searchTextField.delegate = self
         menuCollectionView.dataSource = self.menuDataSource
         menuCollectionView.delegate = self
@@ -44,7 +51,19 @@ class HomeVC: UIViewController {
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
+        self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in            self?.personalTableView.reloadData()
+        }
+        
+    
+        self.peronalViewModel.onErrorHandling = { [weak self] error in
+            // display error ?
+            let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self?.present(controller, animated: true, completion: nil)
+        }
         self.viewModel.getMenuData()
+        self.peronalViewModel.fetchNews()
+        
     }
 }
 
@@ -54,6 +73,9 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     }
 }
 extension HomeVC: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 350
+    }
     
 }
 extension HomeVC: UITextFieldDelegate{

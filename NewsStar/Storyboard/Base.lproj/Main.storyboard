@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlY-tJ-m0u">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlY-tJ-m0u">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5j-60-d0l">
@@ -28,6 +28,25 @@
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsStar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-Uz-pdg">
+                                                <rect key="frame" x="32" y="52" width="152" height="37.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Ig-lNf" customClass="CircleButton" customModule="NewsStar" customModuleProvider="target">
+                                                <rect key="frame" x="334" y="51" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="858-H7-Gpf"/>
+                                                    <constraint firstAttribute="height" constant="40" id="XyE-6n-gpO"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <state key="normal" image="menu_dark"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwv-H9-JyJ">
                                                 <rect key="frame" x="32" y="277.5" width="342" height="50"/>
                                                 <subviews>
@@ -89,26 +108,50 @@ your Interest</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-JZ-IaJ">
-                                                <rect key="frame" x="32" y="633.5" width="342" height="554.5"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-JZ-IaJ">
+                                                <rect key="frame" x="16" y="633.5" width="374" height="554.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aex-xz-egv"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8RL-dj-iS8"/>
+                                                </connections>
                                             </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-If-oYW">
+                                                <rect key="frame" x="30" y="181" width="225" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="vs0-UX-UY6"/>
+                                                </constraints>
+                                                <string key="text">Discover Latest 
+News</string>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="31"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="gwv-H9-JyJ" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="32" id="1yf-Pp-fkE"/>
                                             <constraint firstItem="WKA-Pk-zMz" firstAttribute="top" secondItem="jRk-hH-vBl" secondAttribute="bottom" constant="6" id="2Q1-Zz-E6E"/>
                                             <constraint firstItem="5Od-dZ-jak" firstAttribute="width" secondItem="QMO-ga-eHO" secondAttribute="width" multiplier="1.1" id="5S5-oA-qrZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="gd4-JZ-IaJ" secondAttribute="trailing" constant="32" id="8fb-jo-hGh"/>
+                                            <constraint firstItem="Vhp-Uz-pdg" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="32" id="5ua-C7-8DO"/>
+                                            <constraint firstAttribute="trailing" secondItem="gd4-JZ-IaJ" secondAttribute="trailing" constant="16" id="8fb-jo-hGh"/>
+                                            <constraint firstItem="aGk-If-oYW" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="30" id="9l1-rg-edt"/>
+                                            <constraint firstItem="Vhp-Uz-pdg" firstAttribute="top" secondItem="y5j-60-d0l" secondAttribute="top" constant="52" id="ELx-du-1Q2"/>
+                                            <constraint firstItem="aGk-If-oYW" firstAttribute="top" secondItem="a05-9y-bnb" secondAttribute="bottom" constant="25.5" id="MTf-cR-dpq"/>
                                             <constraint firstItem="a05-9y-bnb" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="32" id="Wct-BH-2Yy"/>
                                             <constraint firstItem="gd4-JZ-IaJ" firstAttribute="top" secondItem="WKA-Pk-zMz" secondAttribute="bottom" constant="32" id="Woy-Ea-fH5"/>
                                             <constraint firstItem="jRk-hH-vBl" firstAttribute="top" secondItem="gwv-H9-JyJ" secondAttribute="bottom" id="Z0F-ra-CNZ"/>
+                                            <constraint firstItem="WKA-Pk-zMz" firstAttribute="top" secondItem="y5j-60-d0l" secondAttribute="top" constant="513.5" id="Zdz-cZ-C4v"/>
+                                            <constraint firstItem="WKA-Pk-zMz" firstAttribute="leading" secondItem="jRk-hH-vBl" secondAttribute="leading" id="bzY-sd-B5e"/>
                                             <constraint firstAttribute="trailing" secondItem="jRk-hH-vBl" secondAttribute="trailing" constant="32" id="cJR-3M-MlC"/>
+                                            <constraint firstItem="gwv-H9-JyJ" firstAttribute="top" secondItem="aGk-If-oYW" secondAttribute="bottom" constant="8.5" id="eq0-nZ-xii"/>
                                             <constraint firstAttribute="trailing" secondItem="gwv-H9-JyJ" secondAttribute="trailing" constant="32" id="f8W-ha-kVP"/>
                                             <constraint firstItem="5Od-dZ-jak" firstAttribute="trailing" secondItem="QMO-ga-eHO" secondAttribute="trailing" id="rQq-DP-52f"/>
                                             <constraint firstItem="jRk-hH-vBl" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="32" id="tPb-KN-2wg"/>
-                                            <constraint firstItem="gd4-JZ-IaJ" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="32" id="tkS-MO-hMJ"/>
+                                            <constraint firstItem="gd4-JZ-IaJ" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="16" id="tkS-MO-hMJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="JaP-Ig-lNf" secondAttribute="trailing" constant="32" id="toq-jd-Wn6"/>
                                             <constraint firstAttribute="height" constant="1200" id="uxS-EF-2Fa"/>
+                                            <constraint firstItem="JaP-Ig-lNf" firstAttribute="centerY" secondItem="Vhp-Uz-pdg" secondAttribute="centerY" id="wwF-8h-nbK"/>
                                             <constraint firstItem="5Od-dZ-jak" firstAttribute="bottom" secondItem="QMO-ga-eHO" secondAttribute="bottom" id="yye-aj-e3S"/>
                                             <constraint firstAttribute="bottom" secondItem="gd4-JZ-IaJ" secondAttribute="bottom" constant="12" id="zvS-ZE-aZ5"/>
                                         </constraints>
@@ -121,51 +164,13 @@ your Interest</string>
                                     <constraint firstItem="y5j-60-d0l" firstAttribute="leading" secondItem="wlY-tJ-m0u" secondAttribute="leading" id="tPy-bi-CCo"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsStar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-Uz-pdg">
-                                <rect key="frame" x="32" y="57.5" width="152" height="37.5"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Ig-lNf" customClass="CircleButton" customModule="NewsStar" customModuleProvider="target">
-                                <rect key="frame" x="342" y="56" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="KRo-oO-62q"/>
-                                    <constraint firstAttribute="height" constant="40" id="Q7X-36-JTo"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" image="menu_dark"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-If-oYW">
-                                <rect key="frame" x="32" y="157.5" width="243" height="88"/>
-                                <string key="text">Discover Latest 
-News</string>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="a05-9y-bnb" firstAttribute="top" secondItem="Vhp-Uz-pdg" secondAttribute="bottom" constant="32" id="2hi-xS-xYC"/>
-                            <constraint firstItem="Vhp-Uz-pdg" firstAttribute="centerY" secondItem="JaP-Ig-lNf" secondAttribute="centerY" id="BSc-aA-1FX"/>
                             <constraint firstItem="wlY-tJ-m0u" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DSk-Xg-ux8"/>
-                            <constraint firstItem="y5j-60-d0l" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="250" id="EGW-3C-2Qz"/>
                             <constraint firstItem="wlY-tJ-m0u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fy6-bV-r6G"/>
-                            <constraint firstItem="JaP-Ig-lNf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="KHO-Oq-huN"/>
-                            <constraint firstItem="aGk-If-oYW" firstAttribute="top" secondItem="a05-9y-bnb" secondAttribute="bottom" constant="2" id="KbM-R7-e8E"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JaP-Ig-lNf" secondAttribute="trailing" constant="32" id="Mu0-sy-V5b"/>
-                            <constraint firstItem="gwv-H9-JyJ" firstAttribute="top" secondItem="aGk-If-oYW" secondAttribute="bottom" constant="32" id="PLY-xY-qwc"/>
-                            <constraint firstItem="WKA-Pk-zMz" firstAttribute="leading" secondItem="aGk-If-oYW" secondAttribute="leading" id="bS7-Ec-NRU"/>
-                            <constraint firstItem="WKA-Pk-zMz" firstAttribute="trailing" secondItem="aGk-If-oYW" secondAttribute="trailing" id="fSw-Yr-mtf"/>
                             <constraint firstItem="y5j-60-d0l" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.980676" id="hie-OR-29m"/>
-                            <constraint firstItem="Vhp-Uz-pdg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="lcl-xK-azN"/>
-                            <constraint firstItem="aGk-If-oYW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="niQ-EY-fMc"/>
                             <constraint firstAttribute="bottom" secondItem="wlY-tJ-m0u" secondAttribute="bottom" id="nth-Si-N0s"/>
                             <constraint firstItem="wlY-tJ-m0u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wMz-b9-cma"/>
                         </constraints>

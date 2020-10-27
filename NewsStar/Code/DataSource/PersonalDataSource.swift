@@ -7,17 +7,18 @@
 
 import UIKit
 
-class PersonalDataSource: GenericDataSource<NewsModel>, UITableViewDataSource{
+class PersonalDataSource: GenericDataSource<Article>, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         data.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.description()) as? NewsTableViewCell else {
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.description(), for: indexPath) as? NewsTableViewCell else {
             return UITableViewCell()
         }
+        cell.article = data.value[indexPath.row]
         return cell
     }
     
-    
+
 }
