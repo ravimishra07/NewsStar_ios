@@ -6,8 +6,6 @@ in the search field.
 ## Motivation
 Idea behind this project is to explore MVVM architecture pattern and create a product that has some real life utility. This project is also aimed to be resource to anyone who want to learn MVVM architecture pattern.
 
-## Code style
-
 ## Screenshots
 Dark Mode
 - ![NewsStar_ios screenshots](screenshots/img1.png)
