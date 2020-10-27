@@ -187,7 +187,34 @@ News</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="13"/>
+            <point key="canvasLocation" x="893" y="112"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pV3-OA-g3g">
+            <objects>
+                <viewController id="Laz-su-WMF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eda-TE-eCo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfV-WD-xFf">
+                                <rect key="frame" x="83" y="0.0" width="331" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xwj-Y8-b0S"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DfV-WD-xFf" firstAttribute="top" secondItem="eda-TE-eCo" secondAttribute="top" id="EGo-VG-CB8"/>
+                            <constraint firstItem="DfV-WD-xFf" firstAttribute="width" secondItem="eda-TE-eCo" secondAttribute="width" multiplier="0.8" id="hrl-V2-Ere"/>
+                            <constraint firstItem="xwj-Y8-b0S" firstAttribute="trailing" secondItem="DfV-WD-xFf" secondAttribute="trailing" id="iIM-KP-yQl"/>
+                            <constraint firstAttribute="bottom" secondItem="DfV-WD-xFf" secondAttribute="bottom" id="piZ-m6-wqa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dia-eR-0en" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vio-tM-cAa">
@@ -202,7 +229,7 @@ News</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARS-fx-Jdk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
+            <point key="canvasLocation" x="112" y="11"/>
         </scene>
     </scenes>
     <designables>
