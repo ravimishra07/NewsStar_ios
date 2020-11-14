@@ -8,7 +8,9 @@
 import UIKit
 
 class SideMenuController: UIViewController {
-
+    override class func description() -> String {
+       return "SideMenuController"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

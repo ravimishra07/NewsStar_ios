@@ -18,7 +18,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var personalTableView: UITableView!
-
+    
     let menuCellIdentifier = "MenuCVCell"
     let personCellIdentifier = "NewsTableViewCell"
     let menuDataSource = MenuDataSource()
@@ -41,6 +41,10 @@ class HomeVC: UIViewController {
         setUpUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        animateMenuButton()
+    }
+    
     func setUpUI(){
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
         self.personalTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: NewsTableViewCell.description())
@@ -56,7 +60,7 @@ class HomeVC: UIViewController {
         self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in            self?.personalTableView.reloadData()
         }
         
-    
+        
         self.peronalViewModel.onErrorHandling = { [weak self] error in
             // display error ?
             let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
@@ -67,13 +71,70 @@ class HomeVC: UIViewController {
         self.peronalViewModel.fetchNews()
         
     }
+    func animateMenuButton(){
+        let initTransform: CGFloat = 150
+        
+        //  (1st jump)move button to top
+        menuButton.transform = CGAffineTransform(translationX: 0, y: -initTransform)
+        UIView.animate(withDuration: 0.3, delay: 1) {
+            //  1st jump to origin
+            self.menuButton.transform = .identity
+        } completion: { (isTrue) in
+            if isTrue{
+                UIView.animate(withDuration: 0.20, delay: 0) {
+                    // (2st jump) move button up
+                    self.menuButton.transform = CGAffineTransform(translationX: 0, y: -60)
+                } completion: { (isTrue) in
+                    if isTrue{
+                        
+                        UIView.animate(withDuration: 0.22) {
+                            self.menuButton.transform = .identity
+
+                        } completion: { (isTrue) in
+                            if isTrue{
+                              //  (3rd jump) move button up
+                                UIView.animate(withDuration: 0.18) {
+                                    self.menuButton.transform = .identity
+
+                                } completion: { (isTrue) in
+                                    if isTrue{
+                                        
+                                        UIView.animate(withDuration: 0.14) {
+                                            self.menuButton.transform = CGAffineTransform(translationX: 0, y: -15)
+                                            
+                                        } completion: { (isTrue) in
+                                            if isTrue{
+                                                // final jumo to origin
+                                                UIView.animate(withDuration: 0.10) {
+                                                    self.menuButton.transform = .identity
+                                                }
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                              
+                            }
+
+                        }
+
+                    }
+                    
+                }
+            }
+            
+        }
+    }
     @IBAction func menuTapped(){
-//        guard let buttonVC = self.storyboard?.instantiateViewController(identifier: ButtonViewController.description()) as? ButtonViewController,
-//            let senderButton = sender as? UIButton else { return }
-//        self.selectedButton = senderButton
-//        buttonVC.transitioningDelegate = self
-//        buttonVC.modalPresentationStyle = .custom
-//        self.present(buttonVC, animated: true, completion: nil)
+       // animateMenuButton()
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: SideMenuController.description()) as? SideMenuController else {
+                    return
+                }
+                   // let senderButton = sender as? UIButton else { return }
+               // self.selectedButton = senderButton
+        //        vc.transitioningDelegate = self
+                vc.modalPresentationStyle = .overFullScreen
+               self.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -96,7 +157,7 @@ extension HomeVC: UITextFieldDelegate{
 }
 extension HomeVC: UIViewControllerTransitioningDelegate{
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-         let backgroundColor = UIColor.label
+        let backgroundColor = UIColor.label
         transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.4)
         transAnimator?.mode = .dismiss
         return transAnimator
