@@ -213,18 +213,54 @@ News</string>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfV-WD-xFf">
                                 <rect key="frame" x="82.666666666666657" y="0.0" width="331.33333333333337" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qm-6j-vxi" customClass="CircleButton" customModule="NewsStar" customModuleProvider="target">
+                                        <rect key="frame" x="259.33333333333331" y="103" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="mfc-rp-CYO"/>
+                                            <constraint firstAttribute="width" constant="40" id="tnR-7h-kyQ"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" image="menu_dark"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="menuTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dca-w1-Upw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4qm-6j-vxi" firstAttribute="top" secondItem="DfV-WD-xFf" secondAttribute="topMargin" constant="51" id="564-zM-Eln"/>
+                                    <constraint firstAttribute="trailing" secondItem="4qm-6j-vxi" secondAttribute="trailing" constant="32" id="dTl-ra-FcJ"/>
+                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29b-0l-xuj">
+                                <rect key="frame" x="0.0" y="44" width="82.666666666666671" height="818"/>
+                                <connections>
+                                    <action selector="backButton:" destination="Laz-su-WMF" eventType="touchUpInside" id="nFx-GT-jyo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xwj-Y8-b0S"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DfV-WD-xFf" firstAttribute="top" secondItem="eda-TE-eCo" secondAttribute="top" id="EGo-VG-CB8"/>
+                            <constraint firstItem="29b-0l-xuj" firstAttribute="top" secondItem="xwj-Y8-b0S" secondAttribute="top" id="Oq7-jt-MZX"/>
                             <constraint firstItem="DfV-WD-xFf" firstAttribute="width" secondItem="eda-TE-eCo" secondAttribute="width" multiplier="0.8" id="hrl-V2-Ere"/>
                             <constraint firstItem="xwj-Y8-b0S" firstAttribute="trailing" secondItem="DfV-WD-xFf" secondAttribute="trailing" id="iIM-KP-yQl"/>
                             <constraint firstAttribute="bottom" secondItem="DfV-WD-xFf" secondAttribute="bottom" id="piZ-m6-wqa"/>
+                            <constraint firstItem="xwj-Y8-b0S" firstAttribute="bottom" secondItem="29b-0l-xuj" secondAttribute="bottom" id="tas-oY-Bf6"/>
+                            <constraint firstItem="29b-0l-xuj" firstAttribute="leading" secondItem="xwj-Y8-b0S" secondAttribute="leading" id="tfm-vH-TDD"/>
+                            <constraint firstItem="DfV-WD-xFf" firstAttribute="leading" secondItem="29b-0l-xuj" secondAttribute="trailing" id="ys9-B7-tBh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="menuButton" destination="4qm-6j-vxi" id="6bU-XN-3GQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dia-eR-0en" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,6 +311,9 @@ interest</string>
         </scene>
     </scenes>
     <designables>
+        <designable name="4qm-6j-vxi">
+            <size key="intrinsicContentSize" width="170.66666666666666" height="170.66666666666666"/>
+        </designable>
         <designable name="JaP-Ig-lNf">
             <size key="intrinsicContentSize" width="170.66666666666666" height="170.66666666666666"/>
         </designable>

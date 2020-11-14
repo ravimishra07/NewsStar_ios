@@ -24,7 +24,8 @@ class HomeVC: UIViewController {
     let menuDataSource = MenuDataSource()
     let personalisedDataSource = PersonalDataSource()
     var transAnimator:TransitionAnimator?
-    
+    var circleAnimator: CircleAnimator?
+
     lazy var viewModel : MenuViewModel = {
         let viewModel = MenuViewModel(dataSource: menuDataSource)
         return viewModel
@@ -125,16 +126,20 @@ class HomeVC: UIViewController {
             
         }
     }
+    
+ 
+    
     @IBAction func menuTapped(){
+       
        // animateMenuButton()
                 guard let vc = self.storyboard?.instantiateViewController(withIdentifier: SideMenuController.description()) as? SideMenuController else {
                     return
                 }
-                   // let senderButton = sender as? UIButton else { return }
-               // self.selectedButton = senderButton
-        //        vc.transitioningDelegate = self
-                vc.modalPresentationStyle = .overFullScreen
-               self.present(vc, animated: true, completion: nil)
+
+        vc.transitioningDelegate = self
+        vc.modalPresentationStyle = .custom
+    self.present(vc, animated: true, completion: nil)
+   
     }
 }
 
@@ -156,18 +161,33 @@ extension HomeVC: UITextFieldDelegate{
     }
 }
 extension HomeVC: UIViewControllerTransitioningDelegate{
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        let backgroundColor = UIColor.label
+//        transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.4)
+//        transAnimator?.mode = .dismiss
+//        return transAnimator
+//    }
+//
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        let backgroundColor = UIColor.label
+//        transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.5)
+//        transAnimator?.mode = .present
+//
+//        return transAnimator
+//    }
+    // MARK:- UIViewControllerTrasitioningDelegates method
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let backgroundColor = UIColor.label
-        transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.4)
-        transAnimator?.mode = .dismiss
-        return transAnimator
+//        guard let backgroundColor = UIColor.red else { return circleAnimator }
+        circleAnimator = CircleAnimator(view: menuButton, color: .red, duration: 0.4)
+        circleAnimator?.mode = .dismiss
+        return circleAnimator
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let backgroundColor = UIColor.label
-        transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.5)
-        transAnimator?.mode = .present
+//        guard let backgroundColor = UIColor.red else { return circleAnimator }
+        circleAnimator = CircleAnimator(view: menuButton, color: .red, duration: 0.5)
+        circleAnimator?.mode = .present
         
-        return transAnimator
+        return circleAnimator
     }
 }
