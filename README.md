@@ -7,7 +7,7 @@ in the search field.
 Idea behind this project is to explore MVVM architecture pattern and create a product that has some real life utility. This project is also aimed to be resource to anyone who want to learn MVVM architecture pattern.
 
 ## Screenshots
-- ![NewsStar_ios screenshots](demo/newstar_home2.png)
+- ![NewsStar_ios screenshots](demo/newstar1..png)
 
 ## Tech/framework used
 Swift/MVVM
