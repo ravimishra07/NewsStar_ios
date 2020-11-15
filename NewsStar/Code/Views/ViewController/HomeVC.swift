@@ -17,7 +17,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var serachView: SoftUIView!
-
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var personalTableView: UITableView!
     
@@ -46,11 +45,11 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         animateMenuButton()
-
     }
     
     func setUpUI(){
-        view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        
+        view.backgroundColor =  UIColor(named: "MainBackgroundColor")
         personalTableView.layer.cornerRadius = 12
         personalTableView.clipsToBounds = true
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
@@ -62,9 +61,6 @@ class HomeVC: UIViewController {
         personalTableView.dataSource = self.personalisedDataSource
         searchButton.layer.cornerRadius  = 20
         serachView.type = .toggleButton
-//        menuButton.alpha = 0
-//        menuButton.perfectCorner()
-//        menuButton.type = .pushButton
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
@@ -74,7 +70,7 @@ class HomeVC: UIViewController {
         
         
         self.peronalViewModel.onErrorHandling = { [weak self] error in
-            // display error ?
+            // display error
             let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
             controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
             self?.present(controller, animated: true, completion: nil)
@@ -163,7 +159,7 @@ extension HomeVC: UITextFieldDelegate{
     }
 }
 extension HomeVC: UIViewControllerTransitioningDelegate{
-  
+    
     // MARK:- UIViewControllerTrasitioningDelegates method
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         circleAnimator = CircleAnimator(view: menuButton, color: .red, duration: 0.4)

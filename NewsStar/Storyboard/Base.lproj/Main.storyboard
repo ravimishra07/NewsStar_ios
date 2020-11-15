@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
@@ -198,6 +198,7 @@ News</string>
                             <constraint firstItem="wlY-tJ-m0u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wMz-b9-cma"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="HUK-rU-4hs"/>
                     <navigationItem key="navigationItem" id="RZt-Ux-tbt"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
@@ -277,7 +278,7 @@ News</string>
             </objects>
             <point key="canvasLocation" x="1570" y="11"/>
         </scene>
-        <!--Choose TopicVC-->
+        <!--Item-->
         <scene sceneID="ea7-Gv-qZm">
             <objects>
                 <viewController id="4pO-P3-xbl" customClass="ChooseTopicVC" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
@@ -310,6 +311,7 @@ interest</string>
                             <constraint firstItem="2Yu-NN-vOj" firstAttribute="centerY" secondItem="INU-Tc-kTp" secondAttribute="centerY" id="vXM-Jp-eP0"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="xlM-oe-s6B"/>
                     <connections>
                         <outlet property="testView" destination="2Yu-NN-vOj" id="ffE-Iy-Fee"/>
                     </connections>
@@ -317,6 +319,24 @@ interest</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv3-u5-nXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2264" y="11"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dxR-4t-1Ia">
+            <objects>
+                <tabBarController id="NVA-rF-E2e" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SbC-Yn-tnE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="4lB-T3-kDM"/>
+                        <segue destination="4pO-P3-xbl" kind="relationship" relationship="viewControllers" id="tbD-6M-jNG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaT-Hz-zf8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1564" y="57"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vio-tM-cAa">
@@ -334,14 +354,6 @@ interest</string>
             <point key="canvasLocation" x="112" y="11"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="4qm-6j-vxi">
-            <size key="intrinsicContentSize" width="170.66666666666666" height="170.66666666666666"/>
-        </designable>
-        <designable name="JaP-Ig-lNf">
-            <size key="intrinsicContentSize" width="170.66666666666666" height="170.66666666666666"/>
-        </designable>
-    </designables>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="menu_dark" width="170.66667175292969" height="170.66667175292969"/>
