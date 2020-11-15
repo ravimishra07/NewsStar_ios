@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1221B52561243C00A7063E /* SoftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1221B42561243B00A7063E /* SoftUIView.swift */; };
 		3C1A0041253CEA0100642FF6 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A0040253CEA0100642FF6 /* RequestFactory.swift */; };
 		3C4F4D322522CCFA00126A7A /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4F4D312522CCFA00126A7A /* ViewExtensions.swift */; };
 		3C4F4D362522CD0500126A7A /* UtilFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4F4D352522CD0500126A7A /* UtilFunctions.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C1221B42561243B00A7063E /* SoftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoftUIView.swift; path = "../../../../../../Downloads/SoftUIView-master/Sources/SoftUIView/SoftUIView.swift"; sourceTree = "<group>"; };
 		3C1A0040253CEA0100642FF6 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		3C4F4D312522CCFA00126A7A /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		3C4F4D352522CD0500126A7A /* UtilFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilFunctions.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				3CF96EEB256071E400CC5F90 /* CircleAnimator.swift */,
+				3C1221B42561243B00A7063E /* SoftUIView.swift */,
 				3CCB2EB12547D06A006F8789 /* TransitionAnimator.swift */,
 			);
 			path = Animation;
@@ -509,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C1221B52561243C00A7063E /* SoftUIView.swift in Sources */,
 				3C1A0041253CEA0100642FF6 /* RequestFactory.swift in Sources */,
 				3CCB2EB22547D06A006F8789 /* TransitionAnimator.swift in Sources */,
 				3CF96EEC256071E400CC5F90 /* CircleAnimator.swift in Sources */,

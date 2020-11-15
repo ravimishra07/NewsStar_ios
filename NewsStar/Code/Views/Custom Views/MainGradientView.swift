@@ -19,15 +19,6 @@ import UIKit
        //custom logic goes here
         self.addBottomRoundedEdge(desiredCurve: 1.5)
     }
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        self.addBottomRoundedEdge(desiredCurve: 1.5)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//        fatalError("init(coder:) has not been implemented")
-//    }
     override func layoutSubviews() {
         (layer as! CAGradientLayer).colors = [topColor.cgColor, bottomColor.cgColor]
     }

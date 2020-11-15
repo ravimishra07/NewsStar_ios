@@ -16,6 +16,8 @@ class HomeVC: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var btnBackGroundView: SoftUIView!
+
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var personalTableView: UITableView!
     
@@ -25,7 +27,7 @@ class HomeVC: UIViewController {
     let personalisedDataSource = PersonalDataSource()
     var transAnimator:TransitionAnimator?
     var circleAnimator: CircleAnimator?
-
+    
     lazy var viewModel : MenuViewModel = {
         let viewModel = MenuViewModel(dataSource: menuDataSource)
         return viewModel
@@ -44,9 +46,13 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         animateMenuButton()
+
     }
     
     func setUpUI(){
+        view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        btnBackGroundView.isHidden = true
+
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
         self.personalTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: NewsTableViewCell.description())
         searchTextField.delegate = self
@@ -55,6 +61,9 @@ class HomeVC: UIViewController {
         personalTableView.delegate = self
         personalTableView.dataSource = self.personalisedDataSource
         searchButton.layer.cornerRadius  = 4
+//        menuButton.alpha = 0
+//        btnBackGroundView.perfectCorner()
+        btnBackGroundView.type = .pushButton
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
@@ -76,70 +85,61 @@ class HomeVC: UIViewController {
         let initTransform: CGFloat = 150
         
         //  (1st jump)move button to top
-        menuButton.transform = CGAffineTransform(translationX: 0, y: -initTransform)
+        btnBackGroundView.transform = CGAffineTransform(translationX: 0, y: -initTransform)
         UIView.animate(withDuration: 0.3, delay: 1) {
             //  1st jump to origin
-            self.menuButton.transform = .identity
+            self.btnBackGroundView.transform = .identity
         } completion: { (isTrue) in
             if isTrue{
                 UIView.animate(withDuration: 0.20, delay: 0) {
                     // (2st jump) move button up
-                    self.menuButton.transform = CGAffineTransform(translationX: 0, y: -60)
+                    self.btnBackGroundView.transform = CGAffineTransform(translationX: 0, y: -60)
                 } completion: { (isTrue) in
                     if isTrue{
                         
                         UIView.animate(withDuration: 0.22) {
-                            self.menuButton.transform = .identity
-
+                            self.btnBackGroundView.transform = .identity
+                            
                         } completion: { (isTrue) in
                             if isTrue{
-                              //  (3rd jump) move button up
+                                //  (3rd jump) move button up
                                 UIView.animate(withDuration: 0.18) {
-                                    self.menuButton.transform = .identity
-
+                                    self.btnBackGroundView.transform = .identity
+                                    
                                 } completion: { (isTrue) in
                                     if isTrue{
                                         
                                         UIView.animate(withDuration: 0.14) {
-                                            self.menuButton.transform = CGAffineTransform(translationX: 0, y: -15)
+                                            self.btnBackGroundView.transform = CGAffineTransform(translationX: 0, y: -15)
                                             
                                         } completion: { (isTrue) in
                                             if isTrue{
                                                 // final jumo to origin
                                                 UIView.animate(withDuration: 0.10) {
-                                                    self.menuButton.transform = .identity
+                                                    self.btnBackGroundView.transform = .identity
                                                 }
-                                                
                                             }
                                         }
                                     }
                                 }
-                              
                             }
-
                         }
-
                     }
-                    
                 }
             }
-            
         }
     }
     
- 
-    
     @IBAction func menuTapped(){
-       
-       // animateMenuButton()
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: SideMenuController.description()) as? SideMenuController else {
-                    return
-                }
-
+        
+        // animateMenuButton()
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: SideMenuController.description()) as? SideMenuController else {
+            return
+        }
         vc.transitioningDelegate = self
         vc.modalPresentationStyle = .custom
-    self.present(vc, animated: true, completion: nil)
-   
+        self.present(vc, animated: true, completion: nil)
+        
     }
 }
 
@@ -161,30 +161,15 @@ extension HomeVC: UITextFieldDelegate{
     }
 }
 extension HomeVC: UIViewControllerTransitioningDelegate{
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        let backgroundColor = UIColor.label
-//        transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.4)
-//        transAnimator?.mode = .dismiss
-//        return transAnimator
-//    }
-//
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        let backgroundColor = UIColor.label
-//        transAnimator = TransitionAnimator(view: menuButton, color: backgroundColor, duration: 0.5)
-//        transAnimator?.mode = .present
-//
-//        return transAnimator
-//    }
+  
     // MARK:- UIViewControllerTrasitioningDelegates method
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        guard let backgroundColor = UIColor.red else { return circleAnimator }
         circleAnimator = CircleAnimator(view: menuButton, color: .red, duration: 0.4)
         circleAnimator?.mode = .dismiss
         return circleAnimator
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        guard let backgroundColor = UIColor.red else { return circleAnimator }
         circleAnimator = CircleAnimator(view: menuButton, color: .red, duration: 0.5)
         circleAnimator?.mode = .present
         

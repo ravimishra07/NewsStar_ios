@@ -27,9 +27,8 @@ class SideMenuController: UIViewController {
         } completion: { (isTrue) in
             
         }
-        //self.view.transform = CGAffineTransform(scaleX: <#T##CGFloat#>, y: <#T##CGFloat#>)
     }
-//
+
     @IBAction func backButton(_ sender: UIButton){
         self.dismiss(animated: true, completion: nil)
     }

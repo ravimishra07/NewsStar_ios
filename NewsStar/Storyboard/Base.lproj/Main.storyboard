@@ -36,23 +36,6 @@
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Ig-lNf" customClass="CircleButton" customModule="NewsStar" customModuleProvider="target">
-                                                <rect key="frame" x="342" y="51" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="858-H7-Gpf"/>
-                                                    <constraint firstAttribute="height" constant="40" id="XyE-6n-gpO"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" image="menu_dark"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="menuTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="bSz-c8-gRZ"/>
-                                                </connections>
-                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwv-H9-JyJ">
                                                 <rect key="frame" x="32" y="277.66666666666669" width="350" height="50"/>
                                                 <subviews>
@@ -134,6 +117,33 @@ News</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3R8-iy-cWF" customClass="SoftUIView" customModule="NewsStar" customModuleProvider="target">
+                                                <rect key="frame" x="342" y="51" width="40" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Ig-lNf" customClass="CircleButton" customModule="NewsStar" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" image="menu_dark"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="menuTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="bSz-c8-gRZ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Fo4-yT-rhg"/>
+                                                    <constraint firstItem="JaP-Ig-lNf" firstAttribute="leading" secondItem="3R8-iy-cWF" secondAttribute="leading" id="HHk-WJ-M9m"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JaP-Ig-lNf" secondAttribute="bottom" id="MJN-2m-H2i"/>
+                                                    <constraint firstAttribute="width" constant="40" id="XfW-J3-CPy"/>
+                                                    <constraint firstItem="JaP-Ig-lNf" firstAttribute="top" secondItem="3R8-iy-cWF" secondAttribute="top" id="c9L-Mh-Kke"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JaP-Ig-lNf" secondAttribute="trailing" id="hPh-eX-DGa"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -151,15 +161,15 @@ News</string>
                                             <constraint firstItem="WKA-Pk-zMz" firstAttribute="top" secondItem="y5j-60-d0l" secondAttribute="top" constant="513.5" id="Zdz-cZ-C4v"/>
                                             <constraint firstItem="WKA-Pk-zMz" firstAttribute="leading" secondItem="jRk-hH-vBl" secondAttribute="leading" id="bzY-sd-B5e"/>
                                             <constraint firstAttribute="trailing" secondItem="jRk-hH-vBl" secondAttribute="trailing" constant="32" id="cJR-3M-MlC"/>
+                                            <constraint firstAttribute="trailing" secondItem="3R8-iy-cWF" secondAttribute="trailing" constant="32" id="dW6-M5-vA9"/>
                                             <constraint firstItem="gwv-H9-JyJ" firstAttribute="top" secondItem="aGk-If-oYW" secondAttribute="bottom" constant="32" id="eq0-nZ-xii"/>
                                             <constraint firstAttribute="trailing" secondItem="gwv-H9-JyJ" secondAttribute="trailing" constant="32" id="f8W-ha-kVP"/>
+                                            <constraint firstItem="3R8-iy-cWF" firstAttribute="top" secondItem="y5j-60-d0l" secondAttribute="top" constant="51" id="jYy-9f-eZp"/>
                                             <constraint firstItem="5Od-dZ-jak" firstAttribute="trailing" secondItem="QMO-ga-eHO" secondAttribute="trailing" id="rQq-DP-52f"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aGk-If-oYW" secondAttribute="trailing" constant="20" symbolic="YES" id="rkM-2U-7BC"/>
                                             <constraint firstItem="jRk-hH-vBl" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="32" id="tPb-KN-2wg"/>
                                             <constraint firstItem="gd4-JZ-IaJ" firstAttribute="leading" secondItem="y5j-60-d0l" secondAttribute="leading" constant="16" id="tkS-MO-hMJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="JaP-Ig-lNf" secondAttribute="trailing" constant="32" id="toq-jd-Wn6"/>
                                             <constraint firstAttribute="height" constant="1200" id="uxS-EF-2Fa"/>
-                                            <constraint firstItem="JaP-Ig-lNf" firstAttribute="centerY" secondItem="Vhp-Uz-pdg" secondAttribute="centerY" id="wwF-8h-nbK"/>
                                             <constraint firstItem="5Od-dZ-jak" firstAttribute="bottom" secondItem="QMO-ga-eHO" secondAttribute="bottom" id="yye-aj-e3S"/>
                                             <constraint firstAttribute="bottom" secondItem="gd4-JZ-IaJ" secondAttribute="bottom" constant="12" id="zvS-ZE-aZ5"/>
                                         </constraints>
@@ -191,6 +201,7 @@ News</string>
                     <navigationItem key="navigationItem" id="RZt-Ux-tbt"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
+                        <outlet property="btnBackGroundView" destination="JaP-Ig-lNf" id="JqS-fd-ZcK"/>
                         <outlet property="mainView" destination="y5j-60-d0l" id="n9b-jR-mKN"/>
                         <outlet property="menuButton" destination="JaP-Ig-lNf" id="36h-YT-2sX"/>
                         <outlet property="menuCollectionView" destination="jRk-hH-vBl" id="xVY-7b-W0S"/>
