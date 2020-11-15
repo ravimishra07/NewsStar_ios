@@ -16,7 +16,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var btnBackGroundView: SoftUIView!
+    @IBOutlet weak var serachView: SoftUIView!
 
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var personalTableView: UITableView!
@@ -51,8 +51,8 @@ class HomeVC: UIViewController {
     
     func setUpUI(){
         view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
-        btnBackGroundView.isHidden = true
-
+        personalTableView.layer.cornerRadius = 12
+        personalTableView.clipsToBounds = true
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
         self.personalTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: NewsTableViewCell.description())
         searchTextField.delegate = self
@@ -60,14 +60,16 @@ class HomeVC: UIViewController {
         menuCollectionView.delegate = self
         personalTableView.delegate = self
         personalTableView.dataSource = self.personalisedDataSource
-        searchButton.layer.cornerRadius  = 4
+        searchButton.layer.cornerRadius  = 20
+        serachView.type = .toggleButton
 //        menuButton.alpha = 0
-//        btnBackGroundView.perfectCorner()
-        btnBackGroundView.type = .pushButton
+//        menuButton.perfectCorner()
+//        menuButton.type = .pushButton
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
-        self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in            self?.personalTableView.reloadData()
+        self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in
+            self?.personalTableView.reloadData()
         }
         
         
@@ -85,38 +87,38 @@ class HomeVC: UIViewController {
         let initTransform: CGFloat = 150
         
         //  (1st jump)move button to top
-        btnBackGroundView.transform = CGAffineTransform(translationX: 0, y: -initTransform)
+        menuButton.transform = CGAffineTransform(translationX: 0, y: -initTransform)
         UIView.animate(withDuration: 0.3, delay: 1) {
             //  1st jump to origin
-            self.btnBackGroundView.transform = .identity
+            self.menuButton.transform = .identity
         } completion: { (isTrue) in
             if isTrue{
                 UIView.animate(withDuration: 0.20, delay: 0) {
                     // (2st jump) move button up
-                    self.btnBackGroundView.transform = CGAffineTransform(translationX: 0, y: -60)
+                    self.menuButton.transform = CGAffineTransform(translationX: 0, y: -60)
                 } completion: { (isTrue) in
                     if isTrue{
                         
                         UIView.animate(withDuration: 0.22) {
-                            self.btnBackGroundView.transform = .identity
+                            self.menuButton.transform = .identity
                             
                         } completion: { (isTrue) in
                             if isTrue{
                                 //  (3rd jump) move button up
                                 UIView.animate(withDuration: 0.18) {
-                                    self.btnBackGroundView.transform = .identity
+                                    self.menuButton.transform = .identity
                                     
                                 } completion: { (isTrue) in
                                     if isTrue{
                                         
                                         UIView.animate(withDuration: 0.14) {
-                                            self.btnBackGroundView.transform = CGAffineTransform(translationX: 0, y: -15)
+                                            self.menuButton.transform = CGAffineTransform(translationX: 0, y: -15)
                                             
                                         } completion: { (isTrue) in
                                             if isTrue{
                                                 // final jumo to origin
                                                 UIView.animate(withDuration: 0.10) {
-                                                    self.btnBackGroundView.transform = .identity
+                                                    self.menuButton.transform = .identity
                                                 }
                                             }
                                         }

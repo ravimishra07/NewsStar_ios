@@ -16,6 +16,8 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsDescLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var backView: NeumorphicUIView!
+
      
     var article: Article?{
         didSet{
@@ -33,7 +35,11 @@ class NewsTableViewCell: UITableViewCell {
     }
     func setUpUI(){
         dateView.perfectCorner()
-        newsImage.addCorner()
+        backView.type = .normal
+        mainView.layer.cornerRadius = 20
+        newsImage.layer.cornerRadius = 20
+        newsImage.clipsToBounds = true
+        backView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
     }
     
     func setData(article: Article?){

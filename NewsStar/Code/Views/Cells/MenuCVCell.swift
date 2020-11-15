@@ -11,13 +11,16 @@ class MenuCVCell: UICollectionViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var menuImage: UIImageView!
-    @IBOutlet weak var imgBackgroundView: UIView!
-
+    @IBOutlet weak var imgBackgroundView: SoftUIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         menuImage.perfectCorner()
+        imgBackgroundView.type = .normal
+        contentView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+
         imgBackgroundView.backgroundColor = UIColor.systemGray.withAlphaComponent(0.3)
+        imgBackgroundView.type = .toggleButton
         imgBackgroundView.perfectCorner()
         // Initialization code
     }

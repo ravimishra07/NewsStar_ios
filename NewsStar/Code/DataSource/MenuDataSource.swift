@@ -24,7 +24,8 @@ class MenuDataSource: GenericDataSource<MenuModel>, UICollectionViewDataSource {
         cell.menuLabel.text = menuName.menuName
         cell.menuImage.image = UIImage(named: menuName.menuImage)
         if indexPath.row == 0{
-            cell.imgBackgroundView.backgroundColor = UIColor("ED4041")?.withAlphaComponent(0.3)
+            cell.menuImage.tintColor = .red
+           // cell.imgBackgroundView.backgroundColor = UIColor("ED4041")?.withAlphaComponent(1)
         }
         return cell
     }
