@@ -12,7 +12,7 @@ protocol NewsServiceProtocol : class {
     func callApiWithGet(_ completion: @escaping ((Result<NewsModel, ErrorResult>) -> Void))
 }
 //enum ResponseCode {
-//    case <#case#>
+//    case case
 //}
 class Service{
     typealias apiResponse = (Result<Data, ErrorResult>) -> Void
