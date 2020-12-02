@@ -16,7 +16,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var serachView: SoftUIView!
+    @IBOutlet weak var searchView: SoftUIView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var personalTableView: UITableView!
     
@@ -60,7 +60,7 @@ class HomeVC: UIViewController {
         personalTableView.delegate = self
         personalTableView.dataSource = self.personalisedDataSource
         searchButton.layer.cornerRadius  = 20
-        serachView.type = .toggleButton
+        searchView.type = .toggleButton
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
