@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NVA-rF-E2e">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
@@ -198,7 +198,7 @@ News</string>
                             <constraint firstItem="wlY-tJ-m0u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wMz-b9-cma"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="HUK-rU-4hs"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="HUK-rU-4hs"/>
                     <navigationItem key="navigationItem" id="RZt-Ux-tbt"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
@@ -301,24 +301,126 @@ interest</string>
                                     <constraint firstAttribute="width" constant="240" id="gFq-r1-Tgu"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdZ-qA-d6w">
+                                <rect key="frame" x="132" y="408" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="fTf-AF-H3y"/>
+                                    <constraint firstAttribute="width" constant="150" id="ght-O7-hsw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rsk-S8-6cS">
+                                <rect key="frame" x="182" y="808" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="nkP-Ht-eK5"/>
+                                    <constraint firstAttribute="height" constant="50" id="wbq-0w-VUc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQL-ef-E5d">
+                                <rect key="frame" x="182" y="658" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RJc-5t-dx1"/>
+                                    <constraint firstAttribute="width" constant="50" id="XX9-8S-Qgp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gbY-ZS-kaQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4fg-Xl-6rr" firstAttribute="top" secondItem="gbY-ZS-kaQ" secondAttribute="top" constant="12" id="4Pc-xM-BSx"/>
+                            <constraint firstItem="Rsk-S8-6cS" firstAttribute="centerX" secondItem="INU-Tc-kTp" secondAttribute="centerX" id="Pnt-Hw-gFN"/>
+                            <constraint firstItem="gbY-ZS-kaQ" firstAttribute="bottom" secondItem="Rsk-S8-6cS" secondAttribute="bottom" constant="4" id="TAw-E8-GNY"/>
                             <constraint firstItem="4fg-Xl-6rr" firstAttribute="centerX" secondItem="INU-Tc-kTp" secondAttribute="centerX" id="Vzp-kU-6AG"/>
+                            <constraint firstItem="Rsk-S8-6cS" firstAttribute="top" secondItem="ZQL-ef-E5d" secondAttribute="bottom" constant="100" id="bxw-rZ-Iwg"/>
+                            <constraint firstItem="ZQL-ef-E5d" firstAttribute="centerX" secondItem="INU-Tc-kTp" secondAttribute="centerX" id="drU-Uo-Obq"/>
+                            <constraint firstItem="HdZ-qA-d6w" firstAttribute="centerX" secondItem="INU-Tc-kTp" secondAttribute="centerX" id="gvW-5o-t5c"/>
                             <constraint firstItem="2Yu-NN-vOj" firstAttribute="centerX" secondItem="INU-Tc-kTp" secondAttribute="centerX" id="iwk-Mv-P4H"/>
                             <constraint firstItem="2Yu-NN-vOj" firstAttribute="centerY" secondItem="INU-Tc-kTp" secondAttribute="centerY" id="vXM-Jp-eP0"/>
+                            <constraint firstItem="ZQL-ef-E5d" firstAttribute="top" secondItem="HdZ-qA-d6w" secondAttribute="bottom" constant="100" id="vXy-9u-dsc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="xlM-oe-s6B"/>
                     <connections>
+                        <outlet property="bottomView1" destination="HdZ-qA-d6w" id="fzE-s6-qoO"/>
+                        <outlet property="bottomView2" destination="ZQL-ef-E5d" id="T6D-ZS-Z1W"/>
+                        <outlet property="bottomView3" destination="Rsk-S8-6cS" id="kcW-Se-mx8"/>
                         <outlet property="testView" destination="2Yu-NN-vOj" id="ffE-Iy-Fee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv3-u5-nXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2264" y="11"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="SE0-7l-OVW">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="nic-sM-dv6" customClass="SearchViewController" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="16O-hH-YLL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-mU-gDo" customClass="SoftUIView" customModule="NewsStar" customModuleProvider="target">
+                                <rect key="frame" x="24" y="56" width="366" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-7W-7l9">
+                                <rect key="frame" x="24" y="56" width="366" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD3-vC-wt5">
+                                        <rect key="frame" x="316" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="uD3-iU-f1Q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search News Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUS-3F-vYg">
+                                        <rect key="frame" x="23" y="0.0" width="269" height="50"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="KD3-vC-wt5" firstAttribute="top" secondItem="sjz-7W-7l9" secondAttribute="top" id="0eo-7S-ay5"/>
+                                    <constraint firstAttribute="bottom" secondItem="KD3-vC-wt5" secondAttribute="bottom" id="2So-Zm-3Vp"/>
+                                    <constraint firstItem="KD3-vC-wt5" firstAttribute="leading" secondItem="XUS-3F-vYg" secondAttribute="trailing" constant="24" id="5De-Yf-lXk"/>
+                                    <constraint firstItem="XUS-3F-vYg" firstAttribute="top" secondItem="sjz-7W-7l9" secondAttribute="top" id="B9v-hf-0Yj"/>
+                                    <constraint firstAttribute="height" constant="50" id="FWJ-xZ-lxU"/>
+                                    <constraint firstItem="XUS-3F-vYg" firstAttribute="centerY" secondItem="sjz-7W-7l9" secondAttribute="centerY" id="VWf-i1-pMl"/>
+                                    <constraint firstItem="XUS-3F-vYg" firstAttribute="leading" secondItem="sjz-7W-7l9" secondAttribute="leading" constant="23" id="bV0-5U-vCe"/>
+                                    <constraint firstAttribute="bottom" secondItem="XUS-3F-vYg" secondAttribute="bottom" id="qvf-wA-wtL"/>
+                                    <constraint firstAttribute="trailing" secondItem="KD3-vC-wt5" secondAttribute="trailing" id="uto-Uo-Ccx"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="vxs-wk-KaB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JQQ-iq-ZQ1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JW3-mU-gDo" firstAttribute="height" secondItem="sjz-7W-7l9" secondAttribute="height" id="9J8-TV-HCE"/>
+                            <constraint firstItem="JW3-mU-gDo" firstAttribute="centerY" secondItem="sjz-7W-7l9" secondAttribute="centerY" id="Ctp-hm-lA8"/>
+                            <constraint firstItem="JW3-mU-gDo" firstAttribute="centerX" secondItem="sjz-7W-7l9" secondAttribute="centerX" id="EDt-Gd-Z6A"/>
+                            <constraint firstItem="JQQ-iq-ZQ1" firstAttribute="trailing" secondItem="sjz-7W-7l9" secondAttribute="trailing" constant="24" id="QBU-1G-nF7"/>
+                            <constraint firstItem="sjz-7W-7l9" firstAttribute="leading" secondItem="JQQ-iq-ZQ1" secondAttribute="leading" constant="24" id="VgE-pE-KDJ"/>
+                            <constraint firstItem="sjz-7W-7l9" firstAttribute="top" secondItem="JQQ-iq-ZQ1" secondAttribute="top" constant="12" id="sIL-cm-qTG"/>
+                            <constraint firstItem="JW3-mU-gDo" firstAttribute="width" secondItem="sjz-7W-7l9" secondAttribute="width" id="zpC-Eh-E9y"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" id="88S-P5-nZ3"/>
+                    <connections>
+                        <outlet property="searchButton" destination="KD3-vC-wt5" id="PAz-VU-iRF"/>
+                        <outlet property="searchTextField" destination="XUS-3F-vYg" id="6fJ-59-rUx"/>
+                        <outlet property="serachView" destination="JW3-mU-gDo" id="wvY-6r-zvN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGH-cQ-u7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2948" y="11"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dxR-4t-1Ia">
@@ -331,12 +433,12 @@ interest</string>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="4lB-T3-kDM"/>
-                        <segue destination="4pO-P3-xbl" kind="relationship" relationship="viewControllers" id="tbD-6M-jNG"/>
+                        <segue destination="nic-sM-dv6" kind="relationship" relationship="viewControllers" id="h41-yx-phg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GaT-Hz-zf8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1564" y="57"/>
+            <point key="canvasLocation" x="-674" y="11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vio-tM-cAa">
@@ -354,14 +456,33 @@ interest</string>
             <point key="canvasLocation" x="112" y="11"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4qm-6j-vxi">
+            <size key="intrinsicContentSize" width="170.66666666666666" height="170.66666666666666"/>
+        </designable>
+        <designable name="JaP-Ig-lNf">
+            <size key="intrinsicContentSize" width="170.66666666666666" height="170.66666666666666"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="menu_dark" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
