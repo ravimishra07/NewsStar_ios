@@ -363,14 +363,14 @@ interest</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-mU-gDo" customClass="SoftUIView" customModule="NewsStar" customModuleProvider="target">
-                                <rect key="frame" x="24" y="68" width="292" height="50"/>
+                                <rect key="frame" x="24" y="68" width="308" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-7W-7l9">
-                                <rect key="frame" x="24" y="68" width="292" height="50"/>
+                                <rect key="frame" x="24" y="68" width="308" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD3-vC-wt5">
-                                        <rect key="frame" x="242" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="258" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="uD3-iU-f1Q"/>
@@ -379,8 +379,8 @@ interest</string>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" image="magnifyingglass" catalog="system"/>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search News Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUS-3F-vYg">
-                                        <rect key="frame" x="24" y="0.0" width="194" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search News Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUS-3F-vYg">
+                                        <rect key="frame" x="24" y="0.0" width="210" height="50"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                     </textField>
@@ -406,30 +406,12 @@ interest</string>
                                     <constraint firstAttribute="height" constant="50" id="vnQ-3r-iLd"/>
                                 </constraints>
                                 <state key="normal" image="filter_icon"/>
+                                <connections>
+                                    <action selector="filterBtnTapped:" destination="nic-sM-dv6" eventType="touchUpInside" id="4KN-FQ-4Qd"/>
+                                </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QUD-wN-nfR">
-                                <rect key="frame" x="87" y="298" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VSB-zN-DoJ">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="euR-3i-WbE">
-                                        <rect key="frame" x="56" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VkB-Cw-rXL">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ryq-yx-GeM">
-                                <rect key="frame" x="24" y="126" width="366" height="40"/>
+                                <rect key="frame" x="24" y="134" width="366" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ff0-6v-O6e">
                                         <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
@@ -438,7 +420,7 @@ interest</string>
                                                 <rect key="frame" x="12" y="4" width="98" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-ZM-OJ8">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-ZM-OJ8">
                                                 <rect key="frame" x="12" y="4" width="98" height="32"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                 <color key="tintColor" red="0.92941176469999998" green="0.25098039220000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -467,7 +449,7 @@ interest</string>
                                                 <rect key="frame" x="12" y="4" width="98" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="677-4I-bGr">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="677-4I-bGr">
                                                 <rect key="frame" x="12" y="4" width="98" height="32"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                 <color key="tintColor" red="0.92941176469999998" green="0.25098039220000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -496,7 +478,7 @@ interest</string>
                                                 <rect key="frame" x="12" y="4" width="98" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOP-kl-nwl">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOP-kl-nwl">
                                                 <rect key="frame" x="12" y="4" width="98" height="32"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                 <color key="tintColor" red="0.92941176469999998" green="0.25098039220000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -524,26 +506,57 @@ interest</string>
                                     <constraint firstAttribute="height" constant="40" id="tGz-iy-p2w"/>
                                 </constraints>
                             </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XKo-pd-isT">
+                                <rect key="frame" x="0.0" y="118" width="414" height="695"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JmF-UQ-oHt">
+                                    <size key="itemSize" width="160" height="122"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oBs-Sa-oKj">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="122"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WKH-0I-dkv">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="122"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="160" height="122"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JQQ-iq-ZQ1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ryq-yx-GeM" firstAttribute="top" secondItem="JW3-mU-gDo" secondAttribute="bottom" constant="8" id="6Zf-W8-ZWk"/>
                             <constraint firstItem="sjz-7W-7l9" firstAttribute="top" secondItem="JQQ-iq-ZQ1" secondAttribute="top" constant="24" id="8n8-G6-5W4"/>
-                            <constraint firstItem="7M0-tl-cd1" firstAttribute="leading" secondItem="sjz-7W-7l9" secondAttribute="trailing" constant="24" id="8uH-X2-J8h"/>
+                            <constraint firstItem="7M0-tl-cd1" firstAttribute="leading" secondItem="sjz-7W-7l9" secondAttribute="trailing" constant="8" id="8uH-X2-J8h"/>
                             <constraint firstItem="JW3-mU-gDo" firstAttribute="height" secondItem="sjz-7W-7l9" secondAttribute="height" id="9J8-TV-HCE"/>
+                            <constraint firstItem="XKo-pd-isT" firstAttribute="leading" secondItem="JQQ-iq-ZQ1" secondAttribute="leading" id="9mj-zw-dv1"/>
                             <constraint firstItem="JW3-mU-gDo" firstAttribute="centerY" secondItem="sjz-7W-7l9" secondAttribute="centerY" id="Ctp-hm-lA8"/>
                             <constraint firstItem="JW3-mU-gDo" firstAttribute="centerX" secondItem="sjz-7W-7l9" secondAttribute="centerX" id="EDt-Gd-Z6A"/>
+                            <constraint firstItem="Ryq-yx-GeM" firstAttribute="top" secondItem="JW3-mU-gDo" secondAttribute="bottom" constant="16" id="FIp-v3-cyg"/>
+                            <constraint firstItem="JQQ-iq-ZQ1" firstAttribute="trailing" secondItem="XKo-pd-isT" secondAttribute="trailing" id="IM6-yF-5eY"/>
+                            <constraint firstItem="XKo-pd-isT" firstAttribute="top" secondItem="XUS-3F-vYg" secondAttribute="bottom" id="OiA-Jn-bBt"/>
                             <constraint firstItem="JQQ-iq-ZQ1" firstAttribute="trailing" secondItem="Ryq-yx-GeM" secondAttribute="trailing" constant="24" id="QxP-bp-6pg"/>
                             <constraint firstItem="sjz-7W-7l9" firstAttribute="leading" secondItem="JQQ-iq-ZQ1" secondAttribute="leading" constant="24" id="VgE-pE-KDJ"/>
                             <constraint firstItem="JQQ-iq-ZQ1" firstAttribute="trailing" secondItem="7M0-tl-cd1" secondAttribute="trailing" constant="24" id="fMT-0v-3Rt"/>
                             <constraint firstItem="7M0-tl-cd1" firstAttribute="centerY" secondItem="XUS-3F-vYg" secondAttribute="centerY" id="lua-4G-Q7D"/>
                             <constraint firstItem="Ryq-yx-GeM" firstAttribute="leading" secondItem="JQQ-iq-ZQ1" secondAttribute="leading" constant="24" id="sLu-ME-13L"/>
+                            <constraint firstItem="JQQ-iq-ZQ1" firstAttribute="bottom" secondItem="XKo-pd-isT" secondAttribute="bottom" id="yZy-9v-MUh"/>
                             <constraint firstItem="JW3-mU-gDo" firstAttribute="width" secondItem="sjz-7W-7l9" secondAttribute="width" id="zpC-Eh-E9y"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" id="88S-P5-nZ3"/>
                     <connections>
+                        <outlet property="accBtn" destination="FBS-RP-Ku1" id="kLN-bg-vjX"/>
+                        <outlet property="bookMarkBtn" destination="Pc4-JP-htt" id="CSi-XP-i5h"/>
+                        <outlet property="countryBtn" destination="6Xc-bW-75G" id="PUa-ek-O8A"/>
+                        <outlet property="filterBtn" destination="7M0-tl-cd1" id="tb0-9g-3Eh"/>
+                        <outlet property="filterStackView" destination="Ryq-yx-GeM" id="dnR-F3-udm"/>
+                        <outlet property="newsCollectionView" destination="XKo-pd-isT" id="JUg-QE-m8v"/>
                         <outlet property="searchButton" destination="KD3-vC-wt5" id="PAz-VU-iRF"/>
                         <outlet property="searchTextField" destination="XUS-3F-vYg" id="6fJ-59-rUx"/>
                         <outlet property="searchView" destination="JW3-mU-gDo" id="gzH-ZU-KbK"/>
@@ -551,7 +564,7 @@ interest</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGH-cQ-u7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2948" y="11"/>
+            <point key="canvasLocation" x="2947.826086956522" y="10.714285714285714"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dxR-4t-1Ia">

@@ -29,18 +29,4 @@ class MenuDataSource: GenericDataSource<MenuModel>, UICollectionViewDataSource {
         }
         return cell
     }
-    
 }
-//
-//class PersonalisedDataSource: GenericDataSource<NewsModel>, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        data.value.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
-//        return cell
-//    }
-//
-//
-//}

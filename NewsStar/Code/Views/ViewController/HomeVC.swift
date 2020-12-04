@@ -48,7 +48,6 @@ class HomeVC: UIViewController {
     }
     
     func setUpUI(){
-        
         view.backgroundColor =  UIColor(named: "MainBackgroundColor")
         personalTableView.layer.cornerRadius = 12
         personalTableView.clipsToBounds = true
@@ -60,7 +59,6 @@ class HomeVC: UIViewController {
         personalTableView.delegate = self
         personalTableView.dataSource = self.personalisedDataSource
         searchButton.layer.cornerRadius  = 20
-        searchView.type = .toggleButton
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
