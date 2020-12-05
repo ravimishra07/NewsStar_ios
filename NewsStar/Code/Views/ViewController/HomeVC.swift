@@ -127,11 +127,17 @@ class HomeVC: UIViewController {
         }
     }
     @IBAction func searchTapped(_ sender: UIButton){
-        Global.searchText = searchTextField?.text ?? ""
-        self.tabBarController?.selectedIndex = 1
+        if let searchText = searchTextField?.text{
+            if searchText != "" {
+                Global.searchText = searchText
+                /// user search controller seperately
+                let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+                self.present(searchVC, animated: true, completion: nil)
 
-//        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-//        self.navigationController?.pushViewController(searchVC, animated: true)
+            }
+        }
+        /** uncomment to use tabcontroller as search controller */
+        // self.tabBarController?.selectedIndex = 1
     }
     @IBAction func menuTapped(){
         
