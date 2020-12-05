@@ -34,6 +34,7 @@
 		3C8125C3253E94CF00FD0352 /* PersonalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8125C2253E94CF00FD0352 /* PersonalDataSource.swift */; };
 		3C850693257AA948007591DA /* NewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C850692257AA948007591DA /* NewsDataSource.swift */; };
 		3C850696257AA9BB007591DA /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C850695257AA9BB007591DA /* NewsViewModel.swift */; };
+		3C850699257B4979007591DA /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C850698257B4979007591DA /* TabbarVC.swift */; };
 		3C8A412B257200FB00B54223 /* SoftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A412A257200FA00B54223 /* SoftUIView.swift */; };
 		3C8A412F2572011400B54223 /* CircleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A412E2572011400B54223 /* CircleAnimator.swift */; };
 		3C98FEDA255E963B00933BD3 /* MainGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C98FED9255E963B00933BD3 /* MainGradientView.swift */; };
@@ -95,6 +96,7 @@
 		3C8125C2253E94CF00FD0352 /* PersonalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataSource.swift; sourceTree = "<group>"; };
 		3C850692257AA948007591DA /* NewsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataSource.swift; sourceTree = "<group>"; };
 		3C850695257AA9BB007591DA /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		3C850698257B4979007591DA /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		3C8A412A257200FA00B54223 /* SoftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftUIView.swift; sourceTree = "<group>"; };
 		3C8A412E2572011400B54223 /* CircleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimator.swift; sourceTree = "<group>"; };
 		3C98FED9255E963B00933BD3 /* MainGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGradientView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				3CCB2EB42547D780006F8789 /* SideMenuController.swift */,
 				3C1221BA2561923100A7063E /* ChooseTopicVC.swift */,
 				3C78317725780A3A00653508 /* SearchViewController.swift */,
+				3C850698257B4979007591DA /* TabbarVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				3C7FF7B72522A46600F81A74 /* CircleButton.swift in Sources */,
 				3CB79BA2253BEDA300D33172 /* MenuCVCell.swift in Sources */,
 				3C7FF7612522875900F81A74 /* HomeVC.swift in Sources */,
+				3C850699257B4979007591DA /* TabbarVC.swift in Sources */,
 				3C1221B8256173F300A7063E /* NeumorphicUIView.swift in Sources */,
 				3C850696257AA9BB007591DA /* NewsViewModel.swift in Sources */,
 				3C4F4D392522CD1000126A7A /* CellExtensions.swift in Sources */,

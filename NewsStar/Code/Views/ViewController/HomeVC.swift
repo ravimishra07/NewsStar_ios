@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+struct Global{
+   static var searchText = ""
+}
 class HomeVC: UIViewController {
     override class func description() -> String {
         "HomeVC"
@@ -124,7 +126,13 @@ class HomeVC: UIViewController {
             }
         }
     }
-    
+    @IBAction func searchTapped(_ sender: UIButton){
+        Global.searchText = searchTextField?.text ?? ""
+        self.tabBarController?.selectedIndex = 1
+
+//        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+//        self.navigationController?.pushViewController(searchVC, animated: true)
+    }
     @IBAction func menuTapped(){
         
         // animateMenuButton()

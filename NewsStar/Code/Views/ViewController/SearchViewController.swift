@@ -9,7 +9,6 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-
     //MARK:- Outlets
     @IBOutlet weak var searchView: SoftUIView!
     @IBOutlet weak var accBtn: SoftUIView!
@@ -20,6 +19,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var filterStackView: UIStackView!
+    @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
+
     
     //MARK:- Variables
     var showFilter = false
@@ -57,19 +58,33 @@ class SearchViewController: UIViewController {
             controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
             self?.present(controller, animated: true, completion: nil)
         }
-        self.newsViewModel.fetchNews(query: "news")
+        
         searchButton.layer.cornerRadius = 20
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if Global.searchText != ""{
+            self.searchTextField.text = Global.searchText
+            self.newsViewModel.fetchNews(query: Global.searchText)
+            Global.searchText = ""
+        }else{
+            self.newsViewModel.fetchNews(query: "news")
+        }
     }
     func animateFilterView(){
         if showFilter{
             filterBtn.tintColor = UIColor("ED4041")
-            UIView.animate(withDuration: 0.6) {
+            collectionViewTopConstraint.constant = 60
+
+            UIView.animate(withDuration: 0.3) {
                 self.filterStackView.transform = .identity
+                self.view.layoutIfNeeded()
             }
         }else{
             filterBtn.tintColor = .black
-            UIView.animate(withDuration: 0.6) {
+            collectionViewTopConstraint.constant = 12
+            UIView.animate(withDuration: 0.3) {
                 self.filterStackView.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
+                self.view.layoutIfNeeded()
             }
         }
         showFilter = !showFilter
@@ -77,6 +92,13 @@ class SearchViewController: UIViewController {
     }
     @IBAction func filterBtnTapped(_ sender: UIButton){
         animateFilterView()
+    }
+    @IBAction func searchTapped(_ sender: UIButton){
+        if let searchText = searchTextField.text{
+            if searchText != ""{
+                self.newsViewModel.fetchNews(query: searchText)
+            }
+        }
     }
 }
 extension SearchViewController: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{

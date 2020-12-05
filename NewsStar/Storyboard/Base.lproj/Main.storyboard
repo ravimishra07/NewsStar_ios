@@ -69,6 +69,9 @@
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                         <state key="normal" image="magnifyingglass" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="searchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5iO-xs-iU3"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search News Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QMO-ga-eHO">
                                                         <rect key="frame" x="23" y="0.0" width="253" height="50"/>
@@ -377,6 +380,9 @@ interest</string>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchTapped:" destination="nic-sM-dv6" eventType="touchUpInside" id="hrS-fL-WVI"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search News Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUS-3F-vYg">
                                         <rect key="frame" x="24" y="0.0" width="210" height="50"/>
@@ -542,6 +548,7 @@ interest</string>
                     <connections>
                         <outlet property="accBtn" destination="FBS-RP-Ku1" id="kLN-bg-vjX"/>
                         <outlet property="bookMarkBtn" destination="Pc4-JP-htt" id="CSi-XP-i5h"/>
+                        <outlet property="collectionViewTopConstraint" destination="OiA-Jn-bBt" id="NSd-Bg-Tcc"/>
                         <outlet property="countryBtn" destination="6Xc-bW-75G" id="PUa-ek-O8A"/>
                         <outlet property="filterBtn" destination="7M0-tl-cd1" id="tb0-9g-3Eh"/>
                         <outlet property="filterStackView" destination="Ryq-yx-GeM" id="dnR-F3-udm"/>
@@ -555,10 +562,10 @@ interest</string>
             </objects>
             <point key="canvasLocation" x="2947.826086956522" y="10.714285714285714"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabbarVC-->
         <scene sceneID="dxR-4t-1Ia">
             <objects>
-                <tabBarController id="NVA-rF-E2e" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabbarVC" id="NVA-rF-E2e" customClass="TabbarVC" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SbC-Yn-tnE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
