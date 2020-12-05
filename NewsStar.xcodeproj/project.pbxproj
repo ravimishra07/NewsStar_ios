@@ -32,6 +32,8 @@
 		3C7FF7C52522A91900F81A74 /* NewsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C7FF7C32522A91900F81A74 /* NewsCollectionCell.xib */; };
 		3C7FF7C82522AD5A00F81A74 /* NewsDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF7C72522AD5A00F81A74 /* NewsDateView.swift */; };
 		3C8125C3253E94CF00FD0352 /* PersonalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8125C2253E94CF00FD0352 /* PersonalDataSource.swift */; };
+		3C850693257AA948007591DA /* NewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C850692257AA948007591DA /* NewsDataSource.swift */; };
+		3C850696257AA9BB007591DA /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C850695257AA9BB007591DA /* NewsViewModel.swift */; };
 		3C8A412B257200FB00B54223 /* SoftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A412A257200FA00B54223 /* SoftUIView.swift */; };
 		3C8A412F2572011400B54223 /* CircleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A412E2572011400B54223 /* CircleAnimator.swift */; };
 		3C98FEDA255E963B00933BD3 /* MainGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C98FED9255E963B00933BD3 /* MainGradientView.swift */; };
@@ -91,6 +93,8 @@
 		3C7FF7C32522A91900F81A74 /* NewsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionCell.xib; sourceTree = "<group>"; };
 		3C7FF7C72522AD5A00F81A74 /* NewsDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDateView.swift; sourceTree = "<group>"; };
 		3C8125C2253E94CF00FD0352 /* PersonalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataSource.swift; sourceTree = "<group>"; };
+		3C850692257AA948007591DA /* NewsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataSource.swift; sourceTree = "<group>"; };
+		3C850695257AA9BB007591DA /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		3C8A412A257200FA00B54223 /* SoftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftUIView.swift; sourceTree = "<group>"; };
 		3C8A412E2572011400B54223 /* CircleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimator.swift; sourceTree = "<group>"; };
 		3C98FED9255E963B00933BD3 /* MainGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGradientView.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 			children = (
 				3CB79BA8253C0DD400D33172 /* MenuViewModel.swift */,
 				3CB79BC3253C810B00D33172 /* PersonalViewModel.swift */,
+				3C850695257AA9BB007591DA /* NewsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 			children = (
 				3CB79BB1253C2D4C00D33172 /* MenuDataSource.swift */,
 				3C8125C2253E94CF00FD0352 /* PersonalDataSource.swift */,
+				3C850692257AA948007591DA /* NewsDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 				3CB79BA2253BEDA300D33172 /* MenuCVCell.swift in Sources */,
 				3C7FF7612522875900F81A74 /* HomeVC.swift in Sources */,
 				3C1221B8256173F300A7063E /* NeumorphicUIView.swift in Sources */,
+				3C850696257AA9BB007591DA /* NewsViewModel.swift in Sources */,
 				3C4F4D392522CD1000126A7A /* CellExtensions.swift in Sources */,
 				3CB79BC7253C832B00D33172 /* Service.swift in Sources */,
 				3CCB2EB52547D780006F8789 /* SideMenuController.swift in Sources */,
@@ -540,6 +547,7 @@
 				3CAF8D72253E7A590054220B /* RequestService.swift in Sources */,
 				3CAF8D6E253E79250054220B /* Reachability.swift in Sources */,
 				3CB79BBC253C5EF000D33172 /* NewsTableViewCell.swift in Sources */,
+				3C850693257AA948007591DA /* NewsDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

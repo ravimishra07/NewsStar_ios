@@ -20,6 +20,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var personalTableView: UITableView!
     
+    //MARK:- Variables
     let menuCellIdentifier = "MenuCVCell"
     let personCellIdentifier = "NewsTableViewCell"
     let menuDataSource = MenuDataSource()
@@ -65,8 +66,6 @@ class HomeVC: UIViewController {
         self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.personalTableView.reloadData()
         }
-        
-        
         self.peronalViewModel.onErrorHandling = { [weak self] error in
             // display error
             let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
