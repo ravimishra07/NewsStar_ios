@@ -18,7 +18,7 @@ class Shimmer: CAGradientLayer {
         super.init(coder: coder)
     }
     
-    init(for view: UIView,cornerRadius: CGFloat) {
+    init(for view: UIView,cornerRadius: CGFloat, startColor: CGColor? = startColor, endColor: CGColor? = endColor) {
         super.init()
         let startColor = UIColor("FF7E5F")?.withAlphaComponent(1).cgColor ?? UIColor.white.cgColor
         let endColor =  UIColor("DA573B")?.withAlphaComponent(1).cgColor ?? UIColor.white.cgColor

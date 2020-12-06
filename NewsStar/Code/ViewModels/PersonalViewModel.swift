@@ -22,21 +22,25 @@ struct PersonalViewModel {
         shimmerDataSource?.data.value = [1,2,3,4,5]
     }
     //let service =   Service.sharedInstance.
-    func fetchNews(){
+    func fetchNews(callback: @escaping ((Bool)->())){
         let params:[String:Any] = ["q":" India", "apiKey": API_KEY]
         Service.sharedInstance.callApiWithGet(endUrl: BASE_URL+EVERYTHING, parameters: params) { (result) in
             switch(result){
             case .success(let data):
             do {
             let newsModel =  try JSONDecoder().decode(NewsModel.self, from: data)
-                print("statuss")
+                print("status")
                 print(newsModel.status)
                 dataSource?.data.value = newsModel.articles
+                callback(true)
+                
             }catch{
                 print(error.localizedDescription)
+                callback(false)
             }
             case .failure(let resError):
                 print(resError.localizedDescription)
+                callback(false)
                 
             }
         }

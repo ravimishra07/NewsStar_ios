@@ -27,6 +27,8 @@ class HomeVC: UIViewController {
     let personCellIdentifier = "NewsTableViewCell"
     let menuDataSource = MenuDataSource()
     let personalisedDataSource = PersonalDataSource()
+    let shimmerDataSource = ShimmerDataSource()
+
     var transAnimator:TransitionAnimator?
     var circleAnimator: CircleAnimator?
     
@@ -37,6 +39,11 @@ class HomeVC: UIViewController {
     
     lazy var peronalViewModel : PersonalViewModel = {
         let viewModel = PersonalViewModel(dataSource: personalisedDataSource)
+        return viewModel
+    }()
+    
+    lazy var shimmerViewModel: ShimmerViewModel = {
+        let viewModel = ShimmerViewModel(dataSource: shimmerDataSource)
         return viewModel
     }()
     
@@ -53,30 +60,51 @@ class HomeVC: UIViewController {
     func setUpUI(){
         view.backgroundColor =  UIColor(named: "MainBackgroundColor")
         personalTableView.layer.cornerRadius = 12
+        searchButton.layer.cornerRadius  = 20
         personalTableView.clipsToBounds = true
+        
+        /// initialize  cells
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
         self.personalTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: NewsTableViewCell.description())
+        self.personalTableView.register(UINib(nibName: "ShimmerTVCell", bundle: nil), forCellReuseIdentifier: ShimmerTVCell.description())
+        
+        ///set up delegates
         searchTextField.delegate = self
         menuCollectionView.dataSource = self.menuDataSource
         menuCollectionView.delegate = self
         personalTableView.delegate = self
-        personalTableView.dataSource = self.personalisedDataSource
-        searchButton.layer.cornerRadius  = 20
+        personalTableView.dataSource = self.shimmerDataSource
+        
+        self.shimmerDataSource.data.addAndNotify(observer: self) { [weak self] _ in
+            self?.personalTableView.reloadData()
+        }
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
-        self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in
-            self?.personalTableView.reloadData()
-        }
         self.peronalViewModel.onErrorHandling = { [weak self] error in
-            // display error
-            let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
-            controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-            self?.present(controller, animated: true, completion: nil)
+            /// display error
+            if let controller = self?.showAlert(){
+                self?.present(controller, animated: true, completion: nil)
+            }
         }
-        self.viewModel.getMenuData()
-        self.peronalViewModel.fetchNews()
         
+        /// fetch data
+        self.shimmerViewModel.getData()
+        self.viewModel.getMenuData()
+        self.peronalViewModel.fetchNews { [weak self] (isLoaded) in
+            //load news after api call
+            self?.loadPersonalView()
+        }
+    }
+    
+    func loadPersonalView(){
+        DispatchQueue.main.async {
+            self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in
+                self?.personalTableView.dataSource = self?.personalisedDataSource
+                self?.personalTableView.reloadData()
+            }
+        }
+       
     }
     func animateMenuButton(){
         let initTransform: CGFloat = 150
@@ -125,6 +153,12 @@ class HomeVC: UIViewController {
                 }
             }
         }
+    }
+    
+    func showAlert()-> UIAlertController{
+        let alertController = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+        return alertController
     }
     @IBAction func searchTapped(_ sender: UIButton){
         if let searchText = searchTextField?.text{
