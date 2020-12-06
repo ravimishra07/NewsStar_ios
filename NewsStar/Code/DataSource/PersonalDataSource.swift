@@ -16,9 +16,8 @@ class PersonalDataSource: GenericDataSource<Article>, UITableViewDataSource{
        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.description(), for: indexPath) as? NewsTableViewCell else {
             return UITableViewCell()
         }
+      
         cell.article = data.value[indexPath.row]
         return cell
     }
-    
-
 }

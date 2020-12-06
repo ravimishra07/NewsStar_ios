@@ -20,8 +20,8 @@ class Shimmer: CAGradientLayer {
     
     init(for view: UIView,cornerRadius: CGFloat) {
         super.init()
-        let startColor = UIColor("FF7E5F")?.cgColor ?? UIColor.white.cgColor
-        let endColor =  UIColor("DA573B")?.cgColor ?? UIColor.white.cgColor
+        let startColor = UIColor("FF7E5F")?.withAlphaComponent(1).cgColor ?? UIColor.white.cgColor
+        let endColor =  UIColor("DA573B")?.withAlphaComponent(1).cgColor ?? UIColor.white.cgColor
         
         self.frame = view.bounds
         self.startPoint = CGPoint(x: 0.0, y: 1.0)
@@ -46,6 +46,4 @@ class Shimmer: CAGradientLayer {
     func removeAnimation(){
         self.removeAllAnimations()
     }
-    
-    
 }

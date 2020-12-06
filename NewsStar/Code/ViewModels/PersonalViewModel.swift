@@ -9,6 +9,7 @@ import Foundation
 
 struct PersonalViewModel {
     weak var dataSource: GenericDataSource<Article>?
+    weak var shimmerDataSource: GenericDataSource<Int>?
     weak var service: Service?
 
     init(dataSource: GenericDataSource<Article>?) {
@@ -16,6 +17,10 @@ struct PersonalViewModel {
     }
     
     var onErrorHandling: ((ErrorResult?)->Void)?
+    
+    func loadShimmer(){
+        shimmerDataSource?.data.value = [1,2,3,4,5]
+    }
     //let service =   Service.sharedInstance.
     func fetchNews(){
         let params:[String:Any] = ["q":" India", "apiKey": API_KEY]
@@ -25,10 +30,7 @@ struct PersonalViewModel {
             do {
             let newsModel =  try JSONDecoder().decode(NewsModel.self, from: data)
                 print("statuss")
-
                 print(newsModel.status)
-                print("statuss")
-
                 dataSource?.data.value = newsModel.articles
             }catch{
                 print(error.localizedDescription)

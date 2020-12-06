@@ -8,7 +8,6 @@
 import UIKit
 
 class NewsCollectionCell: UICollectionViewCell {
-
    
     //MARK:- Outlets
     @IBOutlet weak var dateView: UIView!
@@ -18,8 +17,7 @@ class NewsCollectionCell: UICollectionViewCell {
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var backView: NeumorphicUIView!
-
-     
+    
     var article: Article?{
         didSet{
             setData(article: article)
@@ -53,6 +51,14 @@ class NewsCollectionCell: UICollectionViewCell {
             }
             loadImage(from: url, imgView: newsImage)
         }
+        
+    }
+    func addShimmerLayer(){
+        let shimmerLayer = Shimmer(for: self.mainView, cornerRadius: 12)
+        self.contentView.layer.insertSublayer(shimmerLayer, above: self.mainView.layer)
+        shimmerLayer.startAnimation()
+    }
+    func removeShimmerLayer(){
         
     }
 
