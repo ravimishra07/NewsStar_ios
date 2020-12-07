@@ -41,6 +41,14 @@ class SearchViewController: UIViewController {
         accBtn.type = .pushButton
         countryBtn.type = .pushButton
         bookMarkBtn.type = .pushButton
+        let accBtnTap = UITapGestureRecognizer(target: self, action: #selector(self.handleAccTap(_:)))
+        accBtn.addGestureRecognizer(accBtnTap)
+        let countryTap = UITapGestureRecognizer(target: self, action: #selector(self.handleCountryTap(_:)))
+        countryBtn.addGestureRecognizer(countryTap)
+        let bookmarkTap = UITapGestureRecognizer(target: self, action: #selector(self.handleBookmarkTap(_:)))
+        bookMarkBtn.addGestureRecognizer(bookmarkTap)
+
+       
         newsCollectionView.layer.cornerRadius = 12
         view.backgroundColor =  UIColor(named: "MainBackgroundColor")
         self.newsCollectionView.register(UINib(nibName: "NewsCollectionCell", bundle: nil), forCellWithReuseIdentifier: NewsCollectionCell.description())
@@ -69,6 +77,14 @@ class SearchViewController: UIViewController {
         }else{
             self.newsViewModel.fetchNews(query: "news")
         }
+    }
+    @objc func handleAccTap(_ sender: UITapGestureRecognizer? = nil) {
+    }
+  
+    @objc func handleCountryTap(_ sender: UITapGestureRecognizer? = nil) {
+    }
+    
+    @objc func handleBookmarkTap(_ sender: UITapGestureRecognizer? = nil) {
     }
     func animateFilterView(){
         if showFilter{
