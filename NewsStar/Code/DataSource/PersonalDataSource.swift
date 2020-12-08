@@ -20,5 +20,4 @@ class PersonalDataSource: GenericDataSource<Article>, UITableViewDataSource{
         return cell
     }
     
-
 }

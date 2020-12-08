@@ -155,6 +155,14 @@ extension HomeVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 350
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = peronalViewModel.dataSource?.data.value[indexPath.row].url else {
+            return
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: FullNewsVC.description()) as! FullNewsVC
+        vc.newsUrl = url
+        self.present(vc, animated: true, completion: nil)
+    }
     
 }
 extension HomeVC: UITextFieldDelegate{
@@ -175,7 +183,6 @@ extension HomeVC: UIViewControllerTransitioningDelegate{
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         circleAnimator = CircleAnimator(view: menuButton, color: .red, duration: 0.5)
         circleAnimator?.mode = .present
-        
         return circleAnimator
     }
 }

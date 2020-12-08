@@ -16,4 +16,5 @@ class NewsDataSource: GenericDataSource<Article>, UICollectionViewDataSource {
         cell.article = data.value[indexPath.row]
         return cell
     }
+    
 }

@@ -14,6 +14,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var accBtn: SoftUIView!
     @IBOutlet weak var countryBtn: SoftUIView!
     @IBOutlet weak var bookMarkBtn: SoftUIView!
+    @IBOutlet weak var accViewBtn: UIButton!
+    @IBOutlet weak var countryViewBtn: UIButton!
+    @IBOutlet weak var bookMarkViewBtn: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var newsCollectionView: UICollectionView!
     @IBOutlet weak var searchButton: UIButton!
@@ -21,7 +24,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var filterStackView: UIStackView!
     @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
 
-    
     //MARK:- Variables
     var showFilter = false
     var newsDataSource = NewsDataSource()
@@ -29,7 +31,6 @@ class SearchViewController: UIViewController {
         let viewModel = NewsViewModel(dataSource: newsDataSource)
         return viewModel
     }()
-
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,13 @@ class SearchViewController: UIViewController {
     }
     
     func setUIView(){
+        let c = getCountryList()
+        let flag = getFlagScaler(country: c[0])
+        searchTextField.text = c[0]
+        countryViewBtn.setTitle("\(c[0])", for: .normal)
+        //let str : String = "Smiley \u{1F603}"
+        searchTextField.text = flag
+       // CountryPi
         accBtn.type = .pushButton
         countryBtn.type = .pushButton
         bookMarkBtn.type = .pushButton
@@ -47,7 +55,6 @@ class SearchViewController: UIViewController {
         countryBtn.addGestureRecognizer(countryTap)
         let bookmarkTap = UITapGestureRecognizer(target: self, action: #selector(self.handleBookmarkTap(_:)))
         bookMarkBtn.addGestureRecognizer(bookmarkTap)
-
        
         newsCollectionView.layer.cornerRadius = 12
         view.backgroundColor =  UIColor(named: "MainBackgroundColor")
@@ -79,13 +86,41 @@ class SearchViewController: UIViewController {
         }
     }
     @objc func handleAccTap(_ sender: UITapGestureRecognizer? = nil) {
+        print("----------------------------one taped----------------")
     }
   
     @objc func handleCountryTap(_ sender: UITapGestureRecognizer? = nil) {
+        print("----------------------------two taped----------------")
+
     }
     
     @objc func handleBookmarkTap(_ sender: UITapGestureRecognizer? = nil) {
+        print("----------------------------three taped----------------")
+
     }
+    func getCountryList()->[String]{
+        var countries: [String] = []
+        for code in NSLocale.isoCountryCodes  {
+            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
+            
+            guard let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) else{
+                print("Country not found for code: \(code)")
+                return []
+            }
+            
+            countries.append(code)
+        }
+        return countries
+    }
+    func getFlagScaler(country:String) -> String {
+        let base : UInt32 = 127397
+        var s = ""
+        for v in country.unicodeScalars {
+            s.unicodeScalars.append(UnicodeScalar(base + v.value)!)
+        }
+        return String(s)
+    }
+    
     func animateFilterView(){
         if showFilter{
             filterBtn.tintColor = UIColor("ED4041")
@@ -120,5 +155,13 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width, height: 300)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let url = newsViewModel.dataSource?.data.value[indexPath.row].url else {
+            return
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: FullNewsVC.description()) as! FullNewsVC
+        vc.newsUrl = url
+        self.present(vc, animated: true, completion: nil)
     }
 }

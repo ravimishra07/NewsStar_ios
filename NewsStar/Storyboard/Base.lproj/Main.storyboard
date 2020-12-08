@@ -121,7 +121,7 @@ your Interest</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-JZ-IaJ">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-JZ-IaJ">
                                                 <rect key="frame" x="4" y="624" width="406" height="564"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -547,9 +547,12 @@ interest</string>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" id="88S-P5-nZ3"/>
                     <connections>
                         <outlet property="accBtn" destination="FBS-RP-Ku1" id="kLN-bg-vjX"/>
+                        <outlet property="accViewBtn" destination="677-4I-bGr" id="IjP-Bu-1GP"/>
                         <outlet property="bookMarkBtn" destination="Pc4-JP-htt" id="CSi-XP-i5h"/>
+                        <outlet property="bookMarkViewBtn" destination="mOP-kl-nwl" id="vIm-DZ-64f"/>
                         <outlet property="collectionViewTopConstraint" destination="OiA-Jn-bBt" id="NSd-Bg-Tcc"/>
                         <outlet property="countryBtn" destination="6Xc-bW-75G" id="PUa-ek-O8A"/>
+                        <outlet property="countryViewBtn" destination="WWK-ZM-OJ8" id="2gy-3y-xIk"/>
                         <outlet property="filterBtn" destination="7M0-tl-cd1" id="tb0-9g-3Eh"/>
                         <outlet property="filterStackView" destination="Ryq-yx-GeM" id="dnR-F3-udm"/>
                         <outlet property="newsCollectionView" destination="XKo-pd-isT" id="JUg-QE-m8v"/>
@@ -561,6 +564,40 @@ interest</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGH-cQ-u7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2947.826086956522" y="10.714285714285714"/>
+        </scene>
+        <!--Full NewsVC-->
+        <scene sceneID="AHw-Rf-XBw">
+            <objects>
+                <viewController storyboardIdentifier="FullNewsVC" id="dvY-k1-K5C" customClass="FullNewsVC" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2o0-Wk-vbL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a73-dG-50G">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2GW-Xd-odk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2GW-Xd-odk" firstAttribute="bottom" secondItem="a73-dG-50G" secondAttribute="bottom" id="0Sa-wv-FVl"/>
+                            <constraint firstItem="a73-dG-50G" firstAttribute="top" secondItem="2GW-Xd-odk" secondAttribute="top" id="5jr-EA-s3j"/>
+                            <constraint firstItem="a73-dG-50G" firstAttribute="leading" secondItem="2GW-Xd-odk" secondAttribute="leading" id="K6d-R7-R0u"/>
+                            <constraint firstItem="2GW-Xd-odk" firstAttribute="trailing" secondItem="a73-dG-50G" secondAttribute="trailing" id="raD-7N-cSa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="a73-dG-50G" id="SZd-Sh-sdu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSs-K7-Sat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3632" y="11"/>
         </scene>
         <!--TabbarVC-->
         <scene sceneID="dxR-4t-1Ia">
