@@ -40,6 +40,9 @@ class NewsTableViewCell: UITableViewCell {
         newsImage.layer.cornerRadius = 20
         newsImage.clipsToBounds = true
         backView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        self.addShimmerLayer(view: self.newsImage)
+        self.layoutSubviews()
+        
     }
     
     func setData(article: Article?){
@@ -54,11 +57,14 @@ class NewsTableViewCell: UITableViewCell {
         }
         
     }
+    
+    func addShimmerLayer(view: UIView){
+        let shimmerLayer = Shimmer(for: view, cornerRadius: 12)
+        self.contentView.layer.insertSublayer(shimmerLayer, above: view.layer)
+        shimmerLayer.startAnimation()
+    }
+    override func layoutSubviews() {
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

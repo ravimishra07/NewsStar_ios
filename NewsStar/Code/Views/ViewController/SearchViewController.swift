@@ -58,7 +58,7 @@ class SearchViewController: UIViewController {
        
         newsCollectionView.layer.cornerRadius = 12
         view.backgroundColor =  UIColor(named: "MainBackgroundColor")
-        self.newsCollectionView.register(UINib(nibName: "NewsCollectionCell", bundle: nil), forCellWithReuseIdentifier: NewsCollectionCell.description())
+//        self.newsCollectionView.register(UINib(nibName: "NewsCollectionCell", bundle: nil), forCellWithReuseIdentifier: NewsCollectionCell.description())
 
         newsCollectionView.delegate = self
         newsCollectionView.dataSource = self.newsDataSource

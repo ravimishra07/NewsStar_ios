@@ -27,6 +27,7 @@ class MenuDataSource: GenericDataSource<MenuModel>, UICollectionViewDataSource {
             cell.menuImage.tintColor = .red
            // cell.imgBackgroundView.backgroundColor = UIColor("ED4041")?.withAlphaComponent(1)
         }
+        
         return cell
     }
 }

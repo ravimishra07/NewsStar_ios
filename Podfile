@@ -7,6 +7,6 @@ target 'NewsStar' do
 
   # Pods for NewsStar
 pod 'Alamofire', '~> 4.7'
-
+pod 'SkeletonView'
 
 end

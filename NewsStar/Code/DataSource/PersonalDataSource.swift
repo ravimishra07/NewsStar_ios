@@ -17,6 +17,7 @@ class PersonalDataSource: GenericDataSource<Article>, UITableViewDataSource{
             return UITableViewCell()
         }
         cell.article = data.value[indexPath.row]
+    
         return cell
     }
     

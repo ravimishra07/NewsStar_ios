@@ -21,5 +21,12 @@ class MenuCVCell: UICollectionViewCell {
         imgBackgroundView.backgroundColor = UIColor.systemGray.withAlphaComponent(0.3)
         imgBackgroundView.type = .toggleButton
         imgBackgroundView.perfectCorner()
+
     }
+    func addShimmerLayer(view: UIView){
+        let shimmerLayer = Shimmer(for: view, cornerRadius: 12)
+        self.contentView.layer.insertSublayer(shimmerLayer, above: view.layer)
+        shimmerLayer.startAnimation()
+    }
+    
 }
