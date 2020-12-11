@@ -17,6 +17,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var backView: NeumorphicUIView!
+    
 
      
     var article: Article?{
@@ -59,12 +60,9 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     func addShimmerLayer(view: UIView){
-        let shimmerLayer = Shimmer(for: view, cornerRadius: 12)
-        self.contentView.layer.insertSublayer(shimmerLayer, above: view.layer)
-        shimmerLayer.startAnimation()
-    }
-    override func layoutSubviews() {
-
+//        let shimmerLayer = Shimmer(for: view, cornerRadius: 12)
+//        self.contentView.layer.insertSublayer(shimmerLayer, above: view.layer)
+//        shimmerLayer.startAnimation()
     }
     
 }

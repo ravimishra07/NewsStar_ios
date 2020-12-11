@@ -2,52 +2,63 @@
 //  Shimmer.swift
 //  NewsStar
 //
-//  Created by Ravi Mishra on 09/12/20.
+//  Created by Ravi Mishra on 27/10/20.
 //
 
+import Foundation
+import QuartzCore
+#if canImport(UIKit)
 import UIKit
 
-final class Shimmer: CAGradientLayer {
-    
-    // MARK:- initializers for the CALayer
-    override init() {
-        super.init()
+final public class Shimmer {
+
+    public enum Direction {
+        case right
+        case left
+        case up
+        case down
     }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+
+    struct Key {
+        static let slideAnimation = "slide"
+        static let fadeAnimation = "fade"
+        static let endFadeAnimation = "fade-end"
     }
-    
-    init(for view: UIView,cornerRadius: CGFloat) {
-        super.init()
-        let startColor = UIColor("FF7E5F")?.withAlphaComponent(1).cgColor ?? UIColor.white.cgColor
-        let endColor =  UIColor("DA573B")?.withAlphaComponent(1).cgColor ?? UIColor.white.cgColor
-        
-        self.frame = view.bounds
-        self.startPoint = CGPoint(x: 0.0, y: 1.0)
-        self.endPoint = CGPoint(x: 1.0, y: 1.0)
-        self.colors = [startColor, endColor, startColor]
-        self.locations = [0.0, 0.5, 1.0]
-        self.position = view.center
-        self.cornerRadius = cornerRadius
+
+    static func fadeAnimation(layer: CALayer, opacity: CGFloat, duration: CFTimeInterval) -> CABasicAnimation {
+        let animation = CABasicAnimation(keyPath: "opacity")
+        animation.fromValue = layer.presentation()?.opacity
+        animation.toValue = opacity
+        animation.fillMode = .both
+        animation.isRemovedOnCompletion = false
+        animation.duration = duration
+        return animation
     }
-    
-    
-    // MARK:- function for the CAGradientLayer
-    func startAnimation() {
-        let animation = CABasicAnimation(keyPath: "locations")
-        animation.fromValue = [-1.0, -0.5, 0.0]
-        animation.toValue = [1.0, 1.5, 2.0]
-        animation.repeatCount = .infinity
-        animation.duration = 0.8
-        self.add(animation, forKey: animation.keyPath)
+
+    static func slideAnimation(duration: CFTimeInterval, direction: Direction) -> CABasicAnimation {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.toValue = NSValue(cgPoint: .zero)
+        animation.duration = duration
+        animation.repeatCount = .greatestFiniteMagnitude
+        if direction == .left || direction == .up {
+            animation.speed = -fabsf(animation.speed)
+        }
+        return animation
     }
-    
-    func removeAnimation(){
-        self.removeAllAnimations()
+
+    static func slideRepeat(animation: CAAnimation, duration: CFTimeInterval, direction: Direction) -> CAAnimation {
+        let anim = animation.copy() as! CAAnimation
+        anim.repeatCount = .greatestFiniteMagnitude
+        anim.duration = duration
+        anim.speed = (direction == .right || direction == .down) ? fabsf(anim.speed) : -fabsf(anim.speed)
+        return anim
     }
-    override func layoutSublayers() {
-        
+
+    static func slideFinish(animation: CAAnimation) -> CAAnimation {
+        let anim = animation.copy() as! CAAnimation
+        anim.repeatCount = 0
+        return anim
     }
-   
+
 }
+#endif

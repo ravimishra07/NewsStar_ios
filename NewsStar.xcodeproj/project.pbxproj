@@ -38,6 +38,10 @@
 		3C8A412B257200FB00B54223 /* SoftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A412A257200FA00B54223 /* SoftUIView.swift */; };
 		3C8A412F2572011400B54223 /* CircleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A412E2572011400B54223 /* CircleAnimator.swift */; };
 		3C98FEDA255E963B00933BD3 /* MainGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C98FED9255E963B00933BD3 /* MainGradientView.swift */; };
+		3C9BB88F2583CC0E00BF8BC7 /* ShimmeringMaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BB88B2583CC0E00BF8BC7 /* ShimmeringMaskLayer.swift */; };
+		3C9BB8902583CC0E00BF8BC7 /* ShimmeringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BB88C2583CC0E00BF8BC7 /* ShimmeringView.swift */; };
+		3C9BB8912583CC0E00BF8BC7 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BB88D2583CC0E00BF8BC7 /* Shimmer.swift */; };
+		3C9BB8922583CC0E00BF8BC7 /* ShimmeringLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BB88E2583CC0E00BF8BC7 /* ShimmeringLayer.swift */; };
 		3CAF8D6E253E79250054220B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF8D6D253E79250054220B /* Reachability.swift */; };
 		3CAF8D72253E7A590054220B /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF8D71253E7A590054220B /* RequestService.swift */; };
 		3CB79BA2253BEDA300D33172 /* MenuCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB79BA0253BEDA300D33172 /* MenuCVCell.swift */; };
@@ -56,7 +60,6 @@
 		3CCB2EB22547D06A006F8789 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB2EB12547D06A006F8789 /* TransitionAnimator.swift */; };
 		3CCB2EB52547D780006F8789 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB2EB42547D780006F8789 /* SideMenuController.swift */; };
 		3CD840B7257FDDCF00FD21E8 /* FullNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD840B6257FDDCF00FD21E8 /* FullNewsVC.swift */; };
-		3CD840D92580009E00FD21E8 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD840D82580009E00FD21E8 /* Shimmer.swift */; };
 		C1508659110870174BA85EC8 /* Pods_NewsStar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4547EA23470C8A52C89B7AC6 /* Pods_NewsStar.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +105,10 @@
 		3C8A412A257200FA00B54223 /* SoftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftUIView.swift; sourceTree = "<group>"; };
 		3C8A412E2572011400B54223 /* CircleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimator.swift; sourceTree = "<group>"; };
 		3C98FED9255E963B00933BD3 /* MainGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGradientView.swift; sourceTree = "<group>"; };
+		3C9BB88B2583CC0E00BF8BC7 /* ShimmeringMaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmeringMaskLayer.swift; sourceTree = "<group>"; };
+		3C9BB88C2583CC0E00BF8BC7 /* ShimmeringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmeringView.swift; sourceTree = "<group>"; };
+		3C9BB88D2583CC0E00BF8BC7 /* Shimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		3C9BB88E2583CC0E00BF8BC7 /* ShimmeringLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmeringLayer.swift; sourceTree = "<group>"; };
 		3CAF8D6D253E79250054220B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3CAF8D71253E7A590054220B /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		3CB79BA0253BEDA300D33172 /* MenuCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCVCell.swift; sourceTree = "<group>"; };
@@ -120,7 +127,6 @@
 		3CCB2EB12547D06A006F8789 /* TransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
 		3CCB2EB42547D780006F8789 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		3CD840B6257FDDCF00FD21E8 /* FullNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNewsVC.swift; sourceTree = "<group>"; };
-		3CD840D82580009E00FD21E8 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		4547EA23470C8A52C89B7AC6 /* Pods_NewsStar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsStar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98AE2A86D1EB1CA9AA4C1F0D /* Pods-NewsStar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsStar.release.xcconfig"; path = "Target Support Files/Pods-NewsStar/Pods-NewsStar.release.xcconfig"; sourceTree = "<group>"; };
 		B81B1C5E71432E86A2F0C95E /* Pods-NewsStar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsStar.debug.xcconfig"; path = "Target Support Files/Pods-NewsStar/Pods-NewsStar.debug.xcconfig"; sourceTree = "<group>"; };
@@ -373,11 +379,14 @@
 		3CCB2EB02547D044006F8789 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				3C9BB88D2583CC0E00BF8BC7 /* Shimmer.swift */,
+				3C9BB88E2583CC0E00BF8BC7 /* ShimmeringLayer.swift */,
+				3C9BB88B2583CC0E00BF8BC7 /* ShimmeringMaskLayer.swift */,
+				3C9BB88C2583CC0E00BF8BC7 /* ShimmeringView.swift */,
 				3C8A412E2572011400B54223 /* CircleAnimator.swift */,
 				3CCB2EB12547D06A006F8789 /* TransitionAnimator.swift */,
 				3C8A412A257200FA00B54223 /* SoftUIView.swift */,
 				3C1221B7256173F300A7063E /* NeumorphicUIView.swift */,
-				3CD840D82580009E00FD21E8 /* Shimmer.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -528,12 +537,12 @@
 				3C98FEDA255E963B00933BD3 /* MainGradientView.swift in Sources */,
 				3CB79BAC253C26E100D33172 /* MenuModel.swift in Sources */,
 				3C7FF7B72522A46600F81A74 /* CircleButton.swift in Sources */,
+				3C9BB88F2583CC0E00BF8BC7 /* ShimmeringMaskLayer.swift in Sources */,
 				3CB79BA2253BEDA300D33172 /* MenuCVCell.swift in Sources */,
 				3C7FF7612522875900F81A74 /* HomeVC.swift in Sources */,
 				3C850699257B4979007591DA /* TabbarVC.swift in Sources */,
 				3C1221B8256173F300A7063E /* NeumorphicUIView.swift in Sources */,
 				3C850696257AA9BB007591DA /* NewsViewModel.swift in Sources */,
-				3CD840D92580009E00FD21E8 /* Shimmer.swift in Sources */,
 				3C4F4D392522CD1000126A7A /* CellExtensions.swift in Sources */,
 				3CB79BC7253C832B00D33172 /* Service.swift in Sources */,
 				3CCB2EB52547D780006F8789 /* SideMenuController.swift in Sources */,
@@ -541,6 +550,7 @@
 				3C78317825780A3A00653508 /* SearchViewController.swift in Sources */,
 				3CB79BD1253C93FD00D33172 /* ErrorResult.swift in Sources */,
 				3CB79BCE253C90CB00D33172 /* Result.swift in Sources */,
+				3C9BB8902583CC0E00BF8BC7 /* ShimmeringView.swift in Sources */,
 				3C4F4D322522CCFA00126A7A /* ViewExtensions.swift in Sources */,
 				3C4F4D412522E5EC00126A7A /* Constants.swift in Sources */,
 				3CB79BB5253C31CF00D33172 /* DynamicValue.swift in Sources */,
@@ -550,6 +560,7 @@
 				3CB79BB8253C4FF400D33172 /* NewsModel.swift in Sources */,
 				3CD840B7257FDDCF00FD21E8 /* FullNewsVC.swift in Sources */,
 				3C7FF75D2522875900F81A74 /* AppDelegate.swift in Sources */,
+				3C9BB8912583CC0E00BF8BC7 /* Shimmer.swift in Sources */,
 				3C4F4D362522CD0500126A7A /* UtilFunctions.swift in Sources */,
 				3C8A412B257200FB00B54223 /* SoftUIView.swift in Sources */,
 				3C7FF7C42522A91900F81A74 /* NewsCollectionCell.swift in Sources */,
@@ -558,6 +569,7 @@
 				3CB79BB2253C2D4C00D33172 /* MenuDataSource.swift in Sources */,
 				3CAF8D72253E7A590054220B /* RequestService.swift in Sources */,
 				3CAF8D6E253E79250054220B /* Reachability.swift in Sources */,
+				3C9BB8922583CC0E00BF8BC7 /* ShimmeringLayer.swift in Sources */,
 				3CB79BBC253C5EF000D33172 /* NewsTableViewCell.swift in Sources */,
 				3C850693257AA948007591DA /* NewsDataSource.swift in Sources */,
 			);
