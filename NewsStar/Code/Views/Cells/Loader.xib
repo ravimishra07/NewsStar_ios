@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Loader" customModule="Apricab" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="U2U-p0-KdP" id="Bn9-if-xfi"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="BDd-kp-rlB"/>
+                <outlet property="loaderImage" destination="Oce-V4-F0a" id="kCS-1J-2Ke"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2U-p0-KdP">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loader_img" translatesAutoresizingMaskIntoConstraints="NO" id="Oce-V4-F0a">
+                            <rect key="frame" x="177" y="418" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="WoB-nD-SV0"/>
+                                <constraint firstAttribute="width" constant="60" id="dAE-eL-Bqa"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Oce-V4-F0a" firstAttribute="centerY" secondItem="U2U-p0-KdP" secondAttribute="centerY" id="avM-5G-TJ1"/>
+                        <constraint firstItem="Oce-V4-F0a" firstAttribute="centerX" secondItem="U2U-p0-KdP" secondAttribute="centerX" id="kbX-Wt-PK8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="U2U-p0-KdP" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="E02-ZA-tev"/>
+                <constraint firstItem="U2U-p0-KdP" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="SSA-MK-xTI"/>
+                <constraint firstItem="U2U-p0-KdP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eyg-Pq-8Dh"/>
+                <constraint firstItem="U2U-p0-KdP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ou9-uq-mL4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="loader_img" width="155" height="155"/>
+    </resources>
+</document>

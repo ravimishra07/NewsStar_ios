@@ -31,7 +31,7 @@ class ChooseTopicVC: UIViewController {
         // Setup ShimmerngView
         let shimmerView = ShimmeringView(frame: self.bottomView1.bounds)
         self.bottomView1.addSubview(shimmerView)
-       shimmerView.contentView = bottomView2
+        shimmerView.contentView = bottomView2
         shimmerView.isShimmering = true
         
 

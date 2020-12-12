@@ -75,7 +75,7 @@ class HomeVC: UIViewController {
             self?.present(controller, animated: true, completion: nil)
         }
         self.viewModel.getMenuData()
-        self.peronalViewModel.fetchNews()
+        self.peronalViewModel.fetchNews(context: self)
         
     }
     func animateMenuButton(){

@@ -39,6 +39,7 @@ class SearchViewController: UIViewController {
     }
     
     func setUIView(){
+        /*
         let c = getCountryList()
         let flag = getFlagScaler(country: c[0])
         searchTextField.text = c[0]
@@ -46,6 +47,8 @@ class SearchViewController: UIViewController {
         //let str : String = "Smiley \u{1F603}"
         searchTextField.text = flag
        // CountryPi
+        
+        */
         accBtn.type = .pushButton
         countryBtn.type = .pushButton
         bookMarkBtn.type = .pushButton
@@ -79,10 +82,10 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if Global.searchText != ""{
             self.searchTextField.text = Global.searchText
-            self.newsViewModel.fetchNews(query: Global.searchText)
+            self.newsViewModel.fetchNews(query: Global.searchText, context: self)
             Global.searchText = ""
         }else{
-            self.newsViewModel.fetchNews(query: "news")
+            self.newsViewModel.fetchNews(query: "news", context: self)
         }
     }
     @objc func handleAccTap(_ sender: UITapGestureRecognizer? = nil) {
@@ -147,7 +150,7 @@ class SearchViewController: UIViewController {
     @IBAction func searchTapped(_ sender: UIButton){
         if let searchText = searchTextField.text{
             if searchText != ""{
-                self.newsViewModel.fetchNews(query: searchText)
+                self.newsViewModel.fetchNews(query: searchText,context: self)
             }
         }
     }
