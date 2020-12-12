@@ -6,9 +6,7 @@
 //
 
 import UIKit
-struct Global{
-   static var searchText = ""
-}
+\
 class HomeVC: UIViewController {
     override class func description() -> String {
         "HomeVC"
