@@ -108,7 +108,7 @@ class SearchViewController: UIViewController {
         print("----------------------------three taped----------------")
 
     }
-    func getCountryList()->[String]{
+ //   func getCountryList()->[String]{
 //        var countries: [String] = []
 //        for code in NSLocale.isoCountryCodes  {
 //            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
@@ -120,8 +120,8 @@ class SearchViewController: UIViewController {
 ////
 //            countries.append(code)
 //        }
-//        return countries
-    }
+     //   return ""//countries
+  //  }
     func getFlagScaler(country:String) -> String {
         let base : UInt32 = 127397
         var s = ""
