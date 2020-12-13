@@ -6,7 +6,7 @@
 //
 
 import UIKit
-\
+
 class HomeVC: UIViewController {
     override class func description() -> String {
         "HomeVC"
@@ -125,7 +125,7 @@ class HomeVC: UIViewController {
         }
     }
     @IBAction func searchTapped(_ sender: UIButton){
-        Global.searchText = searchTextField?.text ?? ""
+        Global.searchText = searchTextField?.text ?? "news"
         self.tabBarController?.selectedIndex = 1
 
 //        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController

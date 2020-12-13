@@ -20,13 +20,14 @@
  
  */
 import Foundation
+
 struct NewsViewModel {
     weak var dataSource: GenericDataSource<Article>?
     weak var service: Service?
     let PAGE_SIZE = "pageSize"
     let PAGE_SIZE_COUNT = 10
     
-    let QUERY = "Q"
+    let QUERY = "q"
     let QUERY_IN_TITLE = "qInTitle"
     let PAGE = "page"
     let API_KEY_CONST = "apiKey"
@@ -67,4 +68,41 @@ struct NewsViewModel {
             }
         }
     }
+    
+    func fetchNews(query: String, page: Int, context: SearchViewController, isPaginating :Bool = false){
+       
+        /// show loader
+        Loader.instance.start(viewController: context)
+        
+        /// set params
+        let params:[String: Any] = [QUERY:query,
+                                    API_KEY_CONST: API_KEY,
+                                    PAGE_SIZE: PAGE_SIZE_COUNT,
+                                    PAGE: page]
+        /// api call
+        Service.sharedInstance.callApiWithGet(endUrl: BASE_URL+EVERYTHING, parameters: params) { (result) in
+            switch(result){
+            case .success(let data):
+                do {
+                    let newsModel =  try JSONDecoder().decode(NewsModel.self, from: data)
+                    Global.articleList.append(contentsOf: newsModel.articles)
+                    
+                    if isPaginating{
+                        dataSource?.data.value += newsModel.articles
+                    }else{
+                        dataSource?.data.value = newsModel.articles
+                    }
+                    Loader.instance.stop()
+                }catch{
+                    print(error.localizedDescription)
+                    Loader.instance.stop()
+                }
+            case .failure(let resError):
+                print(resError.localizedDescription)
+                Loader.instance.stop()
+                
+            }
+        }
+    }
+
 }

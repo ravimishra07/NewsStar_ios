@@ -25,6 +25,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
 
     //MARK:- Variables
+    var page = 1
     var showFilter = false
     var newsDataSource = NewsDataSource()
     lazy var newsViewModel: NewsViewModel = {
@@ -81,19 +82,18 @@ class SearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if Global.searchText != ""{
-            self.searchTextField.text = Global.searchText
-            self.newsViewModel.fetchNews(query: Global.searchText, page: 0, context: self)
-            Global.searchText = ""
-        }else{
-            self.newsViewModel.fetchNews(query: "news", page: 0, context: self)
+        var defaultQuery = "India"
+        if searchTextField.text != ""{
+            defaultQuery = searchTextField.text ?? "India"
         }
+            newsViewModel.fetchNews(query: defaultQuery, page: page, context: self, isPaginating: false)
+
     }
     
     
     override func viewWillDisappear(_ animated: Bool) {
-        Global.page = 0
-        Global.searchText= ""
+        Global.page = 1
+        Global.searchText = "news"
     }
     @objc func handleAccTap(_ sender: UITapGestureRecognizer? = nil) {
         print("----------------------------one taped----------------")
@@ -109,18 +109,18 @@ class SearchViewController: UIViewController {
 
     }
     func getCountryList()->[String]{
-        var countries: [String] = []
-        for code in NSLocale.isoCountryCodes  {
-            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
-            
-//            guard let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) else{
-//                print("Country not found for code: \(code)")
-//                return []
-//            }
+//        var countries: [String] = []
+//        for code in NSLocale.isoCountryCodes  {
+//            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
 //
-            countries.append(code)
-        }
-        return countries
+////            guard let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) else{
+////                print("Country not found for code: \(code)")
+////                return []
+////            }
+////
+//            countries.append(code)
+//        }
+//        return countries
     }
     func getFlagScaler(country:String) -> String {
         let base : UInt32 = 127397
@@ -157,8 +157,8 @@ class SearchViewController: UIViewController {
     @IBAction func searchTapped(_ sender: UIButton){
         if let searchText = searchTextField.text{
             if searchText != ""{
-                Global.page = 0
-                self.newsViewModel.fetchNews(query: searchText, page: 0,context: self)
+                Global.page = 1
+                self.newsViewModel.fetchNews(query: searchText, page: 1,context: self)
             }
         }
     }
@@ -178,11 +178,15 @@ extension SearchViewController: UICollectionViewDelegate,UICollectionViewDelegat
         vc.newsUrl = url
         self.present(vc, animated: true, completion: nil)
     }
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if Global.articleList.count == indexPath.row{
-            Global.page += 1
-            newsViewModel.fetchNews(query: Global.searchText, page: Global.page, context: self)
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if (newsCollectionView.contentOffset.y + newsCollectionView.frame.size.height) >= newsCollectionView.contentSize.height - 20 {
+            page += 1
+            var defaultQuery = "india"
+            if searchTextField.text != "" {
+                defaultQuery = "india"
+            }
+            newsViewModel.fetchNews(query: defaultQuery, page: page, context: self, isPaginating: true)
         }
-        
     }
 }

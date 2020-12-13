@@ -7,8 +7,8 @@
 
 import Foundation
 struct Global {
-    static var page = 0
-    static var searchText = ""
+    static var page = 1
+    static var searchText = "In"
     static var newsModelList: [NewsModel] = []
     static var articleList: [Article] = []
 
