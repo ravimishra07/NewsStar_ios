@@ -47,12 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     print(error?.localizedDescription ?? "")
                 }else{
                   print("Display name")
+                    let id = authResult?.user.uid
                   print(authResult?.user.displayName ?? "")
                 }
-            
               }
         }
-     
     }
 
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

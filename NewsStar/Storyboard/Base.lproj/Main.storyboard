@@ -607,7 +607,7 @@ interest</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrV-v3-3En" customClass="GIDSignInButton" customModule="NewsStar" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrV-v3-3En" customClass="GIDSignInButton">
                                 <rect key="frame" x="147" y="423" width="120" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -615,11 +615,19 @@ interest</string>
                                     <constraint firstAttribute="height" constant="50" id="QjF-g8-2zI"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xA-Vu-FUs">
+                                <rect key="frame" x="153" y="104" width="108.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pXo-VQ-6It"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MrV-v3-3En" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="7Va-pv-kUb"/>
+                            <constraint firstItem="6xA-Vu-FUs" firstAttribute="top" secondItem="pXo-VQ-6It" secondAttribute="top" constant="60" id="D9n-eK-sFJ"/>
+                            <constraint firstItem="6xA-Vu-FUs" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="rts-ak-h6o"/>
                             <constraint firstItem="MrV-v3-3En" firstAttribute="centerY" secondItem="ZZX-kd-L9P" secondAttribute="centerY" id="tqi-Ly-FlR"/>
                         </constraints>
                     </view>
@@ -685,6 +693,14 @@ interest</string>
             <point key="canvasLocation" x="112" y="11"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4qm-6j-vxi">
+            <size key="intrinsicContentSize" width="170.66666666666666" height="170.66666666666666"/>
+        </designable>
+        <designable name="JaP-Ig-lNf">
+            <size key="intrinsicContentSize" width="170.66666666666666" height="170.66666666666666"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="arrowtriangle.down" catalog="system" width="128" height="124"/>
