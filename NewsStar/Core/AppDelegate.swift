@@ -8,13 +8,13 @@
 import UIKit
 import CoreData
 import Firebase
+import FirebaseDatabase
 import GoogleSignIn
-
-
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-   
+    var ref: DatabaseReference!
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -45,15 +45,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     print(error?.localizedDescription ?? "")
                 }else{
                   print("Display name")
+                    let name : String = authResult?.user.displayName ?? ""
+                    let email: String = authResult?.user.email ?? ""
+                    let uid: String = authResult?.user.uid ?? ""
+                    let pLink = authResult?.user.photoURL?.absoluteString
+//                    }
+                  
                     
                     let user = User(context: self.persistentContainer.viewContext)
-                    user.email = authResult?.user.email
-                    user.uid = authResult?.user.uid
-                    user.name = authResult?.user.displayName
-                    user.profileLink = "\(String(describing: authResult?.user.photoURL))"
-                    user.interests = ["politics","india","weather"]
-                        self.saveContext()
-
+                    user.email = email
+                    user.uid = uid
+                    user.name = name
+                    user.profileLink = pLink
+                    self.saveContext()
+                    self.ref = Database.database().reference().child("main")
+                    let userObject = ["uid": uid,"name":name,"email":email,"photoLink":pLink]
+                    
+                    self.ref.child(uid).setValue(userObject)
                   print(authResult?.user.displayName ?? "")
                 }
               }
@@ -107,6 +115,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         })
         return container
     }()
+    
+    func uploadDataToFirebase(){
+        
+    }
 
     // MARK: - Core Data Saving support
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeVC: UIViewController {
     override class func description() -> String {
@@ -27,6 +28,9 @@ class HomeVC: UIViewController {
     let personalisedDataSource = PersonalDataSource()
     var transAnimator:TransitionAnimator?
     var circleAnimator: CircleAnimator?
+    var userModel: [User]?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     lazy var viewModel : MenuViewModel = {
         let viewModel = MenuViewModel(dataSource: menuDataSource)
@@ -41,6 +45,7 @@ class HomeVC: UIViewController {
     // MARK:- lifeCycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        retriveUserData()
         setUpUI()
     }
     
@@ -130,6 +135,18 @@ class HomeVC: UIViewController {
         alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
         return alertController
     }
+    
+    func retriveUserData(){
+        do{
+            self.userModel = try context.fetch(User.fetchRequest())
+            print(self.userModel)
+        }
+        catch{
+            print(error.localizedDescription)
+        }
+        
+    }
+    
     @IBAction func searchTapped(_ sender: UIButton){
         Global.searchText = searchTextField?.text ?? "news"
         self.tabBarController?.selectedIndex = 1

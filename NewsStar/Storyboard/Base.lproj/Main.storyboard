@@ -13,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXC-gC-cQv" customClass="MainGradientView" customModule="NewsStar" customModuleProvider="target">
@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlY-tJ-m0u">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5j-60-d0l">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
@@ -361,15 +361,15 @@ interest</string>
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="nic-sM-dv6" customClass="SearchViewController" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16O-hH-YLL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-mU-gDo" customClass="SoftUIView" customModule="NewsStar" customModuleProvider="target">
-                                <rect key="frame" x="24" y="68" width="308" height="50"/>
+                                <rect key="frame" x="24" y="24" width="308" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-7W-7l9">
-                                <rect key="frame" x="24" y="68" width="308" height="50"/>
+                                <rect key="frame" x="24" y="24" width="308" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD3-vC-wt5">
                                         <rect key="frame" x="258" y="0.0" width="50" height="50"/>
@@ -405,7 +405,7 @@ interest</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-tl-cd1">
-                                <rect key="frame" x="340" y="68" width="50" height="50"/>
+                                <rect key="frame" x="340" y="24" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="NyA-xe-iOy"/>
                                     <constraint firstAttribute="height" constant="50" id="vnQ-3r-iLd"/>
@@ -416,7 +416,7 @@ interest</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ryq-yx-GeM">
-                                <rect key="frame" x="24" y="134" width="366" height="40"/>
+                                <rect key="frame" x="24" y="90" width="366" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ff0-6v-O6e">
                                         <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
@@ -512,7 +512,7 @@ interest</string>
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XKo-pd-isT">
-                                <rect key="frame" x="0.0" y="150" width="414" height="663"/>
+                                <rect key="frame" x="0.0" y="106" width="414" height="653"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JmF-UQ-oHt">
                                     <size key="itemSize" width="381" height="284"/>
@@ -563,7 +563,7 @@ interest</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGH-cQ-u7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2947.826086956522" y="10.714285714285714"/>
+            <point key="canvasLocation" x="2970" y="27"/>
         </scene>
         <!--Full NewsVC-->
         <scene sceneID="AHw-Rf-XBw">
@@ -621,13 +621,23 @@ interest</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec5-0U-bJP">
+                                <rect key="frame" x="24" y="712" width="366" height="30"/>
+                                <state key="normal" title="Proceed"/>
+                                <connections>
+                                    <segue destination="NVA-rF-E2e" kind="presentation" id="Mec-Uv-Got"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pXo-VQ-6It"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MrV-v3-3En" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="7Va-pv-kUb"/>
                             <constraint firstItem="6xA-Vu-FUs" firstAttribute="top" secondItem="pXo-VQ-6It" secondAttribute="top" constant="60" id="D9n-eK-sFJ"/>
+                            <constraint firstItem="Ec5-0U-bJP" firstAttribute="leading" secondItem="pXo-VQ-6It" secondAttribute="leading" constant="24" id="PPp-bT-xUQ"/>
+                            <constraint firstItem="pXo-VQ-6It" firstAttribute="trailing" secondItem="Ec5-0U-bJP" secondAttribute="trailing" constant="24" id="hd0-Df-szy"/>
                             <constraint firstItem="6xA-Vu-FUs" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="rts-ak-h6o"/>
+                            <constraint firstItem="pXo-VQ-6It" firstAttribute="bottom" secondItem="Ec5-0U-bJP" secondAttribute="bottom" constant="120" id="sUH-cX-WSw"/>
                             <constraint firstItem="MrV-v3-3En" firstAttribute="centerY" secondItem="ZZX-kd-L9P" secondAttribute="centerY" id="tqi-Ly-FlR"/>
                         </constraints>
                     </view>
