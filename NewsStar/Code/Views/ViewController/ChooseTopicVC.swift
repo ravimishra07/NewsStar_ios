@@ -10,7 +10,7 @@ import UIKit
 class ChooseTopicVC: UIViewController {
     @IBOutlet weak var bottomView1: UIView!
     @IBOutlet weak var bottomView2: UIView!
-    @IBOutlet weak var bottomView3: UIView!
+    @IBOutlet weak var bottomView3: ShimmeringView!
 
 
 
@@ -27,6 +27,15 @@ class ChooseTopicVC: UIViewController {
         let circleShape = CAShapeLayer()
         circleShape.path = circlePath.cgPath
         bottomView1.layer.mask = circleShape
+        
+        // Setup ShimmerngView
+        let shimmerView = ShimmeringView(frame: self.bottomView1.bounds)
+        self.bottomView1.addSubview(shimmerView)
+        shimmerView.contentView = bottomView2
+        shimmerView.isShimmering = true
+        
+
+        
     }
 }
 extension UIView {

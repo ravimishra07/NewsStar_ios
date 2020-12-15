@@ -15,6 +15,9 @@ class NewsDataSource: GenericDataSource<Article>, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionCell", for: indexPath) as! NewsCollectionCell
         cell.removeShimmerLayer()
         cell.article = data.value[indexPath.row]
+       // addShimmerLayer(parentView: cell.contentView, view: cell.newsImage)
+        cell.layoutSubviews()
         return cell
     }
+    
 }

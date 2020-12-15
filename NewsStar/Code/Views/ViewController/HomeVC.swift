@@ -6,9 +6,7 @@
 //
 
 import UIKit
-struct Global{
-   static var searchText = ""
-}
+
 class HomeVC: UIViewController {
     override class func description() -> String {
         "HomeVC"
@@ -27,8 +25,6 @@ class HomeVC: UIViewController {
     let personCellIdentifier = "NewsTableViewCell"
     let menuDataSource = MenuDataSource()
     let personalisedDataSource = PersonalDataSource()
-    let shimmerDataSource = ShimmerDataSource()
-
     var transAnimator:TransitionAnimator?
     var circleAnimator: CircleAnimator?
     
@@ -39,11 +35,6 @@ class HomeVC: UIViewController {
     
     lazy var peronalViewModel : PersonalViewModel = {
         let viewModel = PersonalViewModel(dataSource: personalisedDataSource)
-        return viewModel
-    }()
-    
-    lazy var shimmerViewModel: ShimmerViewModel = {
-        let viewModel = ShimmerViewModel(dataSource: shimmerDataSource)
         return viewModel
     }()
     
@@ -60,51 +51,30 @@ class HomeVC: UIViewController {
     func setUpUI(){
         view.backgroundColor =  UIColor(named: "MainBackgroundColor")
         personalTableView.layer.cornerRadius = 12
-        searchButton.layer.cornerRadius  = 20
         personalTableView.clipsToBounds = true
-        
-        /// initialize  cells
         self.menuCollectionView.register(UINib(nibName:"MenuCVCell", bundle: nil), forCellWithReuseIdentifier: menuCellIdentifier)
         self.personalTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: NewsTableViewCell.description())
-        self.personalTableView.register(UINib(nibName: "ShimmerTVCell", bundle: nil), forCellReuseIdentifier: ShimmerTVCell.description())
-        
-        ///set up delegates
         searchTextField.delegate = self
         menuCollectionView.dataSource = self.menuDataSource
         menuCollectionView.delegate = self
         personalTableView.delegate = self
-        personalTableView.dataSource = self.shimmerDataSource
-        
-        self.shimmerDataSource.data.addAndNotify(observer: self) { [weak self] _ in
-            self?.personalTableView.reloadData()
-        }
+        personalTableView.dataSource = self.personalisedDataSource
+        searchButton.layer.cornerRadius  = 20
         self.menuDataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.menuCollectionView.reloadData()
         }
+        self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in
+            self?.personalTableView.reloadData()
+        }
         self.peronalViewModel.onErrorHandling = { [weak self] error in
-            /// display error
-            if let controller = self?.showAlert(){
-                self?.present(controller, animated: true, completion: nil)
-            }
+            // display error
+            let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self?.present(controller, animated: true, completion: nil)
         }
-        
-        /// fetch data
-        self.shimmerViewModel.getData()
         self.viewModel.getMenuData()
-        self.peronalViewModel.fetchNews { [weak self] (isLoaded) in
-            //load news after api call
-            self?.loadPersonalView()
-        }
-    }
-    
-    func loadPersonalView(){
-        DispatchQueue.main.async {
-            self.personalisedDataSource.data.addAndNotify(observer: self) { [weak self] _ in
-                self?.personalTableView.dataSource = self?.personalisedDataSource
-                self?.personalTableView.reloadData()
-            }
-        }
-       
+        self.peronalViewModel.fetchNews(context: self)
+        
     }
     func animateMenuButton(){
         let initTransform: CGFloat = 150
@@ -161,12 +131,8 @@ class HomeVC: UIViewController {
         return alertController
     }
     @IBAction func searchTapped(_ sender: UIButton){
-        if let searchText = searchTextField?.text{
-            if searchText != "" {
-                Global.searchText = searchText
-                /// user search controller seperately
-                let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-                self.present(searchVC, animated: true, completion: nil)
+        Global.searchText = searchTextField?.text ?? "news"
+        self.tabBarController?.selectedIndex = 1
 
             }
         }
@@ -195,6 +161,14 @@ extension HomeVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 350
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = peronalViewModel.dataSource?.data.value[indexPath.row].url else {
+            return
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: FullNewsVC.description()) as! FullNewsVC
+        vc.newsUrl = url
+        self.present(vc, animated: true, completion: nil)
+    }
     
 }
 extension HomeVC: UITextFieldDelegate{
@@ -215,7 +189,6 @@ extension HomeVC: UIViewControllerTransitioningDelegate{
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         circleAnimator = CircleAnimator(view: menuButton, color: .red, duration: 0.5)
         circleAnimator?.mode = .present
-        
         return circleAnimator
     }
 }

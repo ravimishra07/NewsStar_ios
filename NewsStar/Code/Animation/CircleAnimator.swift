@@ -1,9 +1,8 @@
 //
 //  CircleAnimator.swift
-//  Animatify
+//  NewsStar
 //
-//  Created by Shubham Singh on 29/06/20.
-//  Copyright © 2020 Shubham Singh. All rights reserved.
+//  Created by Ravi Mishra on 27/10/20.
 //
 
 import UIKit

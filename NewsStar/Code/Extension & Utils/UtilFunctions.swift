@@ -21,3 +21,8 @@ func loadImage(from url: URL, imgView: UIImageView){
         }
     }
 }
+//func addShimmerLayer(parentView: UIView, view: UIView){
+//    let shimmerLayer = Shimmer(for: view, cornerRadius: 12)
+//    parentView.layer.insertSublayer(shimmerLayer, above: view.layer)
+//    shimmerLayer.startAnimation()
+//}

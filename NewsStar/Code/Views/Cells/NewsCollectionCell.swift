@@ -8,6 +8,7 @@
 import UIKit
 
 class NewsCollectionCell: UICollectionViewCell {
+
    
     //MARK:- Outlets
     @IBOutlet weak var dateView: UIView!
@@ -18,6 +19,15 @@ class NewsCollectionCell: UICollectionViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var backView: NeumorphicUIView!
     
+    @IBOutlet weak var bImageView: UIView!
+    @IBOutlet weak var bTitleView: UIView!
+    @IBOutlet weak var bDescription: UIView!
+    @IBOutlet weak var bDateView: UIView!
+
+    let startColor = UIColor("FF7E5F")?.withAlphaComponent(1).cgColor ?? UIColor.white.cgColor
+    let endColor =  UIColor("DA573B")?.withAlphaComponent(1).cgColor ?? UIColor.white.cgColor
+    
+    var shimmerLayer=CAGradientLayer()
     var article: Article?{
         didSet{
             setData(article: article)
@@ -25,13 +35,13 @@ class NewsCollectionCell: UICollectionViewCell {
     }
     
     override class func description() -> String {
-       return "NewsCollectionCell"
+        return "NewsCollectionCell"
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUI()
-        // Initialization code
     }
+    
     func setUpUI(){
         dateView.perfectCorner()
         backView.type = .normal
@@ -39,28 +49,17 @@ class NewsCollectionCell: UICollectionViewCell {
         newsImage.layer.cornerRadius = 20
         newsImage.clipsToBounds = true
         backView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+
     }
-    
     func setData(article: Article?){
         if let article = article{
+           // showShimmer(show: false)
             newsTitleLabel.text = article.title
             newsDescLabel.text = article.articleDescription
-            
             guard let url = URL(string: article.urlToImage ?? "") else{
                 return
             }
             loadImage(from: url, imgView: newsImage)
         }
-        
     }
-    func addShimmerLayer(){
-        let shimmerLayer = Shimmer(for: self.mainView, cornerRadius: 12)
-        self.contentView.layer.insertSublayer(shimmerLayer, above: self.mainView.layer)
-        shimmerLayer.startAnimation()
-    }
-    func removeShimmerLayer(){
-        
-    }
-
-    
 }

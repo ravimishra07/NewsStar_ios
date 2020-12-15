@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NVA-rF-E2e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nYb-dq-OIu">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -121,7 +121,7 @@ your Interest</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-JZ-IaJ">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-JZ-IaJ">
                                                 <rect key="frame" x="4" y="624" width="406" height="564"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -305,23 +305,23 @@ interest</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdZ-qA-d6w">
-                                <rect key="frame" x="132" y="408" width="150" height="150"/>
+                                <rect key="frame" x="132" y="358" width="150" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="fTf-AF-H3y"/>
                                     <constraint firstAttribute="width" constant="150" id="ght-O7-hsw"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rsk-S8-6cS">
-                                <rect key="frame" x="182" y="808" width="50" height="50"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rsk-S8-6cS" customClass="ShimmeringView" customModule="NewsStar" customModuleProvider="target">
+                                <rect key="frame" x="107" y="758" width="200" height="100"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="nkP-Ht-eK5"/>
-                                    <constraint firstAttribute="height" constant="50" id="wbq-0w-VUc"/>
+                                    <constraint firstAttribute="width" constant="200" id="nkP-Ht-eK5"/>
+                                    <constraint firstAttribute="height" constant="100" id="wbq-0w-VUc"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQL-ef-E5d">
-                                <rect key="frame" x="182" y="658" width="50" height="50"/>
+                                <rect key="frame" x="182" y="608" width="50" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RJc-5t-dx1"/>
@@ -348,13 +348,13 @@ interest</string>
                     <connections>
                         <outlet property="bottomView1" destination="HdZ-qA-d6w" id="fzE-s6-qoO"/>
                         <outlet property="bottomView2" destination="ZQL-ef-E5d" id="T6D-ZS-Z1W"/>
-                        <outlet property="bottomView3" destination="Rsk-S8-6cS" id="kcW-Se-mx8"/>
+                        <outlet property="bottomView3" destination="Rsk-S8-6cS" id="eN4-an-Se5"/>
                         <outlet property="testView" destination="2Yu-NN-vOj" id="ffE-Iy-Fee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv3-u5-nXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2264" y="11"/>
+            <point key="canvasLocation" x="2280" y="28"/>
         </scene>
         <!--Search-->
         <scene sceneID="SE0-7l-OVW">
@@ -515,7 +515,7 @@ interest</string>
                                 <rect key="frame" x="0.0" y="150" width="414" height="663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JmF-UQ-oHt">
-                                    <size key="itemSize" width="160" height="122"/>
+                                    <size key="itemSize" width="381" height="284"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -547,9 +547,12 @@ interest</string>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" id="88S-P5-nZ3"/>
                     <connections>
                         <outlet property="accBtn" destination="FBS-RP-Ku1" id="kLN-bg-vjX"/>
+                        <outlet property="accViewBtn" destination="677-4I-bGr" id="IjP-Bu-1GP"/>
                         <outlet property="bookMarkBtn" destination="Pc4-JP-htt" id="CSi-XP-i5h"/>
+                        <outlet property="bookMarkViewBtn" destination="mOP-kl-nwl" id="vIm-DZ-64f"/>
                         <outlet property="collectionViewTopConstraint" destination="OiA-Jn-bBt" id="NSd-Bg-Tcc"/>
                         <outlet property="countryBtn" destination="6Xc-bW-75G" id="PUa-ek-O8A"/>
+                        <outlet property="countryViewBtn" destination="WWK-ZM-OJ8" id="2gy-3y-xIk"/>
                         <outlet property="filterBtn" destination="7M0-tl-cd1" id="tb0-9g-3Eh"/>
                         <outlet property="filterStackView" destination="Ryq-yx-GeM" id="dnR-F3-udm"/>
                         <outlet property="newsCollectionView" destination="XKo-pd-isT" id="JUg-QE-m8v"/>
@@ -561,6 +564,77 @@ interest</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGH-cQ-u7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2947.826086956522" y="10.714285714285714"/>
+        </scene>
+        <!--Full NewsVC-->
+        <scene sceneID="AHw-Rf-XBw">
+            <objects>
+                <viewController storyboardIdentifier="FullNewsVC" id="dvY-k1-K5C" customClass="FullNewsVC" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2o0-Wk-vbL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a73-dG-50G">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2GW-Xd-odk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2GW-Xd-odk" firstAttribute="bottom" secondItem="a73-dG-50G" secondAttribute="bottom" id="0Sa-wv-FVl"/>
+                            <constraint firstItem="a73-dG-50G" firstAttribute="top" secondItem="2GW-Xd-odk" secondAttribute="top" id="5jr-EA-s3j"/>
+                            <constraint firstItem="a73-dG-50G" firstAttribute="leading" secondItem="2GW-Xd-odk" secondAttribute="leading" id="K6d-R7-R0u"/>
+                            <constraint firstItem="2GW-Xd-odk" firstAttribute="trailing" secondItem="a73-dG-50G" secondAttribute="trailing" id="raD-7N-cSa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="a73-dG-50G" id="SZd-Sh-sdu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSs-K7-Sat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3632" y="11"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="BsW-zS-nJX">
+            <objects>
+                <viewController id="nYb-dq-OIu" customClass="SignInViewController" customModule="NewsStar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZZX-kd-L9P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrV-v3-3En" customClass="GIDSignInButton">
+                                <rect key="frame" x="147" y="423" width="120" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="7Jc-Sp-B0w"/>
+                                    <constraint firstAttribute="height" constant="50" id="QjF-g8-2zI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xA-Vu-FUs">
+                                <rect key="frame" x="153" y="104" width="108.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pXo-VQ-6It"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MrV-v3-3En" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="7Va-pv-kUb"/>
+                            <constraint firstItem="6xA-Vu-FUs" firstAttribute="top" secondItem="pXo-VQ-6It" secondAttribute="top" constant="60" id="D9n-eK-sFJ"/>
+                            <constraint firstItem="6xA-Vu-FUs" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="rts-ak-h6o"/>
+                            <constraint firstItem="MrV-v3-3En" firstAttribute="centerY" secondItem="ZZX-kd-L9P" secondAttribute="centerY" id="tqi-Ly-FlR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alp-b1-pNT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1423" y="14"/>
         </scene>
         <!--TabbarVC-->
         <scene sceneID="dxR-4t-1Ia">
@@ -648,8 +722,8 @@ interest</string>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
