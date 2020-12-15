@@ -134,8 +134,8 @@ class HomeVC: UIViewController {
         Global.searchText = searchTextField?.text ?? "news"
         self.tabBarController?.selectedIndex = 1
 
-            }
-        }
+            
+        
         /** uncomment to use tabcontroller as search controller */
         // self.tabBarController?.selectedIndex = 1
     }

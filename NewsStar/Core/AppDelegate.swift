@@ -14,9 +14,7 @@ import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-    
    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -47,7 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     print(error?.localizedDescription ?? "")
                 }else{
                   print("Display name")
-                    let id = authResult?.user.uid
+                    
+                    let user = User(context: self.persistentContainer.viewContext)
+                    user.email = authResult?.user.email
+                    user.uid = authResult?.user.uid
+                    user.name = authResult?.user.displayName
+                    user.profileLink = "\(String(describing: authResult?.user.photoURL))"
+                    user.interests = ["politics","india","weather"]
+                        self.saveContext()
+
                   print(authResult?.user.displayName ?? "")
                 }
               }
