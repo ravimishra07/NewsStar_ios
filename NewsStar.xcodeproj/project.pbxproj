@@ -20,6 +20,8 @@
 		3C6AF66225851B9A00E182AB /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6AF66025851B9900E182AB /* Loader.swift */; };
 		3C6AF66325851B9A00E182AB /* Loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6AF66125851B9900E182AB /* Loader.xib */; };
 		3C7508CB258A86A300CA2543 /* PerferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7508CA258A86A300CA2543 /* PerferenceCell.swift */; };
+		3C7508CF258A892700CA2543 /* ChooseTopicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7508CE258A892700CA2543 /* ChooseTopicViewModel.swift */; };
+		3C7508D2258A898100CA2543 /* ChooseTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7508D1258A898100CA2543 /* ChooseTopic.swift */; };
 		3C78317825780A3A00653508 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78317725780A3A00653508 /* SearchViewController.swift */; };
 		3C7FF75D2522875900F81A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF75C2522875900F81A74 /* AppDelegate.swift */; };
 		3C7FF75F2522875900F81A74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF75E2522875900F81A74 /* SceneDelegate.swift */; };
@@ -85,6 +87,8 @@
 		3C6AF66025851B9900E182AB /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		3C6AF66125851B9900E182AB /* Loader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Loader.xib; sourceTree = "<group>"; };
 		3C7508CA258A86A300CA2543 /* PerferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceCell.swift; sourceTree = "<group>"; };
+		3C7508CE258A892700CA2543 /* ChooseTopicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicViewModel.swift; sourceTree = "<group>"; };
+		3C7508D1258A898100CA2543 /* ChooseTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopic.swift; sourceTree = "<group>"; };
 		3C78317725780A3A00653508 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3C7FF7592522875900F81A74 /* NewsStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7FF75C2522875900F81A74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 			children = (
 				3CB79BAB253C26E100D33172 /* MenuModel.swift */,
 				3CB79BB7253C4FF400D33172 /* NewsModel.swift */,
+				3C7508D1258A898100CA2543 /* ChooseTopic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				3CB79BB1253C2D4C00D33172 /* MenuDataSource.swift */,
 				3C8125C2253E94CF00FD0352 /* PersonalDataSource.swift */,
 				3C850692257AA948007591DA /* NewsDataSource.swift */,
+				3C7508CE258A892700CA2543 /* ChooseTopicViewModel.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1A0041253CEA0100642FF6 /* RequestFactory.swift in Sources */,
+				3C7508CF258A892700CA2543 /* ChooseTopicViewModel.swift in Sources */,
 				3CCB2EB22547D06A006F8789 /* TransitionAnimator.swift in Sources */,
 				3C7FF7672522875900F81A74 /* NewsStar.xcdatamodeld in Sources */,
 				3CB79BA9253C0DD400D33172 /* MenuViewModel.swift in Sources */,
@@ -606,6 +613,7 @@
 				3C7FF7C42522A91900F81A74 /* NewsCollectionCell.swift in Sources */,
 				3C7FF75F2522875900F81A74 /* SceneDelegate.swift in Sources */,
 				3C8125C3253E94CF00FD0352 /* PersonalDataSource.swift in Sources */,
+				3C7508D2258A898100CA2543 /* ChooseTopic.swift in Sources */,
 				3CB79BB2253C2D4C00D33172 /* MenuDataSource.swift in Sources */,
 				3CAF8D72253E7A590054220B /* RequestService.swift in Sources */,
 				3CAF8D6E253E79250054220B /* Reachability.swift in Sources */,

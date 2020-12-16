@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nYb-dq-OIu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4pO-P3-xbl">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -341,7 +341,6 @@ interest</string>
                                                                 <constraint firstAttribute="trailing" secondItem="MgQ-Lo-cS0" secondAttribute="trailing" constant="6" id="KYS-wj-8UW"/>
                                                                 <constraint firstItem="MgQ-Lo-cS0" firstAttribute="centerY" secondItem="JGN-Hx-AN9" secondAttribute="centerY" id="Ptg-Nm-AyK"/>
                                                                 <constraint firstItem="JGN-Hx-AN9" firstAttribute="leading" secondItem="JZq-Bo-oGQ" secondAttribute="leading" constant="4" id="Xjv-WF-Tdg"/>
-                                                                <constraint firstAttribute="height" constant="50" id="cmC-u3-tcI"/>
                                                                 <constraint firstItem="JGN-Hx-AN9" firstAttribute="centerY" secondItem="JZq-Bo-oGQ" secondAttribute="centerY" id="inH-br-fdh"/>
                                                                 <constraint firstItem="MgQ-Lo-cS0" firstAttribute="leading" secondItem="JGN-Hx-AN9" secondAttribute="trailing" constant="6" id="mwL-2J-VJB"/>
                                                             </constraints>
@@ -356,7 +355,9 @@ interest</string>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="277" height="96"/>
                                                 <connections>
+                                                    <outlet property="crossImage" destination="JGN-Hx-AN9" id="HdG-nX-NIF"/>
                                                     <outlet property="mainView" destination="JZq-Bo-oGQ" id="GrU-tK-QA0"/>
+                                                    <outlet property="topicName" destination="MgQ-Lo-cS0" id="H2L-LF-W1W"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>

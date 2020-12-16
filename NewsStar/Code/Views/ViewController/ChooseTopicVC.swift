@@ -8,36 +8,19 @@
 import UIKit
 
 class ChooseTopicVC: UIViewController {
-    @IBOutlet weak var bottomView1: UIView!
-    @IBOutlet weak var bottomView2: UIView!
-    @IBOutlet weak var bottomView3: ShimmeringView!
-
-
-
-    @IBOutlet weak var testView: NeumorphicUIView!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var preferenceCollectionView: UICollectionView!
+   // let chooseTopicDataSource: 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testView.type = .toggleButton
+      
         self.view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
-        setUpView()
-        // Do any additional setup after loading the view.
+      
     }
-    func setUpView(){
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: (bottomView1.bounds.size.width / 2) + 5, y: (bottomView1.bounds.size.width) ), radius: bottomView1.bounds.size.height, startAngle: 0.0, endAngle: .pi, clockwise: false)
-        let circleShape = CAShapeLayer()
-        circleShape.path = circlePath.cgPath
-        bottomView1.layer.mask = circleShape
-        
-        // Setup ShimmerngView
-        let shimmerView = ShimmeringView(frame: self.bottomView1.bounds)
-        self.bottomView1.addSubview(shimmerView)
-        shimmerView.contentView = bottomView2
-        shimmerView.isShimmering = true
-        
-
-        
-    }
+   
 }
+
+/*
 extension UIView {
 
 func addTopRoundedCornerToView(targetView:UIView?, desiredCurve:CGFloat?){
@@ -122,3 +105,4 @@ func addTopRoundedCornerToView(targetView:UIView?, desiredCurve:CGFloat?){
         self.layer.mask = maskLayer
     }
 }
+*/
