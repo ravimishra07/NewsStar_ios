@@ -303,7 +303,7 @@ interest</string>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-Gr-xmg">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="594.33333333333337"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e7B-9i-Yjn">
                                             <size key="itemSize" width="277" height="96"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -319,10 +319,10 @@ interest</string>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZq-Bo-oGQ" customClass="SoftUIView" customModule="NewsStar" customModuleProvider="target">
-                                                            <rect key="frame" x="2" y="2" width="273" height="92"/>
+                                                            <rect key="frame" x="8" y="8" width="267" height="80"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JGN-Hx-AN9">
-                                                                    <rect key="frame" x="4" y="36.333333333333329" width="24" height="19.666666666666671"/>
+                                                                    <rect key="frame" x="4" y="30.333333333333329" width="24" height="19.666666666666671"/>
                                                                     <color key="tintColor" name="news_star_dark_orange"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="24" id="Vjn-bB-PVh"/>
@@ -330,7 +330,7 @@ interest</string>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-Lo-cS0">
-                                                                    <rect key="frame" x="34" y="35.666666666666664" width="233" height="21"/>
+                                                                    <rect key="frame" x="34" y="29.666666666666664" width="225" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -338,7 +338,7 @@ interest</string>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="MgQ-Lo-cS0" secondAttribute="trailing" constant="6" id="KYS-wj-8UW"/>
+                                                                <constraint firstAttribute="trailing" secondItem="MgQ-Lo-cS0" secondAttribute="trailing" constant="8" id="KYS-wj-8UW"/>
                                                                 <constraint firstItem="MgQ-Lo-cS0" firstAttribute="centerY" secondItem="JGN-Hx-AN9" secondAttribute="centerY" id="Ptg-Nm-AyK"/>
                                                                 <constraint firstItem="JGN-Hx-AN9" firstAttribute="leading" secondItem="JZq-Bo-oGQ" secondAttribute="leading" constant="4" id="Xjv-WF-Tdg"/>
                                                                 <constraint firstItem="JGN-Hx-AN9" firstAttribute="centerY" secondItem="JZq-Bo-oGQ" secondAttribute="centerY" id="inH-br-fdh"/>
@@ -347,9 +347,9 @@ interest</string>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="JZq-Bo-oGQ" firstAttribute="top" secondItem="NOL-6s-Dhl" secondAttribute="top" constant="2" id="Szh-xh-cCr"/>
-                                                        <constraint firstAttribute="bottom" secondItem="JZq-Bo-oGQ" secondAttribute="bottom" constant="2" id="g6N-uT-0vl"/>
-                                                        <constraint firstItem="JZq-Bo-oGQ" firstAttribute="leading" secondItem="NOL-6s-Dhl" secondAttribute="leading" constant="2" id="oAM-AG-8qo"/>
+                                                        <constraint firstItem="JZq-Bo-oGQ" firstAttribute="top" secondItem="NOL-6s-Dhl" secondAttribute="top" constant="8" id="Szh-xh-cCr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="JZq-Bo-oGQ" secondAttribute="bottom" constant="8" id="g6N-uT-0vl"/>
+                                                        <constraint firstItem="JZq-Bo-oGQ" firstAttribute="leading" secondItem="NOL-6s-Dhl" secondAttribute="leading" constant="8" id="oAM-AG-8qo"/>
                                                         <constraint firstAttribute="trailing" secondItem="JZq-Bo-oGQ" secondAttribute="trailing" constant="2" id="oeH-I9-Ynu"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
@@ -363,7 +363,7 @@ interest</string>
                                         </cells>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Qto-Gr-xmg" secondAttribute="trailing" id="APa-8r-AHh"/>
                                     <constraint firstItem="Qto-Gr-xmg" firstAttribute="top" secondItem="5Ws-bh-KHf" secondAttribute="top" id="DM1-hD-Ear"/>
@@ -398,6 +398,10 @@ interest</string>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="xlM-oe-s6B"/>
+                    <connections>
+                        <outlet property="preferenceCollectionView" destination="Qto-Gr-xmg" id="23b-G4-Hiz"/>
+                        <outlet property="saveBtn" destination="2g9-Xu-csX" id="EXj-NZ-OZY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv3-u5-nXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

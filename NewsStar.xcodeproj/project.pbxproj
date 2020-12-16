@@ -20,8 +20,9 @@
 		3C6AF66225851B9A00E182AB /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6AF66025851B9900E182AB /* Loader.swift */; };
 		3C6AF66325851B9A00E182AB /* Loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6AF66125851B9900E182AB /* Loader.xib */; };
 		3C7508CB258A86A300CA2543 /* PerferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7508CA258A86A300CA2543 /* PerferenceCell.swift */; };
-		3C7508CF258A892700CA2543 /* ChooseTopicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7508CE258A892700CA2543 /* ChooseTopicViewModel.swift */; };
 		3C7508D2258A898100CA2543 /* ChooseTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7508D1258A898100CA2543 /* ChooseTopic.swift */; };
+		3C7508D9258A8DC500CA2543 /* PreferenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7508D8258A8DC400CA2543 /* PreferenceViewModel.swift */; };
+		3C7508E0258A910800CA2543 /* PreferenceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7508DF258A910800CA2543 /* PreferenceDataSource.swift */; };
 		3C78317825780A3A00653508 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78317725780A3A00653508 /* SearchViewController.swift */; };
 		3C7FF75D2522875900F81A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF75C2522875900F81A74 /* AppDelegate.swift */; };
 		3C7FF75F2522875900F81A74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF75E2522875900F81A74 /* SceneDelegate.swift */; };
@@ -87,8 +88,9 @@
 		3C6AF66025851B9900E182AB /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		3C6AF66125851B9900E182AB /* Loader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Loader.xib; sourceTree = "<group>"; };
 		3C7508CA258A86A300CA2543 /* PerferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceCell.swift; sourceTree = "<group>"; };
-		3C7508CE258A892700CA2543 /* ChooseTopicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicViewModel.swift; sourceTree = "<group>"; };
 		3C7508D1258A898100CA2543 /* ChooseTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopic.swift; sourceTree = "<group>"; };
+		3C7508D8258A8DC400CA2543 /* PreferenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewModel.swift; sourceTree = "<group>"; };
+		3C7508DF258A910800CA2543 /* PreferenceDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceDataSource.swift; sourceTree = "<group>"; };
 		3C78317725780A3A00653508 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3C7FF7592522875900F81A74 /* NewsStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7FF75C2522875900F81A74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				3CB79BA8253C0DD400D33172 /* MenuViewModel.swift */,
 				3CB79BC3253C810B00D33172 /* PersonalViewModel.swift */,
 				3C850695257AA9BB007591DA /* NewsViewModel.swift */,
+				3C7508D8258A8DC400CA2543 /* PreferenceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -395,7 +398,7 @@
 				3CB79BB1253C2D4C00D33172 /* MenuDataSource.swift */,
 				3C8125C2253E94CF00FD0352 /* PersonalDataSource.swift */,
 				3C850692257AA948007591DA /* NewsDataSource.swift */,
-				3C7508CE258A892700CA2543 /* ChooseTopicViewModel.swift */,
+				3C7508DF258A910800CA2543 /* PreferenceDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -574,7 +577,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1A0041253CEA0100642FF6 /* RequestFactory.swift in Sources */,
-				3C7508CF258A892700CA2543 /* ChooseTopicViewModel.swift in Sources */,
 				3CCB2EB22547D06A006F8789 /* TransitionAnimator.swift in Sources */,
 				3C7FF7672522875900F81A74 /* NewsStar.xcdatamodeld in Sources */,
 				3CB79BA9253C0DD400D33172 /* MenuViewModel.swift in Sources */,
@@ -592,12 +594,14 @@
 				3CB79BC7253C832B00D33172 /* Service.swift in Sources */,
 				3CCB2EB52547D780006F8789 /* SideMenuController.swift in Sources */,
 				3C7FF7C82522AD5A00F81A74 /* NewsDateView.swift in Sources */,
+				3C7508E0258A910800CA2543 /* PreferenceDataSource.swift in Sources */,
 				3C78317825780A3A00653508 /* SearchViewController.swift in Sources */,
 				3CB79BD1253C93FD00D33172 /* ErrorResult.swift in Sources */,
 				3CB79BCE253C90CB00D33172 /* Result.swift in Sources */,
 				3C9BB8902583CC0E00BF8BC7 /* ShimmeringView.swift in Sources */,
 				3C4F4D322522CCFA00126A7A /* ViewExtensions.swift in Sources */,
 				3C4F4D412522E5EC00126A7A /* Constants.swift in Sources */,
+				3C7508D9258A8DC500CA2543 /* PreferenceViewModel.swift in Sources */,
 				3CB79BB5253C31CF00D33172 /* DynamicValue.swift in Sources */,
 				3C8A412F2572011400B54223 /* CircleAnimator.swift in Sources */,
 				3C7FF7B12522A04E00F81A74 /* SeparatorLine.swift in Sources */,
