@@ -22,7 +22,11 @@ struct PreferenceViewModel {
         let topic6 = ChooseTopic(topicName: "Social Network", isLiked: false)
         let topic7 = ChooseTopic(topicName: "Corona Virus", isLiked: false)
         let topic8 = ChooseTopic(topicName: "Global news", isLiked: true)
-        dataSource?.data.value = [topic1,topic2,topic3,topic4,topic5,topic6,topic7,topic8]
+        dataSource?.data.value = [topic1,topic4,topic2,topic7,topic6,topic5,topic8,topic3]//,topic3,topic4,topic5,topic6,topic7,topic8]
 
+    }
+    func preferenceData() -> [ChooseTopic]?{
+        
+        return dataSource?.data.value
     }
 }

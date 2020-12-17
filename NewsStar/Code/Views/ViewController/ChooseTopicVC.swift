@@ -25,10 +25,24 @@ class ChooseTopicVC: UIViewController {
         }
         self.preferenceViewModel.fetechTopic()
             // self.prefDataSource.data.add
-        
     }
     
 }
-extension ChooseTopicVC: UICollectionViewDelegate{
-    
+
+extension ChooseTopicVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if let item = preferenceViewModel.preferenceData()?[indexPath.row]{
+//
+//            let itemSize = item.topicName.size(withAttributes: [
+//                   NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)
+//               ])
+//            let width = CGSize(width: itemSize.width + 40, height: itemSize.height + 34)
+//               return width
+//        }else{
+//            return .zero
+//        }
+//
+//    }
+
 }
+ 

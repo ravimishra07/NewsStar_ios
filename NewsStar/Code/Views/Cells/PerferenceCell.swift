@@ -8,7 +8,7 @@
 import UIKit
 
 class PerferenceCell: UICollectionViewCell {
-    @IBOutlet weak var mainView: SoftUIView!
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var crossImage: UIImageView!
     @IBOutlet weak var topicName: UILabel!
     
