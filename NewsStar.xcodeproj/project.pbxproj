@@ -69,6 +69,7 @@
 		3CCB2EB22547D06A006F8789 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB2EB12547D06A006F8789 /* TransitionAnimator.swift */; };
 		3CCB2EB52547D780006F8789 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB2EB42547D780006F8789 /* SideMenuController.swift */; };
 		3CD840B7257FDDCF00FD21E8 /* FullNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD840B6257FDDCF00FD21E8 /* FullNewsVC.swift */; };
+		3CE6C708258BD83200537F65 /* CenterAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE6C707258BD83200537F65 /* CenterAlignedCollectionViewFlowLayout.swift */; };
 		B9EC382E80B59AB7E814E12C /* Pods_NewsStar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED77CAFFBF9020B6ED15388 /* Pods_NewsStar.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +148,7 @@
 		3CCB2EB12547D06A006F8789 /* TransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
 		3CCB2EB42547D780006F8789 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		3CD840B6257FDDCF00FD21E8 /* FullNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNewsVC.swift; sourceTree = "<group>"; };
+		3CE6C707258BD83200537F65 /* CenterAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		64A8E3E96FA454B54F4BDE36 /* Pods-NewsStar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsStar.debug.xcconfig"; path = "Target Support Files/Pods-NewsStar/Pods-NewsStar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +181,7 @@
 				3C4F4D352522CD0500126A7A /* UtilFunctions.swift */,
 				3C4F4D382522CD1000126A7A /* CellExtensions.swift */,
 				3C4F4D402522E5EC00126A7A /* Constants.swift */,
+				3CE6C707258BD83200537F65 /* CenterAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = "Extension & Utils";
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				3CB79BBC253C5EF000D33172 /* NewsTableViewCell.swift in Sources */,
 				3C598FCD258686A400C64D5B /* SignInViewController.swift in Sources */,
 				3C7508CB258A86A300CA2543 /* PerferenceCell.swift in Sources */,
+				3CE6C708258BD83200537F65 /* CenterAlignedCollectionViewFlowLayout.swift in Sources */,
 				3C850693257AA948007591DA /* NewsDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

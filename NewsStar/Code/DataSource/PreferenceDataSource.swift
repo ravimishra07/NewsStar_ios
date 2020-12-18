@@ -19,6 +19,7 @@ class PreferenceDataSource: GenericDataSource<ChooseTopic>, UICollectionViewData
         }
         let cellData = data.value[indexPath.row]
         cell.topicName.text = cellData.topicName
+        
         cell.rotateImage(isSelected: cellData.isLiked)
         return cell
     }

@@ -25,24 +25,27 @@ class ChooseTopicVC: UIViewController {
         }
         self.preferenceViewModel.fetechTopic()
             // self.prefDataSource.data.add
+        
     }
     
 }
-
 extension ChooseTopicVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if let item = preferenceViewModel.preferenceData()?[indexPath.row]{
-//
-//            let itemSize = item.topicName.size(withAttributes: [
-//                   NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)
-//               ])
-//            let width = CGSize(width: itemSize.width + 40, height: itemSize.height + 34)
-//               return width
-//        }else{
-//            return .zero
-//        }
-//
-//    }
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if let item = preferenceViewModel.preferenceData()?[indexPath.row]{
+            let itemSize = item.topicName.size(withAttributes: [
+                   NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)
+               ])
+            let cellWidth = CGSize(width: collectionView.frame.width/2-12, height: itemSize.height+40)
+               return cellWidth
+        }else{
+            return .zero
+        }
+            
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.6) {
+            self.preferenceViewModel.setTopicList(index: indexPath.row)
+            self.preferenceCollectionView.reloadData()
+        }
+    }
 }
- 

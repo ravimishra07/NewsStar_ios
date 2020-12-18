@@ -299,42 +299,42 @@ interest</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ws-bh-KHf">
-                                <rect key="frame" x="24" y="143.66666666666669" width="366" height="594.33333333333326"/>
+                                <rect key="frame" x="8" y="143.66666666666669" width="398" height="594.33333333333326"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-Gr-xmg">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="594.33333333333337"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-Gr-xmg">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="594.33333333333337"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e7B-9i-Yjn">
-                                            <size key="itemSize" width="277" height="96"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e7B-9i-Yjn" customClass="LeftAlignedCollectionViewFlowLayout" customModule="NewsStar" customModuleProvider="target">
+                                            <size key="itemSize" width="161" height="107"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PerferenceCell" id="r0P-NF-UX9" customClass="PerferenceCell" customModule="NewsStar" customModuleProvider="target">
-                                                <rect key="frame" x="44.666666666666664" y="0.0" width="277" height="96"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" reuseIdentifier="PerferenceCell" id="r0P-NF-UX9" customClass="PerferenceCell" customModule="NewsStar" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="161" height="107"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NOL-6s-Dhl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="96"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="plF-1T-maR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="161" height="107"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGl-av-2Hr" customClass="SoftUIView" customModule="NewsStar" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="8" width="267" height="80"/>
+                                                            <rect key="frame" x="8" y="8" width="145" height="91"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
                                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZq-Bo-oGQ">
-                                                            <rect key="frame" x="8" y="8" width="267" height="80"/>
+                                                            <rect key="frame" x="8" y="8" width="145" height="91"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JGN-Hx-AN9">
-                                                                    <rect key="frame" x="4" y="30.333333333333329" width="24" height="19.666666666666671"/>
+                                                                    <rect key="frame" x="4" y="36" width="24" height="19.666666666666671"/>
                                                                     <color key="tintColor" name="news_star_dark_orange"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="24" id="Vjn-bB-PVh"/>
                                                                         <constraint firstAttribute="width" constant="24" id="goC-sD-YPE"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-Lo-cS0">
-                                                                    <rect key="frame" x="34" y="30.666666666666664" width="225" height="18.666666666666664"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-Lo-cS0">
+                                                                    <rect key="frame" x="34" y="36.333333333333336" width="103" height="18.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -352,19 +352,20 @@ interest</string>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="SGl-av-2Hr" firstAttribute="height" secondItem="JZq-Bo-oGQ" secondAttribute="height" id="Hqe-DL-6Mg"/>
-                                                        <constraint firstItem="JZq-Bo-oGQ" firstAttribute="top" secondItem="NOL-6s-Dhl" secondAttribute="top" constant="8" id="Szh-xh-cCr"/>
+                                                        <constraint firstItem="JZq-Bo-oGQ" firstAttribute="top" secondItem="plF-1T-maR" secondAttribute="top" constant="8" id="Szh-xh-cCr"/>
                                                         <constraint firstItem="SGl-av-2Hr" firstAttribute="centerY" secondItem="JZq-Bo-oGQ" secondAttribute="centerY" id="dSY-0I-fU8"/>
                                                         <constraint firstAttribute="bottom" secondItem="JZq-Bo-oGQ" secondAttribute="bottom" constant="8" id="g6N-uT-0vl"/>
-                                                        <constraint firstItem="JZq-Bo-oGQ" firstAttribute="leading" secondItem="NOL-6s-Dhl" secondAttribute="leading" constant="8" id="oAM-AG-8qo"/>
-                                                        <constraint firstAttribute="trailing" secondItem="JZq-Bo-oGQ" secondAttribute="trailing" constant="2" id="oeH-I9-Ynu"/>
+                                                        <constraint firstItem="JZq-Bo-oGQ" firstAttribute="leading" secondItem="plF-1T-maR" secondAttribute="leading" constant="8" id="oAM-AG-8qo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JZq-Bo-oGQ" secondAttribute="trailing" constant="8" id="oeH-I9-Ynu"/>
                                                         <constraint firstItem="SGl-av-2Hr" firstAttribute="centerX" secondItem="JZq-Bo-oGQ" secondAttribute="centerX" id="sfI-NF-g7b"/>
                                                         <constraint firstItem="SGl-av-2Hr" firstAttribute="width" secondItem="JZq-Bo-oGQ" secondAttribute="width" id="vx6-Wp-SMS"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
-                                                <size key="customSize" width="277" height="96"/>
+                                                <size key="customSize" width="161" height="107"/>
                                                 <connections>
                                                     <outlet property="crossImage" destination="JGN-Hx-AN9" id="HdG-nX-NIF"/>
                                                     <outlet property="mainView" destination="JZq-Bo-oGQ" id="GrU-tK-QA0"/>
+                                                    <outlet property="softView" destination="SGl-av-2Hr" id="mRF-4z-n2Q"/>
                                                     <outlet property="topicName" destination="MgQ-Lo-cS0" id="H2L-LF-W1W"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -396,12 +397,12 @@ interest</string>
                         <constraints>
                             <constraint firstItem="2g9-Xu-csX" firstAttribute="top" secondItem="5Ws-bh-KHf" secondAttribute="bottom" constant="32" id="3oe-Im-25h"/>
                             <constraint firstItem="4fg-Xl-6rr" firstAttribute="top" secondItem="gbY-ZS-kaQ" secondAttribute="top" constant="12" id="4Pc-xM-BSx"/>
-                            <constraint firstItem="gbY-ZS-kaQ" firstAttribute="trailing" secondItem="5Ws-bh-KHf" secondAttribute="trailing" constant="24" id="Vpi-IK-OGv"/>
+                            <constraint firstItem="gbY-ZS-kaQ" firstAttribute="trailing" secondItem="5Ws-bh-KHf" secondAttribute="trailing" constant="8" id="Vpi-IK-OGv"/>
                             <constraint firstItem="4fg-Xl-6rr" firstAttribute="centerX" secondItem="INU-Tc-kTp" secondAttribute="centerX" id="Vzp-kU-6AG"/>
                             <constraint firstItem="gbY-ZS-kaQ" firstAttribute="bottom" secondItem="2g9-Xu-csX" secondAttribute="bottom" constant="32" id="h44-yE-tTc"/>
                             <constraint firstItem="2g9-Xu-csX" firstAttribute="centerX" secondItem="INU-Tc-kTp" secondAttribute="centerX" id="iHN-i6-bku"/>
                             <constraint firstItem="5Ws-bh-KHf" firstAttribute="top" secondItem="4fg-Xl-6rr" secondAttribute="bottom" constant="32" id="vBp-xd-Yge"/>
-                            <constraint firstItem="5Ws-bh-KHf" firstAttribute="leading" secondItem="gbY-ZS-kaQ" secondAttribute="leading" constant="24" id="veT-X5-ode"/>
+                            <constraint firstItem="5Ws-bh-KHf" firstAttribute="leading" secondItem="gbY-ZS-kaQ" secondAttribute="leading" constant="8" id="veT-X5-ode"/>
                             <constraint firstItem="2g9-Xu-csX" firstAttribute="width" secondItem="INU-Tc-kTp" secondAttribute="width" multiplier="0.6" id="wVx-c7-AWL"/>
                         </constraints>
                     </view>

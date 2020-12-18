@@ -165,7 +165,6 @@ class SearchViewController: UIViewController {
 }
 extension SearchViewController: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width, height: 300)
     }

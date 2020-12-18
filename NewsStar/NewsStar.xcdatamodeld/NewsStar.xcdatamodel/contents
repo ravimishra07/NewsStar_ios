@@ -3,11 +3,12 @@
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="preferences" optional="YES" attributeType="Transformable" customClassName="[String:Bool]"/>
         <attribute name="profileLink" optional="YES" attributeType="String"/>
         <attribute name="uid" optional="YES" attributeType="String"/>
     </entity>
     <configuration name="Configuration"/>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>
