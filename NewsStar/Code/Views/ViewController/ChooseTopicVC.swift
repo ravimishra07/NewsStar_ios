@@ -45,7 +45,10 @@ extension ChooseTopicVC: UICollectionViewDelegate, UICollectionViewDelegateFlowL
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.6) {
             self.preferenceViewModel.setTopicList(index: indexPath.row)
-            self.preferenceCollectionView.reloadData()
+            print("did select printed")
+            collectionView.reloadItems(at:[indexPath])
+
+           // self.preferenceCollectionView.reloadData()
         }
     }
 }

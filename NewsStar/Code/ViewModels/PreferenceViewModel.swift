@@ -34,7 +34,7 @@ struct PreferenceViewModel {
         let selectedItem = topicArray[index]
         let updatedItem = ChooseTopic(topicName: selectedItem.topicName, isLiked: !selectedItem.isLiked)
         topicArray[index] = updatedItem
-        dataSource?.data.value = topicArray
+        dataSource?.data.value[index] = updatedItem
     }
     func preferenceData() -> [ChooseTopic]?{
         
