@@ -27,6 +27,10 @@ class ChooseTopicVC: UIViewController {
             // self.prefDataSource.data.add
         
     }
+    @IBAction func savePrefData(_ sender: UIButton){
+        self.preferenceViewModel.saveUserChoices()
+    }
+    
     
 }
 extension ChooseTopicVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{

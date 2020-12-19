@@ -28,7 +28,7 @@ class PreferenceDataSource: GenericDataSource<ChooseTopic>, UICollectionViewData
             UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseIn]) {
                 crossImage.transform = CGAffineTransform(rotationAngle: .pi/4)
                 softView.isSelected = true
-               // self.mainView.backgroundColor = UIColor("#feb47b")
+                // self.mainView.backgroundColor = UIColor("#feb47b")
 
             } completion: { (isCompleted) in
                 /// set value in preference

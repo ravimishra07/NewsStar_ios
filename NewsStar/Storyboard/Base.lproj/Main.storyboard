@@ -390,6 +390,9 @@ interest</string>
                                 <state key="normal" title="Save Preference">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePrefData:" destination="4pO-P3-xbl" eventType="touchUpInside" id="Fbf-pF-zDN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gbY-ZS-kaQ"/>
