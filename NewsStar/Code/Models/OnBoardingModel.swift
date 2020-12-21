@@ -11,4 +11,5 @@ struct OnBoardingModel {
     let onBoardingTitle: String
     let onBoardingSubTitle: String
     let onBoardingImage: String
+    
 }

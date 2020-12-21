@@ -729,7 +729,7 @@ Skip sign in</string>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Hb-EH-4hJ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="608.33333333333337"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S2H-WI-veM">
                                     <size key="itemSize" width="405" height="613"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -737,7 +737,7 @@ Skip sign in</string>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0Ux-Ib-XVY">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnBoardingCVCell" id="0Ux-Ib-XVY" customClass="OnBoardingCVCell" customModule="NewsStar" customModuleProvider="target">
                                         <rect key="frame" x="4.666666666666667" y="0.0" width="405" height="613"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zWy-3C-Ayf">
@@ -747,6 +747,10 @@ Skip sign in</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Mc-cy-Hb6">
                                                     <rect key="frame" x="0.0" y="0.0" width="405" height="613"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mai-0b-rQN" customClass="SoftUIView" customModule="NewsStar" customModuleProvider="target">
+                                                            <rect key="frame" x="102.33333333333333" y="206.33333333333331" width="200.33333333333337" height="200.33333333333331"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newspaper" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-ma-PfD">
                                                             <rect key="frame" x="111.33333333333333" y="215.66666666666669" width="182.33333333333337" height="182"/>
                                                             <color key="tintColor" systemColor="secondaryLabelColor"/>
@@ -755,31 +759,36 @@ Skip sign in</string>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsStar: A complete News App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Rc-AV-eUm">
-                                                            <rect key="frame" x="27" y="421.66666666666669" width="351.33333333333331" height="25.666666666666686"/>
+                                                            <rect key="frame" x="27" y="433.66666666666669" width="351.33333333333331" height="25.666666666666686"/>
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read news from thousands of news source" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKD-Lu-wLF">
-                                                            <rect key="frame" x="12" y="459.33333333333331" width="381" height="44"/>
+                                                            <rect key="frame" x="12" y="471.33333333333331" width="381" height="43.999999999999943"/>
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="3Rc-AV-eUm" firstAttribute="top" secondItem="DBO-ma-PfD" secondAttribute="bottom" constant="24" id="0Ch-ag-1pU"/>
+                                                        <constraint firstItem="3Rc-AV-eUm" firstAttribute="top" secondItem="DBO-ma-PfD" secondAttribute="bottom" constant="36" id="0Ch-ag-1pU"/>
+                                                        <constraint firstItem="Mai-0b-rQN" firstAttribute="height" secondItem="DBO-ma-PfD" secondAttribute="height" multiplier="1.1" id="BWh-VF-f1y"/>
                                                         <constraint firstItem="DBO-ma-PfD" firstAttribute="centerY" secondItem="5Mc-cy-Hb6" secondAttribute="centerY" id="J5h-4c-Qsq"/>
+                                                        <constraint firstItem="Mai-0b-rQN" firstAttribute="centerX" secondItem="DBO-ma-PfD" secondAttribute="centerX" id="NxD-qq-fb3"/>
                                                         <constraint firstAttribute="trailing" secondItem="lKD-Lu-wLF" secondAttribute="trailing" constant="12" id="PT2-ZA-skh"/>
                                                         <constraint firstItem="DBO-ma-PfD" firstAttribute="centerX" secondItem="5Mc-cy-Hb6" secondAttribute="centerX" id="VvP-Th-HBx"/>
+                                                        <constraint firstItem="Mai-0b-rQN" firstAttribute="centerY" secondItem="DBO-ma-PfD" secondAttribute="centerY" id="fJt-gd-Qa7"/>
                                                         <constraint firstItem="DBO-ma-PfD" firstAttribute="width" secondItem="5Mc-cy-Hb6" secondAttribute="width" multiplier="0.45" id="gpH-hD-8ll"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="leading" secondItem="5Mc-cy-Hb6" secondAttribute="leading" constant="12" id="iT1-EG-vGD"/>
                                                         <constraint firstItem="3Rc-AV-eUm" firstAttribute="centerX" secondItem="5Mc-cy-Hb6" secondAttribute="centerX" id="ovL-Vj-aiQ"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="top" secondItem="3Rc-AV-eUm" secondAttribute="bottom" constant="12" id="uQ8-IS-faY"/>
+                                                        <constraint firstItem="Mai-0b-rQN" firstAttribute="width" secondItem="DBO-ma-PfD" secondAttribute="width" multiplier="1.1" id="uvO-m3-RsX"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="centerX" secondItem="5Mc-cy-Hb6" secondAttribute="centerX" id="vh0-zd-Ul4"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="5Mc-cy-Hb6" secondAttribute="bottom" id="aVC-P6-beM"/>
                                                 <constraint firstItem="5Mc-cy-Hb6" firstAttribute="top" secondItem="zWy-3C-Ayf" secondAttribute="top" id="aXT-KX-X9s"/>
@@ -787,7 +796,13 @@ Skip sign in</string>
                                                 <constraint firstAttribute="trailing" secondItem="5Mc-cy-Hb6" secondAttribute="trailing" id="qDI-GV-yiA"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="405" height="613"/>
+                                        <connections>
+                                            <outlet property="onBoardingImage" destination="DBO-ma-PfD" id="8nv-ib-KGg"/>
+                                            <outlet property="onBoardingSubTitle" destination="lKD-Lu-wLF" id="VqQ-GF-NbZ"/>
+                                            <outlet property="onBoardingTitle" destination="3Rc-AV-eUm" id="u6J-Cy-3UV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -819,6 +834,7 @@ Skip sign in</string>
                     </view>
                     <connections>
                         <outlet property="backView" destination="cHJ-vV-W62" id="XfG-cc-oX8"/>
+                        <outlet property="onBoardingCV" destination="1Hb-EH-4hJ" id="1lr-yj-Gse"/>
                         <outlet property="signinButton" destination="NNH-xs-zih" id="mnX-ip-Dn4"/>
                     </connections>
                 </viewController>
