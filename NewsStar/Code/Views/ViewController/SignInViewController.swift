@@ -11,12 +11,24 @@ import Firebase
 
 
 class SignInViewController: UIViewController {
-   // @IBOutlet weak var signInButton: GIDSignInButton!
+    @IBOutlet weak var signinButton: UIButton!
+    @IBOutlet weak var backView: SoftUIView!
+    
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        signinButton.titleLabel?.textColor = .black
+
+        
+//        GIDSignIn.sharedInstance()?.presentingViewController = self
+//        GIDSignIn.sharedInstance().signIn()
+//        Do any additional setup after loading the view.
+    }
+    @IBAction func googleSignIn(sender: AnyObject) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
-        // Do any additional setup after loading the view.
-    }
+      }
+
 }

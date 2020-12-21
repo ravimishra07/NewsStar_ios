@@ -6,7 +6,7 @@
 //
 
 import UIKit
-@IBDesignable class MainGradientView: UIView {
+@IBDesignable class MainGradientView: UIView{
     //#ffafbd → #ffc3a0
     @IBInspectable var topColor: UIColor = UIColor("#ff7e5f") ?? .white
     @IBInspectable var bottomColor: UIColor = UIColor("#feb47b") ?? .black

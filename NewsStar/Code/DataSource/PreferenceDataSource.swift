@@ -19,13 +19,19 @@ class PreferenceDataSource: GenericDataSource<ChooseTopic>, UICollectionViewData
         }
         let cellData = data.value[indexPath.row]
         cell.topicName.text = cellData.topicName
-        
-        rotateImage(isSelected: cellData.isLiked, crossImage: cell.crossImage, softView: cell.softView)
+//        var topicValue = 0
+//
+//        if cellData.isLiked{
+//            topicValue = 1
+//        }else{
+//            topicValue = 0
+//        }
+        rotateImage(isSelected: cellData.isLikedValue, crossImage: cell.crossImage, softView: cell.softView)
         return cell
     }
-    func rotateImage(isSelected: Bool,crossImage: UIImageView,softView: SoftUIView){
-        if isSelected{
-            UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseIn]) {
+    func rotateImage(isSelected: Int,crossImage: UIImageView,softView: SoftUIView){
+        if isSelected == 2{
+            UIView.animate(withDuration: 0.3, delay: 0, options: []) {
                 crossImage.transform = CGAffineTransform(rotationAngle: .pi/4)
                 softView.isSelected = true
                 // self.mainView.backgroundColor = UIColor("#feb47b")
@@ -38,12 +44,9 @@ class PreferenceDataSource: GenericDataSource<ChooseTopic>, UICollectionViewData
              crossImage.transform = .identity
              softView.isSelected = false
              //   self.mainView.backgroundColor = .clear//
-
             } completion: { (isCompleted) in
                 /// set value in preference
             }
-
-
         }
     }
 

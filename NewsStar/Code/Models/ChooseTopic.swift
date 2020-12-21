@@ -9,5 +9,7 @@ import Foundation
 
 struct ChooseTopic {
     let topicName: String
-    let isLiked: Bool
+    let isLiked: Bool = false
+    let isLikedValue: Int
+
 }
