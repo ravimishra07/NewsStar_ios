@@ -13,8 +13,10 @@ class OnboardingDataSource: GenericDataSource<OnBoardingModel>, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell 
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnBoardingCVCell.description(), for: indexPath) as? OnBoardingCVCell else{
+            return UICollectionViewCell()
+        }
+//        cell.onBoardingImage = UIImage(named: "")
+        return cell
     }
-    
-    
 }

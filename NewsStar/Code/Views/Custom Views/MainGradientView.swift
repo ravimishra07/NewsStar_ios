@@ -6,10 +6,10 @@
 //
 
 import UIKit
-@IBDesignable class MainGradientView: UIView{
+ class MainGradientView: UIView{
     //#ffafbd → #ffc3a0
-    @IBInspectable var topColor: UIColor = UIColor("#ff7e5f") ?? .white
-    @IBInspectable var bottomColor: UIColor = UIColor("#feb47b") ?? .black
+     var topColor: UIColor = UIColor("#ff7e5f") ?? .white
+     var bottomColor: UIColor = UIColor("#feb47b") ?? .black
     
     override class var layerClass: AnyClass {
         return CAGradientLayer.self
@@ -19,6 +19,7 @@ import UIKit
        //custom logic goes here
         self.addBottomRoundedEdge(desiredCurve: 1.5)
     }
+    
     override func layoutSubviews() {
         (layer as! CAGradientLayer).colors = [topColor.cgColor, bottomColor.cgColor]
     }

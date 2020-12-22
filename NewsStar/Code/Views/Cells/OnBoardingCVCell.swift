@@ -8,8 +8,9 @@
 import UIKit
 
 class OnBoardingCVCell: UICollectionViewCell {
-   @IBOutlet weak var  onBoardingTitle: UILabel!
-    @IBOutlet weak var  onBoardingSubTitle: UILabel!
+   // @IBOutlet weak var imageBackView: UIView!
+   @IBOutlet weak var onBoardingTitle: UILabel!
+    @IBOutlet weak var onBoardingSubTitle: UILabel!
     @IBOutlet weak var onBoardingImage: UIImageView!
 
     
@@ -17,7 +18,10 @@ class OnBoardingCVCell: UICollectionViewCell {
         "OnBoardingCVCell"
     }
     override  func awakeFromNib() {
-        self.contentView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+      //  self.contentView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+       // imageBackView.layer. = imageBackView.frame.width/2
+       
+
     
     }
 }
