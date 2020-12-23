@@ -60,14 +60,11 @@ PODS:
   - GTMSessionFetcher/Full (1.4.0):
     - GTMSessionFetcher/Core (= 1.4.0)
   - leveldb-library (1.22)
-  - liquid-swipe (0.7.0):
-    - pop (~> 1.0)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
-  - pop (1.0.12)
   - PromisesObjC (1.2.10)
 
 DEPENDENCIES:
@@ -75,7 +72,6 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - GoogleSignIn
-  - liquid-swipe
 
 SPEC REPOS:
   trunk:
@@ -92,9 +88,7 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - leveldb-library
-    - liquid-swipe
     - nanopb
-    - pop
     - PromisesObjC
 
 SPEC CHECKSUMS:
@@ -111,11 +105,9 @@ SPEC CHECKSUMS:
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
-  liquid-swipe: 850f88c0717fe58ba83f0f571c47a191f29ddc1f
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
 
-PODFILE CHECKSUM: 0f48207aa6e58faeb6fef21b9aa14b9bbda6967a
+PODFILE CHECKSUM: b060087ae247c2daf76fd33cef215c9cb65db5f3
 
 COCOAPODS: 1.9.3

@@ -10,5 +10,4 @@ pod 'Alamofire', '~> 4.7'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'GoogleSignIn'
-pod 'liquid-swipe'
 end

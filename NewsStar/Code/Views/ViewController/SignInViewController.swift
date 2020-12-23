@@ -61,7 +61,7 @@ class SignInViewController: LiquidSwipeContainerController, LiquidSwipeContainer
     }
     func setupUI(){
         //gradientLayer.roundCorners(corners: [.bottomLeft,.bottomRight], radius: 80)
-        dataSource = self
+      //  datasource = self
         onBoardingCV.delegate = self
         onBoardingCV.dataSource = cvDataSource
         self.cvDataSource.data.addAndNotify(observer: self) { [weak self] _ in
