@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2T-LI-NbZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nYb-dq-OIu">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -719,9 +719,23 @@ interest</string>
                                 <rect key="frame" x="82.666666666666671" y="702.33333333333337" width="248.66666666666663" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3f-e2-6zr" customClass="MainGradientView" customModule="NewsStar" customModuleProvider="target">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_bottom_img" translatesAutoresizingMaskIntoConstraints="NO" id="Tws-6V-gS4">
+                                <rect key="frame" x="0.0" y="627.33333333333337" width="414" height="268.66666666666663"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3f-e2-6zr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="304.66666666666669"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_img" translatesAutoresizingMaskIntoConstraints="NO" id="n05-hf-Zex">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="304.66666666666669"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="n05-hf-Zex" firstAttribute="leading" secondItem="c3f-e2-6zr" secondAttribute="leading" id="7Rl-vF-KYV"/>
+                                    <constraint firstItem="n05-hf-Zex" firstAttribute="top" secondItem="c3f-e2-6zr" secondAttribute="top" id="FV9-rI-fdP"/>
+                                    <constraint firstAttribute="bottom" secondItem="n05-hf-Zex" secondAttribute="bottom" id="Fc6-V3-ucN"/>
+                                    <constraint firstAttribute="trailing" secondItem="n05-hf-Zex" secondAttribute="trailing" id="QRq-WI-IFN"/>
+                                </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-O6-iZV">
                                 <rect key="frame" x="94.666666666666671" y="709.66666666666663" width="30" height="30"/>
@@ -794,11 +808,11 @@ Skip sign in</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="405" height="613"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mai-0b-rQN">
-                                                            <rect key="frame" x="84" y="126.66666666666669" width="237" height="237"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <rect key="frame" x="84" y="188" width="237" height="237"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newspaper" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-ma-PfD">
-                                                            <rect key="frame" x="111.33333333333333" y="154.33333333333334" width="182.33333333333337" height="182.00000000000003"/>
+                                                            <rect key="frame" x="111.33333333333333" y="215.66666666666669" width="182.33333333333337" height="182"/>
                                                             <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="DBO-ma-PfD" secondAttribute="height" id="1s6-4g-Kus"/>
@@ -820,7 +834,7 @@ Skip sign in</string>
                                                     <constraints>
                                                         <constraint firstItem="3Rc-AV-eUm" firstAttribute="width" secondItem="5Mc-cy-Hb6" secondAttribute="width" multiplier="0.86749" id="5Ol-lG-d0y"/>
                                                         <constraint firstItem="Mai-0b-rQN" firstAttribute="height" secondItem="DBO-ma-PfD" secondAttribute="height" multiplier="1.3" id="BWh-VF-f1y"/>
-                                                        <constraint firstItem="DBO-ma-PfD" firstAttribute="centerY" secondItem="5Mc-cy-Hb6" secondAttribute="centerY" multiplier="0.8" id="J5h-4c-Qsq"/>
+                                                        <constraint firstItem="DBO-ma-PfD" firstAttribute="centerY" secondItem="5Mc-cy-Hb6" secondAttribute="centerY" id="J5h-4c-Qsq"/>
                                                         <constraint firstItem="Mai-0b-rQN" firstAttribute="centerX" secondItem="DBO-ma-PfD" secondAttribute="centerX" id="NxD-qq-fb3"/>
                                                         <constraint firstAttribute="trailing" secondItem="lKD-Lu-wLF" secondAttribute="trailing" constant="12" id="PT2-ZA-skh"/>
                                                         <constraint firstItem="DBO-ma-PfD" firstAttribute="centerX" secondItem="5Mc-cy-Hb6" secondAttribute="centerX" id="VvP-Th-HBx"/>
@@ -863,7 +877,9 @@ Skip sign in</string>
                             <constraint firstItem="9aA-TF-7VW" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="DXR-E8-FQJ"/>
                             <constraint firstItem="cHJ-vV-W62" firstAttribute="centerX" secondItem="NNH-xs-zih" secondAttribute="centerX" id="Dfk-EA-F0D"/>
                             <constraint firstItem="cHJ-vV-W62" firstAttribute="height" secondItem="NNH-xs-zih" secondAttribute="height" id="El5-tD-wBc"/>
+                            <constraint firstItem="Tws-6V-gS4" firstAttribute="height" secondItem="ZZX-kd-L9P" secondAttribute="height" multiplier="0.3" id="KM2-ND-M3v"/>
                             <constraint firstItem="c3f-e2-6zr" firstAttribute="leading" secondItem="pXo-VQ-6It" secondAttribute="leading" id="L4F-fy-vx2"/>
+                            <constraint firstItem="Tws-6V-gS4" firstAttribute="leading" secondItem="pXo-VQ-6It" secondAttribute="leading" id="N2O-Ek-lPt"/>
                             <constraint firstItem="cHJ-vV-W62" firstAttribute="top" secondItem="1Hb-EH-4hJ" secondAttribute="bottom" constant="50" id="QbG-51-CBv"/>
                             <constraint firstItem="NNH-xs-zih" firstAttribute="centerY" secondItem="pXo-VQ-6It" secondAttribute="centerY" multiplier="1.6" id="Qy3-5K-oLV"/>
                             <constraint firstItem="cHJ-vV-W62" firstAttribute="centerY" secondItem="NNH-xs-zih" secondAttribute="centerY" id="SaV-ua-OaT"/>
@@ -871,6 +887,7 @@ Skip sign in</string>
                             <constraint firstItem="VcH-O6-iZV" firstAttribute="centerY" secondItem="NNH-xs-zih" secondAttribute="centerY" id="VQG-7f-X9z"/>
                             <constraint firstItem="Tu5-h8-dk5" firstAttribute="width" secondItem="NNH-xs-zih" secondAttribute="width" id="XG8-Bm-LdJ"/>
                             <constraint firstItem="cHJ-vV-W62" firstAttribute="top" secondItem="1Hb-EH-4hJ" secondAttribute="bottom" constant="50" id="ZyA-18-XB0"/>
+                            <constraint firstAttribute="trailing" secondItem="Tws-6V-gS4" secondAttribute="trailing" id="aTW-0f-enF"/>
                             <constraint firstItem="c3f-e2-6zr" firstAttribute="trailing" secondItem="pXo-VQ-6It" secondAttribute="trailing" id="c8v-og-SV0"/>
                             <constraint firstItem="9aA-TF-7VW" firstAttribute="bottom" secondItem="1Hb-EH-4hJ" secondAttribute="bottom" constant="-24" id="dCF-qD-rWN"/>
                             <constraint firstItem="Tu5-h8-dk5" firstAttribute="top" secondItem="cHJ-vV-W62" secondAttribute="bottom" constant="6" id="kPe-xq-CNN"/>
@@ -878,6 +895,7 @@ Skip sign in</string>
                             <constraint firstItem="NNH-xs-zih" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="mAh-bg-3zj"/>
                             <constraint firstItem="c3f-e2-6zr" firstAttribute="height" secondItem="ZZX-kd-L9P" secondAttribute="height" multiplier="0.34" id="msB-8y-yn3"/>
                             <constraint firstItem="1Hb-EH-4hJ" firstAttribute="leading" secondItem="pXo-VQ-6It" secondAttribute="leading" id="myR-GV-ya1"/>
+                            <constraint firstAttribute="bottom" secondItem="Tws-6V-gS4" secondAttribute="bottom" id="q0K-5W-i4x"/>
                             <constraint firstItem="NNH-xs-zih" firstAttribute="width" secondItem="ZZX-kd-L9P" secondAttribute="width" multiplier="0.6" id="vOS-9S-zaX"/>
                             <constraint firstItem="cHJ-vV-W62" firstAttribute="width" secondItem="NNH-xs-zih" secondAttribute="width" id="y7P-Lf-JYf"/>
                             <constraint firstItem="pXo-VQ-6It" firstAttribute="trailing" secondItem="1Hb-EH-4hJ" secondAttribute="trailing" id="zzs-cw-zxP"/>
@@ -885,7 +903,6 @@ Skip sign in</string>
                     </view>
                     <connections>
                         <outlet property="backView" destination="cHJ-vV-W62" id="XfG-cc-oX8"/>
-                        <outlet property="gradientLayer" destination="c3f-e2-6zr" id="4XL-LO-uR4"/>
                         <outlet property="onBoardingCV" destination="1Hb-EH-4hJ" id="1lr-yj-Gse"/>
                         <outlet property="pageControl" destination="9aA-TF-7VW" id="khA-4l-hFn"/>
                         <outlet property="signinButton" destination="NNH-xs-zih" id="mnX-ip-Dn4"/>
@@ -963,6 +980,8 @@ Skip sign in</string>
     <resources>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="arrowtriangle.down" catalog="system" width="128" height="124"/>
+        <image name="background_bottom_img" width="4688" height="3605"/>
+        <image name="background_img" width="4688" height="3605"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="filter_icon" width="33.333332061767578" height="33.333332061767578"/>
         <image name="google" width="128" height="128"/>

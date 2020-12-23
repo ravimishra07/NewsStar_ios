@@ -14,9 +14,10 @@ init(dataSource: GenericDataSource<OnBoardingModel>?) {
     self.dataSource = dataSource
 }
 func getOnboardingData(){
-    let onboarding1 = OnBoardingModel(onBoardingTitle: "", onBoardingSubTitle: "", onBoardingImage: "")
-    let onboarding2 = OnBoardingModel(onBoardingTitle: "", onBoardingSubTitle: "", onBoardingImage: "")
-    let onboarding3 = OnBoardingModel(onBoardingTitle: "", onBoardingSubTitle: "", onBoardingImage: "")
+    let onboarding1 = OnBoardingModel(onBoardingTitle: "Personalized News", onBoardingSubTitle: "Read what are interested in!", onBoardingImage: "newspaper")
+
+    let onboarding2 = OnBoardingModel(onBoardingTitle: "Latest News", onBoardingSubTitle: "Get latest news from all over the globe", onBoardingImage: "globe")
+    let onboarding3 = OnBoardingModel(onBoardingTitle: "100+ sources", onBoardingSubTitle: "Get news from 100+ sources", onBoardingImage: "path")
 
     let onboardingArray: [OnBoardingModel] = [onboarding1,onboarding2,onboarding3]
     dataSource?.data.value = onboardingArray
