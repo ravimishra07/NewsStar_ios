@@ -15,6 +15,7 @@ class SignInViewController: UIViewController{
     @IBOutlet weak var gradientLayer: MainGradientView!
 
     @IBOutlet weak var backView: SoftUIView!
+    
     @IBOutlet weak var onBoardingCV: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
 
@@ -26,15 +27,17 @@ class SignInViewController: UIViewController{
     }()
  
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        self.pageControl.currentPage = 0
         signinButton.titleLabel?.textColor = .black
         setupUI()
     }
     func setupUI(){
         //gradientLayer.roundCorners(corners: [.bottomLeft,.bottomRight], radius: 80)
-      //  datasource = self
+        //  datasource = self
+        
         onBoardingCV.delegate = self
         onBoardingCV.dataSource = cvDataSource
         self.cvDataSource.data.addAndNotify(observer: self) { [weak self] _ in

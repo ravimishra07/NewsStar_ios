@@ -8,20 +8,17 @@
 import UIKit
 
 class OnBoardingCVCell: UICollectionViewCell {
-   // @IBOutlet weak var imageBackView: UIView!
-   @IBOutlet weak var onBoardingTitle: UILabel!
+     @IBOutlet weak var imageBackView: SoftUIView!
+    @IBOutlet weak var onBoardingTitle: UILabel!
     @IBOutlet weak var onBoardingSubTitle: UILabel!
     @IBOutlet weak var onBoardingImage: UIImageView!
-
     
     override class func description() -> String {
         "OnBoardingCVCell"
     }
     override  func awakeFromNib() {
-      //  self.contentView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
-       // imageBackView.layer. = imageBackView.frame.width/2
+        imageBackView.cornerRadius = imageBackView.bounds.width/2
+        imageBackView.isSelected = true
        
-
-    
     }
 }
