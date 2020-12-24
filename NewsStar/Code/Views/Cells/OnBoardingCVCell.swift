@@ -17,8 +17,8 @@ class OnBoardingCVCell: UICollectionViewCell {
         "OnBoardingCVCell"
     }
     override  func awakeFromNib() {
-        imageBackView.cornerRadius = imageBackView.bounds.width/2
-        imageBackView.isSelected = true
+        //imageBackView.cornerRadius = imageBackView.bounds.width/2
+        imageBackView.isSelected = false
        
     }
 }

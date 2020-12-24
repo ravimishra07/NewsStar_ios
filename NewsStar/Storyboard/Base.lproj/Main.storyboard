@@ -783,11 +783,11 @@ Skip sign in</string>
                                 </constraints>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9aA-TF-7VW">
-                                <rect key="frame" x="146" y="600.33333333333337" width="122" height="28"/>
+                                <rect key="frame" x="146" y="618.33333333333337" width="122" height="28"/>
                                 <color key="pageIndicatorTintColor" systemColor="secondaryLabelColor"/>
                                 <color key="currentPageIndicatorTintColor" name="news_star_dark_orange"/>
                             </pageControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Hb-EH-4hJ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Hb-EH-4hJ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="608.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S2H-WI-veM">
@@ -819,12 +819,12 @@ Skip sign in</string>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsStar: A complete News App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Rc-AV-eUm">
-                                                            <rect key="frame" x="27" y="448.66666666666669" width="351.33333333333331" height="22"/>
+                                                            <rect key="frame" x="27" y="464" width="351.33333333333331" height="22"/>
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read news from thousands of news source" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKD-Lu-wLF">
-                                                            <rect key="frame" x="12" y="482.66666666666669" width="381" height="21"/>
+                                                            <rect key="frame" x="12" y="498" width="381" height="21"/>
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -842,7 +842,7 @@ Skip sign in</string>
                                                         <constraint firstItem="DBO-ma-PfD" firstAttribute="width" secondItem="5Mc-cy-Hb6" secondAttribute="width" multiplier="0.4" id="gpH-hD-8ll"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="leading" secondItem="5Mc-cy-Hb6" secondAttribute="leading" constant="12" id="iT1-EG-vGD"/>
                                                         <constraint firstItem="3Rc-AV-eUm" firstAttribute="centerX" secondItem="5Mc-cy-Hb6" secondAttribute="centerX" id="ovL-Vj-aiQ"/>
-                                                        <constraint firstItem="3Rc-AV-eUm" firstAttribute="centerY" secondItem="5Mc-cy-Hb6" secondAttribute="centerY" multiplier="1.5" id="q4G-0E-QDn"/>
+                                                        <constraint firstItem="3Rc-AV-eUm" firstAttribute="centerY" secondItem="5Mc-cy-Hb6" secondAttribute="centerY" multiplier="1.55" id="q4G-0E-QDn"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="top" secondItem="3Rc-AV-eUm" secondAttribute="bottom" constant="12" id="uQ8-IS-faY"/>
                                                         <constraint firstItem="Mai-0b-rQN" firstAttribute="width" secondItem="DBO-ma-PfD" secondAttribute="width" multiplier="1.5" id="uvO-m3-RsX"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="centerX" secondItem="5Mc-cy-Hb6" secondAttribute="centerX" id="vh0-zd-Ul4"/>
@@ -890,7 +890,7 @@ Skip sign in</string>
                             <constraint firstItem="cHJ-vV-W62" firstAttribute="top" secondItem="1Hb-EH-4hJ" secondAttribute="bottom" constant="50" id="ZyA-18-XB0"/>
                             <constraint firstAttribute="trailing" secondItem="Tws-6V-gS4" secondAttribute="trailing" id="aTW-0f-enF"/>
                             <constraint firstItem="c3f-e2-6zr" firstAttribute="trailing" secondItem="pXo-VQ-6It" secondAttribute="trailing" id="c8v-og-SV0"/>
-                            <constraint firstItem="9aA-TF-7VW" firstAttribute="bottom" secondItem="1Hb-EH-4hJ" secondAttribute="bottom" constant="-24" id="dCF-qD-rWN"/>
+                            <constraint firstItem="9aA-TF-7VW" firstAttribute="bottom" secondItem="1Hb-EH-4hJ" secondAttribute="bottom" constant="-6" id="dCF-qD-rWN"/>
                             <constraint firstItem="Tu5-h8-dk5" firstAttribute="top" secondItem="cHJ-vV-W62" secondAttribute="bottom" constant="6" id="kPe-xq-CNN"/>
                             <constraint firstItem="Tu5-h8-dk5" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="knM-7y-AHb"/>
                             <constraint firstItem="NNH-xs-zih" firstAttribute="centerX" secondItem="ZZX-kd-L9P" secondAttribute="centerX" id="mAh-bg-3zj"/>
