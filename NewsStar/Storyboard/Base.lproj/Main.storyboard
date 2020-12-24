@@ -819,12 +819,12 @@ Skip sign in</string>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsStar: A complete News App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Rc-AV-eUm">
-                                                            <rect key="frame" x="27" y="464" width="351.33333333333331" height="22"/>
+                                                            <rect key="frame" x="27" y="479.33333333333331" width="351.33333333333331" height="22"/>
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read news from thousands of news source" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKD-Lu-wLF">
-                                                            <rect key="frame" x="12" y="498" width="381" height="21"/>
+                                                            <rect key="frame" x="12" y="513.33333333333337" width="381" height="21"/>
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -842,7 +842,7 @@ Skip sign in</string>
                                                         <constraint firstItem="DBO-ma-PfD" firstAttribute="width" secondItem="5Mc-cy-Hb6" secondAttribute="width" multiplier="0.4" id="gpH-hD-8ll"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="leading" secondItem="5Mc-cy-Hb6" secondAttribute="leading" constant="12" id="iT1-EG-vGD"/>
                                                         <constraint firstItem="3Rc-AV-eUm" firstAttribute="centerX" secondItem="5Mc-cy-Hb6" secondAttribute="centerX" id="ovL-Vj-aiQ"/>
-                                                        <constraint firstItem="3Rc-AV-eUm" firstAttribute="centerY" secondItem="5Mc-cy-Hb6" secondAttribute="centerY" multiplier="1.55" id="q4G-0E-QDn"/>
+                                                        <constraint firstItem="3Rc-AV-eUm" firstAttribute="centerY" secondItem="5Mc-cy-Hb6" secondAttribute="centerY" multiplier="1.6" id="q4G-0E-QDn"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="top" secondItem="3Rc-AV-eUm" secondAttribute="bottom" constant="12" id="uQ8-IS-faY"/>
                                                         <constraint firstItem="Mai-0b-rQN" firstAttribute="width" secondItem="DBO-ma-PfD" secondAttribute="width" multiplier="1.5" id="uvO-m3-RsX"/>
                                                         <constraint firstItem="lKD-Lu-wLF" firstAttribute="centerX" secondItem="5Mc-cy-Hb6" secondAttribute="centerX" id="vh0-zd-Ul4"/>

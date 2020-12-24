@@ -80,7 +80,11 @@ class SignInViewController: UIViewController{
     */
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
       //  let indexPath = IndexPath(row: self.indexOfCell(), section: 0)
-        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.size.width)
+        var page = scrollView.contentOffset.x / scrollView.frame.size.width
+        if page > 1.9{
+            page = 2
+        }
+        pageControl.currentPage = Int(ceil(page))
         /*
         onBoardingCV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
        
@@ -113,15 +117,15 @@ class SignInViewController: UIViewController{
 }
 extension SignInViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let columns: CGFloat = 1.1
-        let collectionViewWidth = collectionView.bounds.width
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        
-        let adjustedWidth = (collectionViewWidth) - (flowLayout.minimumLineSpacing * (columns - 1))
-        let width = floor(adjustedWidth / columns)
-        self.collectionViewWidth = width
-        return CGSize(width: width, height: 2*(self.view.bounds.height)/3)
-        //return CGSize(width: self.view.bounds.width-12, height: 2*(self.view.bounds.height)/3)
+//        let columns: CGFloat = 1.1
+//        let collectionViewWidth = collectionView.bounds.width
+//        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+//
+//        let adjustedWidth = (collectionViewWidth) - (flowLayout.minimumLineSpacing * (columns - 1))
+//        let width = floor(adjustedWidth / columns)
+//        self.collectionViewWidth = width
+//        return CGSize(width: width, height: 2*(self.view.bounds.height)/3)
+        return CGSize(width: self.view.bounds.width-12, height: 2*(self.view.bounds.height)/3)
     }
 //    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 //        self.pageControl.currentPage = indexPath.row
